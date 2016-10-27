@@ -1,0 +1,39 @@
+{
+  "name": "ottemo-io",
+  "version": "2.0.0-a",
+  "description": "Public web site code for Ottemo",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ottemo/ottemo-io.git"
+  },
+  "keywords": [
+    "ottemo",
+    "ecommerce",
+    "golang",
+    "store",
+    "retail"
+  ],
+  "author": "Ottemo",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ottemo/ottemo-io/issues"
+  },
+  "homepage": "https://github.com/ottemo/ottemo-io",
+  "devDependencies": {
+    "browser-sync": "^2.11.0",
+    "del": "^2.2.0",
+    "gulp": "^3.8.11",
+    "gulp-changed": "^1.0.0",
+    "gulp-concat": "^2.5.2",
+    "gulp-load-plugins": "^1.2.0",
+    "gulp-sass": "^2.0.0",
+    "gulp-sitemap": "^2.1.0",
+    "gulp-swig": "^0.8.0",
+    "gulp-task-listing": "^1.0.1",
+    "run-sequence": "^1.1.5"
+  }
+}
