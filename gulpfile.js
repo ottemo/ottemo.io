@@ -1,26 +1,24 @@
-var gulp = require('gulp');
-var del = require('del');
-var browserSync = require('browser-sync');
-var reload = browserSync.reload;
-var runSequence = require('run-sequence');
-var $ = require('gulp-load-plugins')({
-    lazy: true
-});
+var gulp = require('gulp'),
+    jade = require('gulp-jade'),
+    del = require('del'),
+    browserSync = require('browser-sync'),
+    reload = browserSync.reload,
+    runSequence = require('run-sequence'),
+    $ = require('gulp-load-plugins')({
+        lazy: true
+    });
 
 var src = './src';
 var paths = {
     src: src,
     dist: './dist',
-    html: [
-        '!' + src + '/_*.html', // underscored templates don't get built
-        src + '/*.html',
-    ],
+    jade: src + '/jade/*.jade',
     sass: src + '/sass/**/*.scss',
     js: src + '/js/**/*.js',
     media: src + '/media/*',
     img: src + '/img/**/*',
     fonts: src + '/fonts/**/*',
-    static: src + '/*.{txt,xml}',
+    static: src + '/*.{txt,xml}'
 };
 
 // List tasks
@@ -58,9 +56,9 @@ function devServerTask() {
         });
 
         // Start watching
+        gulp.watch(paths.jade, ['compile_views']);
         gulp.watch(paths.js, ['compile_js']);
         gulp.watch(paths.sass, ['compile_sass']);
-        gulp.watch(paths.html, ['compile_templates']);
     }
 }
 
@@ -73,19 +71,20 @@ function cleanTask() {
 }
 
 // Compile from src to dist
-gulp.task('compile', ['compile_templates', 'compile_sass', 'compile_js', 'compile_media', 'compile_static']);
+gulp.task('compile', ['compile_views', 'compile_sass', 'compile_js', 'compile_media', 'compile_static']);
 
-// Compile swig templates
-gulp.task('compile_templates', function() {
-    return gulp.src(paths.html)
-        .pipe($.swig({
-            defaults: {
-                cache: false
-            }
+// Compile jade templates
+gulp.task('compile_views', function() {
+    return gulp.src(paths.jade)
+        .pipe($.jade({
+            pretty: true
         }))
         .pipe(gulp.dest(paths.dist))
-        .on("end", reload);
+        .pipe(reload({
+            stream: true
+        }));
 });
+
 
 // Compile sass into CSS
 gulp.task('compile_sass', function() {

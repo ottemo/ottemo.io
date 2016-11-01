@@ -29,6 +29,7 @@
     "gulp": "^3.8.11",
     "gulp-changed": "^1.0.0",
     "gulp-concat": "^2.5.2",
+    "gulp-jade": "^1.1.0",
     "gulp-load-plugins": "^1.2.0",
     "gulp-sass": "^2.0.0",
     "gulp-sitemap": "^2.1.0",
