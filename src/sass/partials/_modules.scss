@@ -2,7 +2,7 @@
   position: fixed;
   top: 0;
   width: 100%;
-  background-color: $white;
+  background-color: rgba(255,255,255,.8);
   z-index: 1000;
   .logo {
     height: 25px;
@@ -46,20 +46,18 @@
 .section {
   position: relative;
   overflow: hidden;
-  height: 100vh;
   background-color: $white;
+  padding-top: 70px;
+  .section-header {
+    font-size: 48px;
+    font-weight: 400;
+    text-align: center;
+  }
   &.main-section {
-    padding-top: 70px;
-    position: relative;
     background: url("../img/Macbook.png") no-repeat right;
     background-size: 52%;
     .block-container-inner {
-      height: 100%;
       .block-two-side {
-        display: table;
-        float: left;
-        width: 50%;
-        height: 100%;
         &.image-bg {
           position: absolute;
           img {
@@ -91,6 +89,208 @@
       background: $light-grey;
       transform: skewY(-10deg);
       z-index: -1;
+    }
+  }
+
+  &.section-capabilities {
+    z-index: -2;
+    .section-wrapper {
+      .section-content-wrapper {
+        text-align: center;
+        vertical-align: middle;
+        padding: 0 15%;
+        .block-image-side {
+          float: left;
+          width: 70%;
+          img {
+            width: 100%;
+          }
+        }
+        .block-text-side {
+          width: 30%;
+          float: left;
+          ul {
+            //list-style: none;
+            text-align: left;
+            font-size: 30px;
+            font-weight: 700;
+            line-height: 2em;
+          }
+        }
+      }
+    }
+    &:before {
+      content: "";
+      position: absolute;
+      top: -20vh;
+      width: 100%;
+      height: 70vh;
+      background: $light-grey;
+      transform: skewY(-10deg);
+      z-index: -1;
+    }
+  }
+
+  &.section-features {
+    background-color: $dark-grey;
+    background-image: url("../img/imac-features.png");
+    background-repeat: no-repeat;
+    background-position: right center;
+    background-size: 48% auto;
+    .feature-block {
+      .block-title {
+        color: $white;
+        font-size: 30px;
+        font-weight: 400;
+      }
+      .block-description {
+        color: $grey;
+        font-size: 20px;
+        font-weight: 300;
+      }
+    }
+    &:before {
+      content: "";
+      position: absolute;
+      bottom: -20vh;
+      width: 100%;
+      height: 50vh;
+      background: #2c2c32;
+      transform: skewY(-10deg);
+      z-index: -1;
+    }
+  }
+
+  &.section-testimonials {
+    .carousel-wrapper {
+      display: table;
+      height: 100%;
+      width: 100%;
+      .carousel-inner {
+        display: table-cell;
+        height: 100%;
+      }
+    }
+    .item {
+      .text-content {
+        width: 50%;
+        float: left;
+        .testimonial-title {
+          font-size: 42px;
+          font-weight: 400;
+          padding-right: 20%;
+        }
+        .testimonial-description {
+          font-size: 32px;
+          font-weight: 300;
+        }
+        .testimonial-text {
+          font-size: 20px;
+          &:before {
+            content: "";
+            display: block;
+            width: 32px;
+            height: 32px;
+            margin-bottom: 8px;
+            background-image: url("../img/quotes.svg");
+            background-size: cover;
+          }
+        }
+        .author {
+          font-size: 24px;
+          font-weight: 300;
+          color: $grey;
+          font-style: italic;
+        }
+      }
+      .image-content {
+        width: 40%;
+        float: right;
+        img {
+          max-width: 100%;
+        }
+      }
+    }
+  }
+
+  &.section-blog {
+    .featured-block {
+      display: table-cell;
+      .featured-block-inner {
+        text-align: center;
+        padding: 16px 0 32px;
+        background-color: $light-grey;
+        img {
+          height: 100px;
+        }
+      }
+    }
+    .post-wrapper {
+      padding: 0 32px;
+      .post-picture {
+        width: 100%;
+        img {
+          width: 100%;
+        }
+      }
+      .post-title {
+        font-size: 30px;
+        font-weight: 400;
+      }
+      .post-description {
+        font-size: 20px;
+        font-weight: 300;
+      }
+    }
+  }
+}
+
+footer {
+  background-color: $dark-grey;
+  padding: 48px 0 0;
+  .bottom-block {
+    padding-bottom: 70px;
+    .copyright {
+      float: left;
+      ul {
+        li {
+          color: $grey;
+          margin-right: 8px;
+          .footer-logo {
+            height: 20px;
+          }
+          a {
+            color: white;
+          }
+        }
+      }
+    }
+    .sm-icons {
+      float: right;
+      a {
+        color: white;
+      }
+    }
+  }
+  .links {
+    margin-bottom: 24px;
+    .col {
+      width: 14.28%;
+      float: left;
+      .category-link {
+        font-size: 16px;
+        font-weight: 700;
+        text-transform: uppercase;
+        color: $grey;
+      }
+      ul {
+        list-style: none;
+        padding: 0;
+        li a {
+          color: $white;
+          font-weight: 300;
+        }
+      }
     }
   }
 }
