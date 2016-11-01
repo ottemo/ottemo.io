@@ -32,6 +32,9 @@
             text-decoration: none;
           }
         }
+        &.active a {
+          color: $ottemo-blue;
+        }
       }
     }
   }
@@ -345,6 +348,58 @@ footer {
         li a {
           color: $white;
           font-weight: 300;
+        }
+      }
+    }
+  }
+}
+
+.navigation-sidebar {
+  ul {
+    list-style: none;
+    padding: 0;
+    li {
+      a {
+        font-size: 21px;
+        line-height: 48px;
+        color: $grey;
+        &:hover {
+          text-decoration: none;
+          color: $ottemo-light-blue;
+        }
+      }
+      &.active a {
+        color: $ottemo-blue;
+      }
+    }
+  }
+}
+
+
+/*****************/
+/* Features page */
+/*****************/
+
+.features-page {
+
+  .section {
+    padding: 0;
+    .section-header {
+      text-align: left;
+      line-height: 48px;
+      margin: 8px 0;
+    }
+    .section-header-l2 {
+      font-size: 30px;
+      line-height: 36px;
+    }
+  }
+  .two-column-layout {
+    padding-top: 120px;
+    .page-content {
+      .image-content {
+        img {
+          width: 100%;
         }
       }
     }
