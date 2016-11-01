@@ -11,15 +11,15 @@ $(document).ready(function() {
         singleItem:true
     });
 
-    $.scrollify({
+    /*$.scrollify({
         section : ".scroll-to-section",
-        interstitialSection : ".footer",
+        //interstitialSection : ".footer",
         easing: "easeOutExpo",
         scrollSpeed: 1100,
         offset : 0,
         scrollbars: true,
         setHeights: true,
         overflowScroll: true
-    });
+    });*/
 
 });

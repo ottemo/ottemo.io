@@ -47,13 +47,15 @@
   position: relative;
   overflow: hidden;
   background-color: $white;
-  padding-top: 70px;
+  padding: 70px 0;
   .section-header {
-    font-size: 48px;
+    font-size: 40px;
     font-weight: 400;
+    margin-bottom: 50px;
     text-align: center;
   }
   &.main-section {
+    height: 100%;
     background: url("../img/Macbook.png") no-repeat right;
     background-size: 52%;
     .block-container-inner {
@@ -94,6 +96,7 @@
 
   &.section-capabilities {
     z-index: -2;
+    border-top: 3px solid black;
     .section-wrapper {
       .section-content-wrapper {
         text-align: center;
@@ -163,15 +166,24 @@
 
   &.section-testimonials {
     .carousel-wrapper {
-      display: table;
-      height: 100%;
-      width: 100%;
-      .carousel-inner {
-        display: table-cell;
-        height: 100%;
+      padding: 0 100px;
+      .owl-buttons div {
+        display: inline-block;
+        width: 50px;
+        height: 50px;
+        text-indent: -9999px;
+        background-size: cover;
+        &.owl-prev {
+          background-image: url("../img/arrow-left.svg");
+          margin-right: 50px;
+        }
+        &.owl-next {
+          background-image: url("../img/arrow-right.svg");
+        }
       }
     }
     .item {
+      position: relative;
       .text-content {
         width: 50%;
         float: left;
@@ -204,25 +216,42 @@
         }
       }
       .image-content {
-        width: 40%;
+        position: absolute;
+        top: 130px;
+        right: 0;
+        width: 50%;
         float: right;
         img {
-          max-width: 100%;
+          width: 98%;
         }
       }
+    }
+    &:before {
+      content: "";
+      position: absolute;
+      bottom: -20vh;
+      width: 100%;
+      height: 50vh;
+      background: $light-grey;
+      transform: skewY(-10deg);
+      z-index: 0;
     }
   }
 
   &.section-blog {
+    padding-top: 0;
     .featured-block {
-      display: table-cell;
-      .featured-block-inner {
-        text-align: center;
-        padding: 16px 0 32px;
-        background-color: $light-grey;
-        img {
-          height: 100px;
-        }
+      text-align: center;
+      background-color: $light-grey;
+      padding: 32px 0;
+      margin-bottom: 70px;
+      .block-title {
+        font-weight: 400;
+        font-size: 30px;
+        margin: 0;
+      }
+      img {
+        height: 100px;
       }
     }
     .post-wrapper {
@@ -247,9 +276,8 @@
 
 footer {
   background-color: $dark-grey;
-  padding: 48px 0 0;
+  padding: 48px 0;
   .bottom-block {
-    padding-bottom: 70px;
     .copyright {
       float: left;
       ul {

@@ -28,15 +28,7 @@
   }
 }
 
-.section-wrapper {
-  display: table;
-  height: 100%;
-  width: 100%;
-  .section-header-wrapper,
-  .section-content-wrapper {
-    display: table-row;
-  }
-}
+
 
 .l-align-left {
   float: left;
