@@ -1,0 +1,68 @@
+extends include/template
+block content
+    section.section.section-case-studies
+        .container
+            h1.section-header Ottemo Case Studies
+            p.section-description
+                | Maecenas ut nibh et justo condimentum rutrum. Morbi a dapibus nisl. Pellentesque vulputate urna id leo pellentesque
+        .container
+            ul
+                - for (var i = 0; i < 9; ++i) {
+                    li.story-block
+                        .story-picture
+                            img(src="img/story-img.jpg", alt="Story Image")
+                        h1.block-title Title
+                        p.main-text
+                            | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis molestie augue quis ante placerat, feugiat tristique orci laoreet.
+                        a.link(href="#") Read their story
+                - }
+
+    section.section.section-testimonials
+        .container
+            h1.section-header Testimonials
+            p.section-description
+                | Maecenas ut nibh et justo condimentum rutrum.
+                br
+                | Morbi a dapibus nisl. Pellentesque vulputate urna id leo pellentesque
+            .carousel-wrapper
+                #owl-demo.owl-carousel.owl-theme
+                    .item
+                        .text-content
+                            p.testimonial-text
+                                | Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda commodi explicabo minus qui? Accusamus earum iure maiores necessitatibus nihil odit possimus quidem quisquam ratione rem! Eaque in ipsum rem sequi.
+                            p.author John Smith
+                        .image-content
+                            img(src='../img/iPhone_engine.png', alt='')
+                    .item
+                        .text-content
+                            p.testimonial-text
+                                | Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda commodi explicabo minus qui? Accusamus earum iure maiores necessitatibus nihil odit possimus quidem quisquam ratione rem! Eaque in ipsum rem sequi.
+                            p.author John Smith
+                        .image-content
+                            img(src='../img/testimonials-img-01.png', alt='')
+                    .item
+                        .text-content
+                            p.testimonial-text
+                                | Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda commodi explicabo minus qui? Accusamus earum iure maiores necessitatibus nihil odit possimus quidem quisquam ratione rem! Eaque in ipsum rem sequi.
+                            p.author John Smith
+                        .image-content
+                            img(src='../img/testimonials-img-01.png', alt='')
+
+    .clients-links
+        .container
+            ul
+                li
+                    a(href="http://richkidsbrand.com")
+                        img(src="img/logos/Richkidsbrand.png" alt="richkidsbrand")
+                li
+                    a(href="http://karigran.com")
+                        img(src="img/logos/Karigran.png" alt="karigran logo")
+                li
+                    a(href="http://poconovapes.com")
+                        img(src="img/logos/Poconovapes.png" alt="poconovapes logo")
+                li
+                    a(href="http://southcoastswords.com")
+                        img(src="img/logos/Southcoastswords.png" alt="southcoastswords logo")
+                li
+                    a(href="http://knickknackrecords.com")
+                        img(src="img/logos/KnickKnackRecords.png" alt="KnickKnackRecords logo")

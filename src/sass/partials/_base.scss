@@ -13,7 +13,7 @@ h1, h2, h3, h4, h5, h6 {
   font-family: 'Roboto Slab', serif;
   font-weight: 400;
 }
-p, a {
+p, a, span {
   font-family: 'Lato', sans-serif;
 }
 
@@ -44,14 +44,48 @@ p, a {
   }
 }
 
+.link {
+  font-size: 16px;
+  font-weight: 700;
+  color: $ottemo-blue;
+  &:hover {
+    color: $ottemo-light-blue;
+    text-decoration: none;
+  }
+}
+
 section.diagonal:before {
   content: "";
   position: absolute;
   bottom: -20vh;
   width: 100%;
   height: 50vh;
+  z-index: -1;
   background: $light-grey;
   transform: skewY(-10deg);
+}
+
+
+.block-title {
+  font-size: 24px;
+}
+
+/*
+  text formatting
+*/
+.section-header {
+  font-size: 40px;
+  font-weight: 400;
+}
+
+.section-header-l2 {
+  font-size: 30px;
+  line-height: 40px;
+}
+
+.section-description {
+  font-size: 24px;
+  font-weight: 300;
 }
 
 .main-text {
@@ -59,11 +93,14 @@ section.diagonal:before {
   line-height: 28px;
   font-weight: 300;
   &.accent {
-    font-size: 18px;
-    line-height: 30px;
+    font-size: 20px;
+    line-height: 32px;
   }
 }
 
-.block-title {
-  font-size: 24px;
+.cite {
+  font-style: italic;
+  font-size: 20px;
+  color: #999;
+  font-weight: 300;
 }

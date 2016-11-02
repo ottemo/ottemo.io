@@ -36,6 +36,17 @@
 .l-align-right {
   float: right;
 }
+.l-text-align {
+  &.left {
+    text-align: left;
+  }
+  &.right {
+    text-align: right;
+  }
+  &.center {
+    text-align: center;
+  }
+}
 
 .l-block-two-side {
   .l-block-side {
@@ -43,6 +54,17 @@
   }
 }
 
+.l-block-three-side {
+  .l-block-side {
+    width: 33.333%;
+    padding: 0 16px;
+  }
+}
+
 .body-wrapper {
   min-height: 100%;
+}
+
+.section-wrapper {
+  padding-bottom: 50px;
 }

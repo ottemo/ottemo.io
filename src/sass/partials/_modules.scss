@@ -70,6 +70,7 @@
 }
 
 .body-wrapper {
+  padding-top: 70px;
   &.side-out {
     transform: translate(280px, 0);
   }
@@ -79,13 +80,6 @@
   position: relative;
   overflow: hidden;
   background-color: $white;
-  padding: 70px 0;
-  .section-header {
-    font-size: 40px;
-    font-weight: 400;
-    margin-bottom: 50px;
-    text-align: center;
-  }
   &.main-section {
     height: 100%;
     background: url("../img/Macbook.png") no-repeat right;
@@ -389,10 +383,6 @@ footer {
       line-height: 48px;
       margin: 8px 0;
     }
-    .section-header-l2 {
-      font-size: 30px;
-      line-height: 36px;
-    }
   }
   .two-column-layout {
     padding-top: 120px;
@@ -404,4 +394,96 @@ footer {
       }
     }
   }
+}
+
+/*****************/
+/* Customers page */
+/*****************/
+
+.section-case-studies {
+  ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    .story-block {
+      width: 33.333%;
+      padding: 0 24px;
+      margin-bottom: 50px;
+      float: left;
+      .story-picture {
+        width: 100%;
+        img {
+          width: 100%;
+        }
+      }
+    }
+  }
+}
+
+.clients-links {
+  margin-bottom: 50px;
+  ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    li {
+      position: relative;
+      width: 33.333%;
+      float: left;
+      border-right: 1px solid #dadada;
+      border-bottom: 1px solid #dadada;
+      height: 150px;
+      text-align: center;
+      &:nth-child(3n+3) {
+        border-right: none;
+      }
+      &:nth-child(n+4) {
+        border-bottom: none;
+      }
+      a {
+        display: inline-block;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+      }
+    }
+  }
+}
+
+
+.persons-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  .item {
+    display: inline-block;
+    width: 25%;
+    padding: 24px;
+    margin: 0 -2px;
+    vertical-align: top;
+    .person-photo {
+      width: 100%;
+      img {
+        width: 100%;
+      }
+    }
+    .person-name {
+      display: block;
+      font-family: 'Roboto Slab', serif;
+      font-size: 24px;
+      line-height: 36px;
+      font-weight: 400;
+      margin: 16px 0 8px;
+    }
+    .person-position {
+      display: block;
+      font-size: 18px;
+      font-weight: 300;
+      font-style: italic;
+      color: #999;
+    }
+  }
+
 }
