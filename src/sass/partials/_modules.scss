@@ -352,7 +352,7 @@ footer {
   ul {
     list-style: none;
     padding: 0;
-    li {
+    /*li {
       a {
         font-size: 21px;
         line-height: 48px;
@@ -365,7 +365,7 @@ footer {
       &.active a {
         color: $ottemo-blue;
       }
-    }
+    }*/
   }
 }
 
@@ -421,7 +421,7 @@ footer {
 }
 
 .clients-links {
-  margin-bottom: 50px;
+  margin: 50px 0;
   ul {
     margin: 0;
     padding: 0;
@@ -446,6 +446,11 @@ footer {
         top: 50%;
         left: 50%;
         transform: translate(-50%,-50%);
+        opacity: .5;
+        transition: .3s;
+        &:hover {
+          opacity: 1;
+        }
       }
     }
   }
@@ -486,4 +491,93 @@ footer {
     }
   }
 
+}
+
+/*
+  Blog
+*/
+
+.post {
+  padding: 0 16px;
+  margin-bottom: 40px;
+  img {
+    width: 100%;
+  }
+  .post-details {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    li {
+      font-family: 'Lato', sans-serif;
+      font-size: 16px;
+      color: #c0c0c0;
+      .post-author {
+        padding-left: 4px;
+      }
+    }
+  }
+  .post-title {
+    font-size: 20px;
+  }
+  &.single-post {
+    padding-left: 50px;
+    padding-bottom: 50px;
+    margin-bottom: 50px;
+    border-bottom: 5px solid $ottemo-blue;
+  }
+}
+
+.post-group {
+  .post-group-title {
+    font-weight: 700;
+  }
+  .post-link {
+    padding-left: 16px;
+    padding-bottom: 16px;
+    .link {
+      font-weight: 400;
+    }
+  }
+}
+
+.comment-form {
+  input,
+  textarea {
+    width: 100%;
+  }
+  textarea {
+    height: 250px;
+  }
+}
+
+.comments-section {
+  .comment-item {
+    .comment-author-details {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      li {
+        display: inline-block;
+        vertical-align: middle;
+        margin-right: 16px;
+        .author-name {
+          font-size: 20px;
+        }
+      }
+      .author-photo {
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        overflow: hidden;
+        img {
+          width: 100%;
+          height: 100%;
+        }
+      }
+    }
+    .comment-text {
+      padding: 24px;
+      border: 1px solid #dadada;
+    }
+  }
 }

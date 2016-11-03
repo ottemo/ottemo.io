@@ -2,8 +2,8 @@ extends include/template
 block content
     section.section.section-case-studies
         .container
-            h1.section-header Ottemo Case Studies
-            p.section-description
+            h1.section-header.l-text-align.center Ottemo Case Studies
+            p.section-description.l-text-align.center
                 | Maecenas ut nibh et justo condimentum rutrum. Morbi a dapibus nisl. Pellentesque vulputate urna id leo pellentesque
         .container
             ul
@@ -18,37 +18,38 @@ block content
                 - }
 
     section.section.section-testimonials
-        .container
-            h1.section-header Testimonials
-            p.section-description
-                | Maecenas ut nibh et justo condimentum rutrum.
-                br
-                | Morbi a dapibus nisl. Pellentesque vulputate urna id leo pellentesque
-            .carousel-wrapper
-                #owl-demo.owl-carousel.owl-theme
-                    .item
-                        .text-content
-                            p.testimonial-text
-                                | Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda commodi explicabo minus qui? Accusamus earum iure maiores necessitatibus nihil odit possimus quidem quisquam ratione rem! Eaque in ipsum rem sequi.
-                            p.author John Smith
-                        .image-content
-                            img(src='../img/iPhone_engine.png', alt='')
-                    .item
-                        .text-content
-                            p.testimonial-text
-                                | Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda commodi explicabo minus qui? Accusamus earum iure maiores necessitatibus nihil odit possimus quidem quisquam ratione rem! Eaque in ipsum rem sequi.
-                            p.author John Smith
-                        .image-content
-                            img(src='../img/testimonials-img-01.png', alt='')
-                    .item
-                        .text-content
-                            p.testimonial-text
-                                | Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda commodi explicabo minus qui? Accusamus earum iure maiores necessitatibus nihil odit possimus quidem quisquam ratione rem! Eaque in ipsum rem sequi.
-                            p.author John Smith
-                        .image-content
-                            img(src='../img/testimonials-img-01.png', alt='')
+        .section-wrapper
+            .container
+                h1.section-header.l-text-align.center Testimonials
+                p.section-description.l-text-align.center
+                    | Maecenas ut nibh et justo condimentum rutrum.
+                    br
+                    | Morbi a dapibus nisl. Pellentesque vulputate urna id leo pellentesque
+                .carousel-wrapper
+                    #owl-demo.owl-carousel.owl-theme
+                        .item
+                            .text-content
+                                p.testimonial-text
+                                    | Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda commodi explicabo minus qui? Accusamus earum iure maiores necessitatibus nihil odit possimus quidem quisquam ratione rem! Eaque in ipsum rem sequi.
+                                p.author John Smith
+                            .image-content
+                                img(src='../img/iPhone_engine.png', alt='')
+                        .item
+                            .text-content
+                                p.testimonial-text
+                                    | Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda commodi explicabo minus qui? Accusamus earum iure maiores necessitatibus nihil odit possimus quidem quisquam ratione rem! Eaque in ipsum rem sequi.
+                                p.author John Smith
+                            .image-content
+                                img(src='../img/testimonials-img-01.png', alt='')
+                        .item
+                            .text-content
+                                p.testimonial-text
+                                    | Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda commodi explicabo minus qui? Accusamus earum iure maiores necessitatibus nihil odit possimus quidem quisquam ratione rem! Eaque in ipsum rem sequi.
+                                p.author John Smith
+                            .image-content
+                                img(src='../img/testimonials-img-01.png', alt='')
 
-    .clients-links
+    section.clients-links
         .container
             ul
                 li

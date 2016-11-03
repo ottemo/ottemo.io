@@ -104,3 +104,23 @@ section.diagonal:before {
   color: #999;
   font-weight: 300;
 }
+
+label {
+  display: block;
+  font-family: 'Roboto Slab', serif;
+  margin-bottom: 8px;
+  //font-weight: 400;
+  //color: $grey
+  //font-size: 18px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="number"],
+input[type="phone"], {
+  padding: 8px;
+  font-size: 20px;
+}
+textarea {
+  padding: 8px;
+}

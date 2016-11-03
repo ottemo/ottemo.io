@@ -11,6 +11,12 @@ $(document).ready(function() {
         singleItem:true
     });
 
+    $('.grid').masonry({
+        // options
+        itemSelector: '.grid-item',
+        //columnWidth: 200
+    });
+
     $(function() {
         $(window).resize(function() {
             $('#main-section').height($(window).height());
