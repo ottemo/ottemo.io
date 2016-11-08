@@ -1,8 +1,41 @@
 extends include/template
 block content
     section.section.section-pricing
-        .container
-            h1.section-header.l-text-align.center Pricing
-            p.section-description.l-text-align.center
-                | We understand that no two companies are the same,
-                | so we don't group companies together.
+        .section-wrapper
+            .container
+                h1.section-header.l-text-align.center Pricing
+                p.section-description.l-text-align.center Always know what you'll pay
+                .pricing-grid
+                    .pricing.standart
+                        .group-title
+                            span Standart
+                        .price
+                            .price-inner
+                                span.dollar-sign $
+                                span.dollars 29
+                                span.cents .95
+                                span.period /mo
+                        .details A full-featured online store
+                    .pricing.plus
+                        .group-title
+                            span Plus
+                        .price
+                            .price-inner
+                                span.dollar-sign $
+                                span.dollars 79
+                                span.cents .95
+                                span.period /mo
+                        .details Optimized conversion and customer group management
+                    .pricing.enterprise
+                        .group-title
+                            span Enterprise
+                        .price
+                            .price-inner
+                                p
+                                    | Call
+                                    strong 1-333-333-3333
+                                    br
+                                    | for pricing tailored to
+                                    br
+                                    | your business
+                        .details The ultimate cloud ecommerce selling solution

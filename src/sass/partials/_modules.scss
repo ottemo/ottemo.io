@@ -581,3 +581,83 @@ footer {
     }
   }
 }
+
+
+/*
+  Pricing
+*/
+
+.pricing-grid {
+  text-align: center;
+  .pricing {
+    display: inline-block;
+    vertical-align: top;
+    width: 230px;
+    border: 1px solid #dadada;
+    margin: 0 16px;
+    .group-title {
+      font-size: 18px;
+      font-weight: 400;
+      padding: 16px;
+      color: $white;
+      background-color: $grey;
+      h1 {
+        margin: 0;
+      }
+    }
+    .price {
+      color: $ottemo-blue;
+      font-size: 20px;
+      width: 100%;
+      height: 170px;
+      border-bottom: 1px solid #dadada;
+      display: table;
+      .price-inner {
+        padding: 16px;
+        display: table-cell;
+        width: 100%;
+        height: 100%;
+        vertical-align: middle;
+        span {
+          display: inline-block;
+          &.dollar-sign {
+            vertical-align: top;
+            padding-top: 8px;
+          }
+          &.dollars {
+            font-size: 40px;
+          }
+        }
+      }
+    }
+    .details {
+      font-size: 18px;
+      padding: 16px;
+    }
+  }
+}
+
+/*
+  Contacts
+*/
+
+.contacts-top {
+  height: 500px;
+  .contacts-top-wrapper {
+    height: 100%;
+    .contacts-column {
+      height: 100%;
+      .contacts-text-block {
+        padding-top: 100px;
+      }
+    }
+  }
+}
+
+.contacts-form {
+  width: 600px;
+  margin: 0 auto;
+  input {
+    width: 100%;
+  }
+}
