@@ -2,36 +2,39 @@ extends include/template
 block content
 
     section.section.contacts-top
-        .contacts-top-wrapper.container.l-block-two-side
-            .contacts-column.l-block-side.l-align-left
-                .contacts-text-block
-                    h1.section-header How fast is your
-                        br
-                        | eCommerce platform?
-                    h2.section-header-l2 We guarantee it could be faster!
-                    p.section-description We would love to show you a demo so you can see just how fast. Drop us a note and we'll get you more info...
-            .contacts-column.l-block-side.l-align-right
-                img(src="img/contact-img.jpg").contact-image-block
+        .section-wrapper.container
+            .contacts-top-wrapper.l-block-two-side
+                .contacts-column.l-block-side.l-align-left
+                    .contacts-text-block
+                        h1.section-header How fast is your
+                            br
+                            | eCommerce platform?
+                .contacts-column.l-block-side.l-align-right
+                    img(src="img/contact-img.jpg").contact-image-block
 
 
-    section.section
-        .section-wrapper
-            .container
-                .contacts-form
-                    form(method="post")
-                        p.input-field
-                            label(for="contact-name") Your Name
-                            input(type="text")#contact-name
-                        p.input-field
-                            label(for="contact-email") Your Email
-                            input(type="email")#contact-email
-                        p.input-field
-                            label(for="contact-company-type") Your Company Type
-                            input(type="email")#contact-company-type
-                        p.input-field
-                            label(for="contact-web-url") Your Website URL
-                            input(type="email")#contact-web-url
-                        p.input-field
-                            label(for="contact-phone") Your Phone Number
-                            input(type="email")#contact-phone
-                        a(href="#").contact-submit.button.button-big Submit Comment
+    section.section.contact-form-section
+        .section-wrapper.container
+            .text-side.col-lg-5
+                h2.section-header-l2 We guarantee
+                    br
+                    | it could be faster!
+                p.section-description We would love to show you a demo so you can see just how fast. Drop us a note and we'll get you more info...
+            .contacts-form-side.col-lg-7
+                form(method="post")
+                    p.input-field
+                        label(for="contact-name") Your Name
+                        input(type="text")#contact-name
+                    p.input-field
+                        label(for="contact-email") Your Email
+                        input(type="email")#contact-email
+                    p.input-field
+                        label(for="contact-company-type") Your Company Type
+                        input(type="email")#contact-company-type
+                    p.input-field
+                        label(for="contact-web-url") Your Website URL
+                        input(type="email")#contact-web-url
+                    p.input-field
+                        label(for="contact-phone") Your Phone Number
+                        input(type="email")#contact-phone
+                    a(href="#").contact-submit.button.button-big Submit Comment

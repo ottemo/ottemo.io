@@ -642,7 +642,8 @@ footer {
 */
 
 .contacts-top {
-  height: 500px;
+  height: 600px;
+  @include diagonal-background(500px, -60%);
   .contacts-top-wrapper {
     height: 100%;
     .contacts-column {
@@ -650,14 +651,99 @@ footer {
       .contacts-text-block {
         padding-top: 100px;
       }
+      .contact-image-block {
+        display: block;
+        height: 100%;
+      }
     }
   }
 }
 
-.contacts-form {
-  width: 600px;
-  margin: 0 auto;
-  input {
-    width: 100%;
+.contact-form-section {
+  background-color: $light-grey;
+  .contacts-form-side {
+    margin: 0 auto;
+    input {
+      width: 100%;
+    }
+  }
+}
+
+/*
+  Company
+*/
+
+.company-top {
+  @include diagonal-background(500px, -20%);
+}
+
+/*
+  Migrate
+*/
+
+.migrate-top {
+  height: 450px;
+  @include diagonal-background(500px, -60%);
+}
+
+.differentiator-section {
+  @include diagonal-background(500px, -350px);
+}
+
+.story-section {
+  background-color: $light-grey;
+}
+
+.wizard-section {
+  @include diagonal-background-top(500px, -350px);
+  text-align: center;
+  img {
+    height: 250px;
+    margin: 24px 0;
+  }
+}
+
+.quote {
+  position: relative;
+  .text-content {
+    width: 50%;
+    float: left;
+    .testimonial-title {
+      font-size: 32px;
+      font-weight: 400;
+      padding-right: 20%;
+    }
+    .testimonial-description {
+      font-size: 32px;
+      font-weight: 300;
+    }
+    .testimonial-text {
+      font-size: 20px;
+      &:before {
+        content: "";
+        display: block;
+        width: 32px;
+        height: 32px;
+        margin-bottom: 8px;
+        background-image: url("../img/quotes.svg");
+        background-size: cover;
+      }
+    }
+    .author {
+      font-size: 24px;
+      font-weight: 300;
+      color: $grey;
+      font-style: italic;
+    }
+  }
+  .image-content {
+    position: absolute;
+    top: 0px;
+    right: 0;
+    width: 45%;
+    float: right;
+    img {
+      width: 98%;
+    }
   }
 }

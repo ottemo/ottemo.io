@@ -67,6 +67,10 @@
 
 .section-wrapper {
   padding-bottom: 50px;
+  position: relative;
+  &.layer-top {
+    z-index: 1;
+  }
 }
 
 .grid-item { width: 50%; }

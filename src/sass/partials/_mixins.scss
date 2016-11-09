@@ -1,0 +1,25 @@
+@mixin diagonal-background($height, $bottom) {
+  &:after {
+    content: "";
+    display: block;
+    position: absolute;
+    height: $height;
+    width: 100%;
+    transform: skewY(-5deg);
+    background-color: $light-grey;
+    bottom: $bottom;
+  }
+}
+
+@mixin diagonal-background-top($height, $top) {
+  &:after {
+    content: "";
+    display: block;
+    position: absolute;
+    height: $height;
+    width: 100%;
+    transform: skewY(-5deg);
+    background-color: $light-grey;
+    top: $top;
+  }
+}
