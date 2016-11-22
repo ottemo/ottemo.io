@@ -1,58 +1,11 @@
-.header {
+.mobile-navigation {
   position: fixed;
-  top: 0;
-  width: 100%;
-  background-color: rgba(255,255,255,.8);
-  z-index: 1000;
-  .logo {
-    height: 25px;
-    width: 15%;
-    margin: 22px 0;
-    float: left;
-    img {
-      height: 100%;
-    }
-  }
-  .navigation {
-    width: 70%;
-    display: inline-block;
-    text-align: center;
-    margin: 10px 0;
-    ul {
-      padding: 0;
-      .nav-item {
-        display: inline-block;
-        a {
-          font-size: 16px;
-          font-weight: 700;
-          color: $grey;
-          text-transform: uppercase;
-          margin: 10px;
-          &:hover {
-            text-decoration: none;
-          }
-        }
-        &.active a {
-          color: $ottemo-blue;
-        }
-      }
-    }
-  }
-  .action-button {
-    width: 15%;
-    float: right;
-    text-align: right;
-    margin: 15px 0;
-  }
-}
-
-.mobile-nav {
   display: none;
-  position: fixed;
   left: 0;
-  background-color: $dark-grey;
+  top: 0;
   width: 300px;
   height: 100%;
+  background-color: $dark-grey;
   z-index: 0;
   ul {
     margin: 0;
@@ -66,163 +19,403 @@
         font-size: 16px;
       }
     }
+    .submenu {
+      display: none;
+    }
+    li {
+      border: none;
+    }
+  }
+  @include respond-to(medium) {
+    display: block;
+  }
+  @include respond-to(small) {
+    display: block;
+  }
+  @include respond-to(xs) {
+    display: block;
   }
 }
+
+.header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  text-align: center;
+  background-color: rgba(255,255,255,.8);
+  z-index: 1000;
+  .mobile-menu-btn {
+    display: block;
+    position: fixed;
+    left: 0;
+    margin: 16px;
+    .fa-bars {
+      font-size: 32px;
+      color: $grey;
+    }
+    @include respond-to(large) {
+      display: none;
+    }
+  }
+  .logo {
+    height: 25px;
+    margin: 20px 0;
+    display: inline-block;
+    float: none;
+    img {
+      height: 100%;
+    }
+    @include respond-to(xs) {
+      float: none;
+      margin: 20px 0 20px 40px;
+    }
+    @include respond-to(large) {
+      float: left;
+    }
+  }
+  .navigation {
+    display: none;
+    text-align: center;
+    margin: 10px 0;
+    ul {
+      padding: 0;
+      .nav-item {
+        display: inline-block;
+        position: relative;
+        a {
+          font-size: 16px;
+          font-weight: 700;
+          color: $grey;
+          text-transform: uppercase;
+          margin: 10px;
+        }
+        &:hover {
+          a {
+            text-decoration: none;
+            color: $ottemo-light-blue;
+          }
+          .submenu {
+            display: block;
+          }
+        }
+        &.active a {
+          color: $ottemo-blue;
+        }
+        .submenu {
+          display: none;
+          position: absolute;
+          list-style: none;
+          text-align: left;
+          background-color: $white;
+          border-radius: 2px;
+          box-shadow: 0 5px 10px rgba(0,0,0,.15);
+          .nav-item a {
+            display: block;
+            min-width: 100px;
+            margin: 4px 10px;
+          }
+        }
+      }
+    }
+    @include respond-to(large) {
+      display: inline-block;
+    }
+  }
+  .action-button {
+    position: fixed;
+    right: 0;
+    top: 0;
+    margin: 14px;
+    @include respond-to(large) {
+      position: static;
+      float: right;
+      margin-right: 0;
+    }
+  }
+  @include respond-to(xs) {
+    text-align: left;
+  }
+}
+
+section {
+  position: relative;
+  padding: 50px 0;
+  @include respond-to(mobile) {
+    padding: 24px 0;
+    .section-header,
+    .section-header-l2 {
+      text-align: center;
+    }
+  }
+}
+
+//next prev buttons style
+.owl-buttons {
+  position: absolute;
+  bottom: 50px;
+  right: 0;
+  @include respond-to(xs) {
+    position: static;
+    margin-top: 24px;
+  }
+  div {
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    text-indent: -9999px;
+    background-size: cover;
+    &.owl-prev {
+      background-image: url("../img/arrow-left.svg");
+      margin-right: 18px;
+    }
+    &.owl-next {
+      background-image: url("../img/arrow-right.svg");
+    }
+  }
+}
+
 
 .body-wrapper {
+  position: relative;
   padding-top: 70px;
-  &.side-out {
+  background-color: $white;
+  overflow-x: hidden;
+  transition: transform .4s ease;
+  z-index: 1;
+  &.opened {
     transform: translate(280px, 0);
+  }
+  @include respond-to(xs) {
+    padding-top: 0;
+  }
+  @include respond-to(small) {
+    padding-top: 0;
   }
 }
 
-.section {
-  position: relative;
+.section-header {
+  font-size: 40px;
+  font-weight: 400;
+  text-align: left;
+  line-height: 52px;
+  margin: 8px 0;
+  @include respond-to(xs) {
+    font-size: 30px;
+    line-height: 40px;
+    text-align: center;
+  }
+  @include respond-to(small) {
+    font-size: 30px;
+    line-height: 40px;
+  }
+}
+
+.section-header-l2 {
+  font-size: 30px;
+  line-height: 40px;
+  @include respond-to(mobile) {
+    font-size: 24px;
+    line-height: 32px;
+  }
+}
+
+.section-description {
+  font-size: 24px;
+  font-weight: 300;
+  @include respond-to(mobile) {
+    font-size: 20px;
+    line-height: 32px;
+    text-align: center;
+  }
+}
+
+.top-section {
   overflow: hidden;
-  background-color: $white;
-  &.main-section {
-    height: 100%;
+  @include diagonal-background(500px, -180px);
+  .top-section-wrapper {
+    display:table;
+    width:100%;
+    height:100%;
     background: url("../img/Macbook.png") no-repeat right;
     background-size: 52%;
-    .block-container-inner {
-      .block-two-side {
-        &.image-bg {
-          position: absolute;
-          img {
-            height: 100%;
+    @include respond-to(xs) {
+      background: none;
+    }
+    @include respond-to(small) {
+      background: none;
+    }
+    .top-section-inner {
+      display:table-cell;
+      vertical-align:middle;
+      .image-content {
+        img {
+          max-width: 100%;
+        }
+        @include respond-to(large) {
+          display: none;
+        }
+        @include respond-to(medium) {
+          display: none;
+        }
+      }
+      .text-content {
+        .hero-caption {
+          font-size: 60px;
+          line-height: 68px;
+          font-weight: 400;
+          margin: 24px 0;
+          @include respond-to(xs) {
+            font-size: 32px;
+            line-height: 40px;
+            margin: 16px 0;
           }
         }
-        .content {
-          display: table-cell;
-          vertical-align: middle;
-          .hero-caption {
-            font-size: 60px;
-            line-height: 68px;
-            font-weight: 400;
-            margin: 24px 0;
+        .hero-description {
+          font-size: 24px;
+          font-weight: 300;
+          @include respond-to(xs) {
+            font-size: 18px;
           }
-          .hero-description {
-            font-size: 24px;
-            font-weight: 300;
-          }
+        }
+        @include respond-to(xs) {
+          text-align: center;
+        }
+        @include respond-to(small) {
+          text-align: center;
         }
       }
     }
-    &:before {
-      content: "";
-      position: absolute;
-      bottom: -20vh;
-      width: 100%;
-      height: 50vh;
-      background: $light-grey;
-      transform: skewY(-10deg);
-      z-index: -1;
-    }
   }
+}
 
-  &.section-capabilities {
-    z-index: -2;
-    .section-wrapper {
-      .section-content-wrapper {
-        text-align: center;
-        vertical-align: middle;
-        padding: 0 15%;
-        .block-image-side {
-          float: left;
-          width: 70%;
-          img {
-            width: 100%;
-          }
+.section-capabilities {
+  padding: 50px 0;
+  .capabilities-wrapper {
+    padding-top: 50px;
+    .block-image-side {
+      img {
+        width: 100%;
+      }
+    }
+    .block-text-side {
+      ul {
+        margin: 0;
+        text-align: left;
+        font-size: 30px;
+        font-weight: 700;
+        line-height: 2em;
+        color: $grey;
+        @include respond-to(medium) {
+          font-size: 24px;
         }
-        .block-text-side {
-          width: 30%;
-          float: left;
-          ul {
-            //list-style: none;
-            text-align: left;
-            font-size: 30px;
-            font-weight: 700;
-            line-height: 2em;
-          }
+        @include respond-to(small) {
+          font-size: 18px;
+        }
+        @include respond-to(xs) {
+          font-size: 18px;
         }
       }
     }
-    &:before {
-      content: "";
-      position: absolute;
-      top: -20vh;
-      width: 100%;
-      height: 70vh;
-      background: $light-grey;
-      transform: skewY(-10deg);
-      z-index: -1;
-    }
   }
+}
 
-  &.section-features {
+
+.section-features {
+  padding: 50px 0;
+  background-color: $dark-grey;
+  background-image: url("../img/imac-features.png");
+  background-repeat: no-repeat;
+  background-position: right center;
+  background-size: 48% auto;
+  @include respond-to(xs) {
+    text-align: center;
+    background-image: none;
     background-color: $dark-grey;
-    background-image: url("../img/imac-features.png");
-    background-repeat: no-repeat;
-    background-position: right center;
-    background-size: 48% auto;
+  }
+  @include respond-to(small) {
+    text-align: center;
+    background-image: none;
+    background-color: $dark-grey;
+  }
+  .image-content {
+    img {
+      max-width: 70%;
+    }
+    @include respond-to(medium) {
+      display: none;
+    }
+    @include respond-to(large) {
+      display: none;
+    }
+  }
+  .text-content {
     .feature-block {
       .block-title {
         color: $white;
         font-size: 30px;
         font-weight: 400;
+        @include respond-to(xs) {
+          font-size: 24px;
+        }
       }
       .block-description {
         color: $grey;
         font-size: 20px;
         font-weight: 300;
+        @include respond-to(xs) {
+          font-size: 18px;
+        }
       }
     }
-    &:before {
-      content: "";
-      position: absolute;
-      bottom: -20vh;
-      width: 100%;
-      height: 50vh;
-      background: #2c2c32;
-      transform: skewY(-10deg);
-      z-index: -1;
-    }
   }
+}
 
-  &.section-testimonials {
-    .carousel-wrapper {
-      padding: 0 100px;
-      .owl-buttons div {
-        display: inline-block;
-        width: 50px;
-        height: 50px;
-        text-indent: -9999px;
-        background-size: cover;
-        &.owl-prev {
-          background-image: url("../img/arrow-left.svg");
-          margin-right: 50px;
-        }
-        &.owl-next {
-          background-image: url("../img/arrow-right.svg");
+.section-testimonials {
+  padding: 50px 0;
+  position: relative;
+  overflow: hidden;
+  @include respond-to(xs) {
+    text-align: center;
+  }
+  .testimonials-wrapper {
+    position: relative;
+    @include diagonal-background(500px, -200px);
+    .testimonials-header {
+      position: absolute;
+      @include respond-to(xs) {
+        position: static;
+      }
+      @include respond-to(small) {
+        position: static;
+        text-align: center;
+        h1 {
+          text-align: center;
         }
       }
     }
     .item {
-      position: relative;
-      .text-content {
-        width: 50%;
-        float: left;
-        .testimonial-title {
-          font-size: 42px;
-          font-weight: 400;
-          padding-right: 20%;
+      .item-wrapper {
+        padding: 50px 0;
+        position: relative;
+        @include respond-to(xs) {
+          padding: 0;
         }
-        .testimonial-description {
-          font-size: 32px;
-          font-weight: 300;
+        @include respond-to(small) {
+          padding: 0;
+        }
+      }
+      .text-content {
+        padding-top: 230px;
+        @include respond-to(xs) {
+          padding-top: 0;
+        }
+        @include respond-to(small) {
+          padding-top: 0;
         }
         .testimonial-text {
           font-size: 20px;
+          font-weight: 300;
+          font-style: italic;
           &:before {
             content: "";
             display: block;
@@ -241,62 +434,47 @@
         }
       }
       .image-content {
-        position: absolute;
-        top: 130px;
-        right: 0;
-        width: 50%;
-        float: right;
         img {
           width: 98%;
         }
       }
     }
-    &:before {
-      content: "";
-      position: absolute;
-      bottom: -20vh;
-      width: 100%;
-      height: 50vh;
-      background: $light-grey;
-      transform: skewY(-10deg);
-      z-index: 0;
-    }
   }
+}
 
-  &.section-blog {
-    padding-top: 0;
-    .featured-block {
-      text-align: center;
-      background-color: $light-grey;
-      padding: 32px 0;
-      margin-bottom: 70px;
-      .block-title {
-        font-weight: 400;
-        font-size: 30px;
-        margin: 0;
-      }
+.section-blog {
+  padding: 50px 0;
+  @include respond-to(xs) {
+    text-align: center;
+  }
+  @include respond-to(small) {
+    text-align: center;
+  }
+  .post-wrapper {
+    margin-bottom: 50px;
+    .post-picture {
+      width: 100%;
       img {
-        height: 100px;
+        width: 100%;
       }
     }
-    .post-wrapper {
-      padding: 0 32px;
-      .post-picture {
-        width: 100%;
-        img {
-          width: 100%;
-        }
-      }
-      .post-title {
-        font-size: 30px;
-        font-weight: 400;
-      }
-      .post-description {
-        font-size: 20px;
-        font-weight: 300;
-      }
+    .post-title {
+      font-size: 30px;
+      font-weight: 400;
+    }
+    .post-description {
+      font-size: 20px;
+      font-weight: 300;
     }
   }
+}
+
+.section {
+  position: relative;
+  overflow: hidden;
+  background-color: $white;
+
+
 }
 
 footer {
@@ -305,6 +483,14 @@ footer {
   .bottom-block {
     .copyright {
       float: left;
+      @include respond-to(mobile) {
+        float: none;
+        text-align: center;
+        ul li {
+          display: block;
+          margin-bottom: 8px;
+        }
+      }
       ul {
         li {
           color: $grey;
@@ -321,27 +507,67 @@ footer {
     .sm-icons {
       float: right;
       a {
-        color: white;
+        display: inline-block;
+        font-size: 18px;
+        color: $grey;
+        margin-left: 8px;
+      }
+      @include respond-to(mobile) {
+        float: none;
+        text-align: center;
+        a {
+          font-size: 24px;
+          margin: 24px 16px;
+        }
       }
     }
   }
   .links {
     margin-bottom: 24px;
     .col {
-      width: 14.28%;
-      float: left;
+      @include respond-to(mobile) {
+        border-bottom: 1px solid rgba(255,255,255,.1);
+        padding-top: 8px;
+        padding-bottom: 8px;
+      }
       .category-link {
         font-size: 16px;
         font-weight: 700;
         text-transform: uppercase;
         color: $grey;
+        &:focus {
+          text-decoration: none;
+        }
+        @include respond-to(mobile) {
+          &.expandable:after {
+            content: url("/img/arrow-accordion.svg");
+            width: 24px;
+            height: 24px;
+            float: right;
+            &.expanded & {
+              transform: rotate(7deg);
+            }
+          }
+          &.expanded:after {
+            transform: rotate(180deg);
+          }
+        }
       }
-      ul {
+      .subcategory-links {
         list-style: none;
         padding: 0;
         li a {
           color: $white;
           font-weight: 300;
+        }
+        @include respond-to(mobile) {
+          display: none;
+          li {
+            padding: 8px;
+            a{
+              font-size: 16px;
+            }
+          }
         }
       }
     }
@@ -349,23 +575,26 @@ footer {
 }
 
 .navigation-sidebar {
+  @include respond-to(mobile) {
+    margin-top: 70px;
+  }
   ul {
     list-style: none;
     padding: 0;
-    /*li {
-      a {
-        font-size: 21px;
-        line-height: 48px;
-        color: $grey;
-        &:hover {
-          text-decoration: none;
-          color: $ottemo-light-blue;
-        }
-      }
-      &.active a {
+  }
+  .nav-item {
+    padding: 8px 0;
+    a {
+      font-size: 18px;
+      color: $grey;
+      &.active {
         color: $ottemo-blue;
       }
-    }*/
+      &:hover {
+        text-decoration: none;
+        color: $ottemo-light-blue;
+      }
+    }
   }
 }
 
@@ -378,11 +607,7 @@ footer {
 
   .section {
     padding: 0;
-    .section-header {
-      text-align: left;
-      line-height: 48px;
-      margin: 8px 0;
-    }
+
   }
   .two-column-layout {
     padding-top: 120px;
@@ -396,20 +621,32 @@ footer {
   }
 }
 
+/*  Operations  */
+.section-order-management {
+  .section-header {
+    text-align: center;
+  }
+  @include respond-to(mobile) {
+    text-align: center;
+  }
+}
+
 /*****************/
 /* Customers page */
 /*****************/
 
 .section-case-studies {
+  padding: 50px 0;
+  @include respond-to(mobile) {
+    text-align: center;
+    padding-top: 70px;
+  }
   ul {
     margin: 0;
     padding: 0;
     list-style: none;
     .story-block {
-      width: 33.333%;
-      padding: 0 24px;
       margin-bottom: 50px;
-      float: left;
       .story-picture {
         width: 100%;
         img {
@@ -421,37 +658,48 @@ footer {
 }
 
 .clients-links {
-  margin: 50px 0;
-  ul {
-    margin: 0;
-    padding: 0;
-    list-style: none;
-    li {
-      position: relative;
-      width: 33.333%;
-      float: left;
-      border-right: 1px solid #dadada;
-      border-bottom: 1px solid #dadada;
-      height: 150px;
-      text-align: center;
+  .client-logo-box {
+    display: inline-table;
+    vertical-align: top;
+    width: 33.333%;
+    height: 175px;
+    margin: 0 -2px;
+    border-right: 1px solid #dadada;
+    border-bottom: 1px solid #dadada;
+    @include respond-to(xs) {
+      &:nth-child(2n+2) {
+        border-right: none;
+      }
+      &:last-child {
+        border-bottom: none;
+      }
+    }
+    @include respond-to(large-than-mobile) {
       &:nth-child(3n+3) {
         border-right: none;
       }
       &:nth-child(n+4) {
         border-bottom: none;
       }
+    }
+    .logo-box-wrapper {
+      display: table-cell;
+      vertical-align: middle;
+      text-align: center;
       a {
-        display: inline-block;
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%,-50%);
         opacity: .5;
-        transition: .3s;
+        transition: .3s ease;
         &:hover {
           opacity: 1;
         }
       }
+      img {
+        max-width: 80%;
+      }
+    }
+    @include respond-to(xs) {
+      width: 50%;
+      height: 125px;
     }
   }
 }
@@ -681,69 +929,164 @@ footer {
   Migrate
 */
 
-.migrate-top {
+.section-migrate-top {
   height: 450px;
-  @include diagonal-background(500px, -60%);
+  overflow: hidden;
+  @include diagonal-background(500px, -200px);
+  @include respond-to(xs) {
+    height: auto;
+    text-align: center;
+    padding-top: 70px;
+  }
+  .top-section-wrapper {
+    display: table;
+    height: 100%;
+    width: 100%;
+    .top-section-inner {
+      display: table-cell;
+      vertical-align: middle;
+      background: url("/img/MagentoDif.png");
+      background-repeat: no-repeat;
+      background-position: 70% center;
+      @include respond-to(small) {
+        background-size: 60%;
+        background-position: 80% center;
+        .section-header {
+          text-align: left;
+        }
+      }
+      @include respond-to(xs) {
+        background: none;
+      }
+      .mobile-image {
+        display: none;
+        @include respond-to(xs) {
+          display: block;
+          img {
+            width: 75%;
+          }
+        }
+      }
+    }
+  }
 }
 
 .differentiator-section {
-  @include diagonal-background(500px, -350px);
+  @include respond-to(xs) {
+    text-align: center;
+  }
 }
 
 .story-section {
-  background-color: $light-grey;
+  @include diagonal-top(-3deg, 120px, 60px);
+  @include diagonal-bottom(-3deg, 120px, 60px);
+  .story-section-wrapper {
+    position: relative;
+    padding: 0;
+    margin: 70px 0;
+    background-color: $light-grey;
+    z-index: 1;
+    @include respond-to(mobile) {
+      text-align: center;
+    }
+    .item-wrapper {
+      padding: 50px 0 0;
+      position: relative;
+      @include respond-to(xs) {
+        padding: 0;
+      }
+      @include respond-to(small) {
+        padding: 0;
+      }
+      .text-content {
+        .testimonial-title {
+          font-size: 32px;
+          font-weight: 400;
+        }
+        .testimonial-description {
+          font-size: 32px;
+          font-weight: 300;
+        }
+        .testimonial-text {
+          font-size: 20px;
+          font-weight: 300;
+          font-style: italic;
+          &:before {
+            content: "";
+            display: block;
+            width: 32px;
+            height: 32px;
+            margin-bottom: 8px;
+            background-image: url("../img/quotes.svg");
+            background-size: cover;
+          }
+        }
+        .author {
+          font-size: 24px;
+          font-weight: 300;
+          color: $grey;
+          font-style: italic;
+        }
+      }
+      .image-content {
+        text-align: center;
+        img {
+          max-width: 98%;
+          max-height: 550px;
+          @include respond-to(xs) {
+            width: 85%;
+          }
+          @include respond-to(sm) {
+            width: 50%;
+          }
+        }
+      }
+    }
+  }
 }
 
 .wizard-section {
-  @include diagonal-background-top(500px, -350px);
   text-align: center;
   img {
     height: 250px;
     margin: 24px 0;
+    @include respond-to(xs) {
+      width: 100%;
+      height: auto;
+    }
   }
 }
 
-.quote {
-  position: relative;
-  .text-content {
-    width: 50%;
-    float: left;
-    .testimonial-title {
-      font-size: 32px;
-      font-weight: 400;
-      padding-right: 20%;
-    }
-    .testimonial-description {
-      font-size: 32px;
-      font-weight: 300;
-    }
-    .testimonial-text {
-      font-size: 20px;
-      &:before {
-        content: "";
-        display: block;
-        width: 32px;
-        height: 32px;
-        margin-bottom: 8px;
-        background-image: url("../img/quotes.svg");
-        background-size: cover;
-      }
-    }
-    .author {
-      font-size: 24px;
-      font-weight: 300;
-      color: $grey;
-      font-style: italic;
+.tab-icon {
+  text-indent: 32px;
+  &:before {
+    content: url("/img/chain.svg");
+    position: absolute;
+    left: -16px;
+    width: 24px;
+    height: 24px;
+    @include respond-to(mobile) {
+      position: relative;
+      display: inline-block;
+      top: 3px;
     }
   }
-  .image-content {
-    position: absolute;
-    top: 0px;
-    right: 0;
-    width: 45%;
-    float: right;
-    img {
-      width: 98%;
-    }
+  @include respond-to(mobile) {
+    text-indent: 0;
   }
 }
+
+.contact-us-banner {
+  .section-header {
+    text-align: center;
+  }
+  text-align: center;
+  display: table;
+  padding: 24px;
+  background-color: $light-grey;
+  margin-bottom: 50px;
+  @include respond-to(xs) {
+    margin-bottom: 0;
+  }
+}
+

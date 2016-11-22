@@ -5,9 +5,10 @@
     position: absolute;
     height: $height;
     width: 100%;
-    transform: skewY(-5deg);
+    transform: skewY(-10deg);
     background-color: $light-grey;
     bottom: $bottom;
+    z-index: -1;
   }
 }
 
@@ -21,5 +22,68 @@
     transform: skewY(-5deg);
     background-color: $light-grey;
     top: $top;
+  }
+}
+
+@mixin diagonal-top($deg, $height, $top) {
+  &:before {
+    content: "";
+    display: block;
+    position: absolute;
+    height: $height;
+    width: 100%;
+    transform: skewY($deg);
+    background-color: $light-grey;
+    top: $top;
+  }
+}
+
+@mixin diagonal-bottom($deg, $height, $bottom) {
+  &:after {
+    content: "";
+    display: block;
+    position: absolute;
+    height: $height;
+    width: 100%;
+    transform: skewY($deg);
+    background-color: $light-grey;
+    bottom: $bottom;
+  }
+}
+
+@mixin respond-to($breakpoint) {
+  @if $breakpoint == "xs" {
+    @media (min-width: 320px) and (max-width: 766px) {
+      @content;
+    }
+  }
+  @else if $breakpoint == "small" {
+    @media (min-width: 767px) and (max-width: 991px) {
+      @content;
+    }
+  }
+
+  @else if $breakpoint == "mobile" {
+    @media (min-width: 320px) and (max-width: 991px) {
+      @content;
+    }
+  }
+
+  @else if $breakpoint == "medium" {
+    @media (min-width: 992px) and (max-width: 1199px) {
+      @content;
+    }
+  }
+
+  @else if $breakpoint == "large" {
+    @media (min-width: 1200px) {
+      @content;
+    }
+  }
+
+  @else if $breakpoint == "large-than-mobile" {
+    @media (min-width: 767px) {
+      @content;
+    }
   }
 }

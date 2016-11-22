@@ -1,0 +1,136 @@
+doctype html
+html(lang='en')
+    head
+        meta(charset='UTF-8')
+        meta(name="viewport", content="width=device-width, initial-scale=1.0, maximum-scale=1.0")
+        title Ottemo
+        link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css')
+        link(rel='stylesheet', href='/css/owl.carousel.css')
+        link(rel='stylesheet', href='/css/owl.transitions.css')
+        link(rel='stylesheet', href='/css/style.css')
+    body
+
+
+
+
+        .layout
+            header.header
+                .header-row
+                    // Title
+                    span.layout-title Title
+                    nav.navigation.layout--large-screen-only
+                        a.navigation-link(href='/') Home
+                        a.navigation-link(href='/features.html') Features
+                        a.navigation-link(href='/customers.html') Customers
+                        a.navigation-link(href='/migrate-magento') Migrate
+                        a.navigation-link(href='/pricing.html') Pricing
+                        a.navigation-link(href='/blog.html') Blog
+                        a.navigation-link(href='#') Demo Store
+                        a.navigation-link(href='/company.html') Company
+
+            .layout-drawer
+                span.layout-title Title
+                nav.navigation
+                    a.navigation-link(href='/') Home
+                    a.navigation-link(href='/features.html') Features
+                    a.navigation-link(href='/customers.html') Customers
+                    a.navigation-link(href='/migrate-magento') Migrate
+                    a.navigation-link(href='/pricing.html') Pricing
+                    a.navigation-link(href='/blog.html') Blog
+                    a.navigation-link(href='#') Demo Store
+                    a.navigation-link(href='/company.html') Company
+            main.layout-content
+                .page-content
+                    block content
+                    footer.footer
+                        .container
+                            .links.clearfix
+                                .col
+                                    a.category-link(href='#') Features
+                                    ul
+                                        li
+                                            a(href='#') Payments
+                                        li
+                                            a(href='#') Operations
+                                        li
+                                            a(href='#') Design
+                                        li
+                                            a(href='#') Marketing
+                                        li
+                                            a(href='#') Infrastructure
+                                        li
+                                            a(href='#') Subscriptions
+                                .col
+                                    a.category-link(href='#') Customers
+                                    ul
+                                        li
+                                            a(href='#') Case Studies
+                                        li
+                                            a(href='#') Customer stories
+                                        li
+                                            a(href='#') Testimonials
+                                        li
+                                            a(href='#') Links
+                                .col
+                                    a.category-link(href='#') Migrate
+                                    ul
+                                        li
+                                            a(href='#') Magento
+                                        li
+                                            a(href='#') Shopify
+                                .col
+                                    a.category-link(href='#') Company
+                                    ul
+                                        li
+                                            a(href='#') About Us
+                                        li
+                                            a(href='#') Contact Us
+                                        li
+                                            a(href='#') Partners
+                                        li
+                                            a(href='#') Story
+                                        li
+                                            a(href='#') Team
+                                        li
+                                            a(href='#') Bio’s
+                                        li
+                                            a(href='#') Press
+                                .col
+                                    a.category-link(href='#') Pricing
+                                .col
+                                    a.category-link(href='#') Blog
+                                .col
+                                    a.category-link(href='#') Demo Store
+                            .bottom-block.clearfix
+                                .copyright
+                                    ul.l-inline-list
+                                        li
+                                            img.footer-logo(src='/img/ottemo-logo-white.svg', alt='')
+                                        li 2016. All rights reserved.
+                                        li
+                                            a(href='#') Privacy Policy
+                                .sm-icons
+                                    ul.l-inline-list
+                                        li
+                                            a(href='#')
+                                                i.fa.fa-envelope(aria-hidden='true')
+                                        li
+                                            a(href='#')
+                                                i.fa.fa-github(aria-hidden='true')
+                                        li
+                                            a(href='#')
+                                                i.fa.fa-facebook(aria-hidden='true')
+                                        li
+                                            a(href='#')
+                                                i.fa.fa-linkedin(aria-hidden='true')
+                                        li
+                                            a(href='#')
+                                                i.fa.fa-lightbulb-o(aria-hidden='true')
+
+
+
+        script(src='/js/jquery.scrollify.min.js')
+        script(src='/js/jquery-3.1.1.min.js')
+        script(src="/js/masonry.pkgd.min.js")
+        script(src='/js/owl.carousel.min.js')
+        script(src='/js/main.js')

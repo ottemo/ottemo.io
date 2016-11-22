@@ -12,7 +12,10 @@ var src = './src';
 var paths = {
     src: src,
     dist: './dist',
-    jade: src + '/jade/*.jade',
+    jade: [
+        '!' + src + '/jade/include/*.jade',
+        src + '/jade/**/*.jade'
+    ],
     sass: src + '/sass/**/*.scss',
     js: src + '/js/**/*.js',
     media: src + '/media/*',

@@ -1,11 +1,11 @@
-extends include/template
+extends ../include/template
 block content
     .two-column-layout.container
         .navigation-sidebar.col-md-2
             nav
                 ul
                     li.nav-item.active
-                        a(href='/features.html').active Payments
+                        a(href='/features.html') Payments
                     li.nav-item
                         a(href='/features/operations.html') Operations
                     li.nav-item
@@ -13,30 +13,33 @@ block content
                     li.nav-item
                         a(href='/features/marketing.html') Marketing
                     li.nav-item
-                        a(href='/features/infrastructure.html') Infrastructure
+                        a(href='/features/infrastructure.html').active Infrastructure
                     li.nav-item
                         a(href='/features/subscriptions.html') Subscriptions
         .page-content.col-md-10
-            section.section-order-management
-                h1.section-header We offer the top payment gateways
+            section
+                h1.section-header Ottemo is architected for high performance. We handle hosting, scaling, integration touch points for you. Always improving performance & security
                 .row
                     .text-content.col-md-6
-                        h2.section-header-l2.tab-icon Authorize.net
+                        h2.section-header-l2.tab-icon The fastest page load speeds for your storefront and admin panel in the industry
                         p.main-text.accent
                             | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis molestie augue quis ante placerat, feugiat tristique orci laoreet. Cras egestas rhoncus mi eu tincidunt. Phasellus pretium suscipit imperdiet. Quisque cursus pellentesque efficitur. Suspendisse mollis elementum neque fringilla feugiat. Etiam quis volutpat nunc, ut condimentum sapien.
+
                     .text-content.col-md-6
-                        h2.section-header-l2.tab-icon Paypal
+                        h2.section-header-l2.tab-icon Unlimited scalability and bandwidth
                         p.main-text.accent
                             | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis molestie augue quis ante placerat, feugiat tristique orci laoreet. Cras egestas rhoncus mi eu tincidunt. Phasellus pretium suscipit imperdiet. Quisque cursus pellentesque efficitur. Suspendisse mollis elementum neque fringilla feugiat. Etiam quis volutpat nunc, ut condimentum sapien.
                 .row
                     .text-content.col-md-6
-                        h2.section-header-l2.tab-icon Paypal Pro
+                        h2.section-header-l2.tab-icon Secure hosting for your website in the cloud
                         p.main-text.accent
                             | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis molestie augue quis ante placerat, feugiat tristique orci laoreet. Cras egestas rhoncus mi eu tincidunt. Phasellus pretium suscipit imperdiet. Quisque cursus pellentesque efficitur. Suspendisse mollis elementum neque fringilla feugiat. Etiam quis volutpat nunc, ut condimentum sapien.
+
                     .text-content.col-md-6
-                        h2.section-header-l2.tab-icon Stripe
+                        h2.section-header-l2.tab-icon Security
                         p.main-text.accent
                             | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis molestie augue quis ante placerat, feugiat tristique orci laoreet. Cras egestas rhoncus mi eu tincidunt. Phasellus pretium suscipit imperdiet. Quisque cursus pellentesque efficitur. Suspendisse mollis elementum neque fringilla feugiat. Etiam quis volutpat nunc, ut condimentum sapien.
+
 
     .contact-us-banner.container
         h1.section-header Ready? So are we.

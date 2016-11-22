@@ -3,18 +3,23 @@
  */
 $(document).ready(function() {
 
-    $("#owl-demo").owlCarousel({
+    $("#owl-testimonials").owlCarousel({
 
-        navigation : true, // Show next and prev buttons
+        navigation : true,
         slideSpeed : 300,
         paginationSpeed : 400,
-        singleItem:true
+        autoHeight: true,
+        singleItem: true
     });
 
     $('.grid').masonry({
         // options
         itemSelector: '.grid-item',
         //columnWidth: 200
+    });
+
+    $('#mobile-menu-btn').click(function(){
+        $('.body-wrapper').toggleClass('opened');
     });
 
     $(function() {
@@ -24,4 +29,12 @@ $(document).ready(function() {
         $(window).resize();
     });
 
+
+    $(document).on("click", ".category-group .category-link", function(e) {
+        if($(window).width() <= 991) {
+            e.preventDefault();
+            $(this).toggleClass("expanded").siblings("ul").toggle()
+        }
+    })
 });
+

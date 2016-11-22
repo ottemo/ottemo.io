@@ -25,6 +25,7 @@ p, a, span {
   letter-spacing: .03em;
   text-transform: uppercase;
   background-color: $dark-grey;
+  transition: .3s ease;
   &.button-small {
     padding: 8px 24px;
     border-radius: 24px;
@@ -73,20 +74,7 @@ section.diagonal:before {
 /*
   text formatting
 */
-.section-header {
-  font-size: 40px;
-  font-weight: 400;
-}
 
-.section-header-l2 {
-  font-size: 30px;
-  line-height: 40px;
-}
-
-.section-description {
-  font-size: 24px;
-  font-weight: 300;
-}
 
 .main-text {
   font-size: 16px;
@@ -109,9 +97,6 @@ label {
   display: block;
   font-family: 'Roboto Slab', serif;
   margin-bottom: 8px;
-  //font-weight: 400;
-  //color: $grey
-  //font-size: 18px;
 }
 
 input[type="text"],

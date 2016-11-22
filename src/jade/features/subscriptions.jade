@@ -1,0 +1,31 @@
+extends ../include/template
+block content
+    .two-column-layout.container
+        .navigation-sidebar.col-md-2
+            nav
+                ul
+                    li.nav-item.active
+                        a(href='/features.html') Payments
+                    li.nav-item
+                        a(href='/features/operations.html') Operations
+                    li.nav-item
+                        a(href='/features/design.html') Design
+                    li.nav-item
+                        a(href='/features/marketing.html') Marketing
+                    li.nav-item
+                        a(href='/features/infrastructure.html') Infrastructure
+                    li.nav-item
+                        a(href='/features/subscriptions.html').active Subscriptions
+        .page-content.col-md-10
+            section
+                h1.section-header Monthly subscription features for recurring revenue
+            section
+                h1.section-header Monthly box subscriptions
+
+    .contact-us-banner.container
+        h1.section-header Ready? So are we.
+        p.main-text.accent
+            | We work with you, not against you.
+            br
+            | If you don't see a feature that you need to help your company flourish we'd love to hear about it.
+        a(href="/getstarted.html").button.button-big Contact us

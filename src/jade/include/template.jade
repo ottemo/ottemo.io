@@ -2,94 +2,110 @@ doctype html
 html(lang='en')
     head
         meta(charset='UTF-8')
+        meta(name="viewport", content="width=device-width, initial-scale=1.0, maximum-scale=1.0")
         title Ottemo
         link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css')
-        link(rel='stylesheet', href='css/owl.carousel.css')
-        link(rel='stylesheet', href='css/owl.transitions.css')
-        link(rel='stylesheet', href='css/style.css')
+        link(rel='stylesheet', href='/css/owl.carousel.css')
+        link(rel='stylesheet', href='/css/owl.transitions.css')
+        link(rel='stylesheet', href='/css/style.css')
     body
-        .mobile-nav
+        .mobile-navigation
             nav
                 ul
                     li.nav-item
-                        a(href='features.html') Features
+                        a(href='/') Home
                     li.nav-item
-                        a(href='customers.html') Customers
+                        a(href='/features.html') Features
                     li.nav-item
-                        a(href='migrate-magento') Migrate
+                        a(href='/customers.html') Customers
                     li.nav-item
-                        a(href='pricing.html') Pricing
+                        a(href='/migrate-magento') Migrate
+                        ul.submenu
+                            li.nav-item
+                                a(href='/migrate-magento') Magento
+                            li.nav-item
+                                a(href='/migrate-magento') Shopify
                     li.nav-item
-                        a(href='blog.html') Blog
+                        a(href='/pricing.html') Pricing
+                    li.nav-item
+                        a(href='/blog.html') Blog
                     li.nav-item
                         a(href='#') Demo Store
                     li.nav-item
-                        a(href='company.html') Company
+                        a(href='/company.html') Company
         .body-wrapper
             header.header
                 .container
+                    .mobile-menu-btn
+                        a#mobile-menu-btn(href="#")
+                            i.fa.fa-bars(aria-hidden='true')
                     .logo
                         a(href='/')
-                            img(src='img/ottemo-logo.svg', alt='Ottemo logo')
+                            img(src='/img/ottemo-logo.svg', alt='Ottemo logo')
                     .navigation
                         nav
                             ul
                                 li.nav-item
-                                    a(href='features.html') Features
+                                    a(href='/features.html') Features
                                 li.nav-item
-                                    a(href='customers.html') Customers
+                                    a(href='/customers.html') Customers
                                 li.nav-item
-                                    a(href='migrate-magento') Migrate
+                                    a(href='#') Migrate
+                                    ul.submenu
+                                        li.nav-item
+                                            a(href='/migrate-magento') Magento
+                                        li.nav-item
+                                            a(href='/migrate-magento') Shopify
                                 li.nav-item
-                                    a(href='pricing.html') Pricing
+                                    a(href='/pricing.html') Pricing
                                 li.nav-item
-                                    a(href='blog.html') Blog
+                                    a(href='/blog.html') Blog
                                 li.nav-item
                                     a(href='#') Demo Store
                                 li.nav-item
-                                    a(href='company.html') Company
+                                    a(href='/company.html') Company
                     .action-button
-                        a.button.button-small(href='getstarted.html') Get started
+                        a.button.button-small(href='/getstarted.html') Get started
             block content
             footer.footer
                 .container
                     .links.clearfix
-                        .col
-                            a.category-link(href='#') Features
-                            ul
+                        .category-group.col.col-md-2
+                            a(href='#').category-link.expandable Features
+                            ul.subcategory-links
                                 li
-                                    a(href='#') Payments
+                                    a(href='/features.html') Payments
                                 li
-                                    a(href='#') Operations
+                                    a(href='/features/operations.html') Operations
                                 li
-                                    a(href='#') Design
+                                    a(href='/features/design.html') Design
                                 li
-                                    a(href='#') Marketing
+                                    a(href='/features/marketing.html') Marketing
                                 li
-                                    a(href='#') Infrastructure
+                                    a(href='/features/infrastructure.html') Infrastructure
                                 li
-                                    a(href='#') Subscriptions
-                        .col
-                            a.category-link(href='#') Customers
-                            ul
+                                    a(href='/features/subscriptions.html') Subscriptions
+                        .category-group.col.col-md-2
+                            a(href='#').category-link.expandable Customers
+                            ul.subcategory-links
                                 li
-                                    a(href='#') Case Studies
+                                    a(href='/customers.html') Case Studies
                                 li
-                                    a(href='#') Customer stories
+                                    a(href='/customers.html') Customer stories
                                 li
-                                    a(href='#') Testimonials
+                                    a(href='/customers.html') Testimonials
                                 li
-                                    a(href='#') Links
-                        .col
-                            a.category-link(href='#') Migrate
-                            ul
+                                    a(href='/customers.html') Links
+                        .category-group.col.col-md-2
+                            a(href='#').category-link.expandable Migrate
+                            ul.subcategory-links
                                 li
-                                    a(href='#') Magento
+                                    a(href='/migrate-magento') Magento
                                 li
-                                    a(href='#') Shopify
-                        .col
-                            a.category-link(href='#') Company
-                            ul
+                                    a(href='/migrate-magento') Shopify
+                        .category-group.col.col-md-2
+                            a(href='#').category-link.expandable Company
+                            ul.subcategory-links
                                 li
                                     a(href='#') About Us
                                 li
@@ -104,17 +120,15 @@ html(lang='en')
                                     a(href='#') Bio’s
                                 li
                                     a(href='#') Press
-                        .col
+                        .col.col-md-2
                             a.category-link(href='#') Pricing
-                        .col
+                        .col.col-md-2
                             a.category-link(href='#') Blog
-                        .col
-                            a.category-link(href='#') Demo Store
                     .bottom-block.clearfix
                         .copyright
                             ul.l-inline-list
                                 li
-                                    img.footer-logo(src='img/ottemo-logo-white.svg', alt='')
+                                    img.footer-logo(src='/img/ottemo-logo-white.svg', alt='')
                                 li 2016. All rights reserved.
                                 li
                                     a(href='#') Privacy Policy
@@ -135,8 +149,8 @@ html(lang='en')
                                 li
                                     a(href='#')
                                         i.fa.fa-lightbulb-o(aria-hidden='true')
-        script(src='js/jquery.scrollify.min.js')
-        script(src='js/jquery-3.1.1.min.js')
-        script(src="js/masonry.pkgd.min.js")
-        script(src='js/owl.carousel.min.js')
-        script(src='js/main.js')
+        script(src='/js/jquery.scrollify.min.js')
+        script(src='/js/jquery-3.1.1.min.js')
+        script(src="/js/masonry.pkgd.min.js")
+        script(src='/js/owl.carousel.min.js')
+        script(src='/js/main.js')

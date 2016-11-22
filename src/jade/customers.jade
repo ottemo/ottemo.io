@@ -1,69 +1,104 @@
 extends include/template
 block content
-    section.section.section-case-studies
+    section.section-case-studies
         .container
             h1.section-header.l-text-align.center Ottemo Case Studies
             p.section-description.l-text-align.center
                 | Maecenas ut nibh et justo condimentum rutrum. Morbi a dapibus nisl. Pellentesque vulputate urna id leo pellentesque
         .container
             ul
-                - for (var i = 0; i < 9; ++i) {
-                    li.story-block
-                        .story-picture
-                            img(src="img/story-img.jpg", alt="Story Image")
-                        h1.block-title Title
-                        p.main-text
-                            | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis molestie augue quis ante placerat, feugiat tristique orci laoreet.
-                        a.link(href="#") Read their story
-                - }
+                li.story-block.col-sm-6
+                    .story-picture
+                        img(src="img/cs-rk.jpg", alt="Rich Kids")
+                    h1.block-title Rich Kids Brand
+                    p.main-text
+                        | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis molestie augue quis ante placerat, feugiat tristique orci laoreet.
+                    a(href="#").button.button-small Read their story
+                li.story-block.col-sm-6
+                    .story-picture
+                        img(src="img/cs-kg.jpg", alt="Kari Grain")
+                    h1.block-title Kari Grain
+                    p.main-text
+                        | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis molestie augue quis ante placerat, feugiat tristique orci laoreet.
+                    a(href="#").button.button-small Read their story
+                li.story-block.col-sm-6
+                    .story-picture
+                        img(src="img/cs-pv.jpg", alt="Mt Pocono Vapes LLC")
+                    h1.block-title Mt Pocono Vapes LLC
+                    p.main-text
+                        | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis molestie augue quis ante placerat, feugiat tristique orci laoreet.
+                    a(href="#").button.button-small Read their story
+                li.story-block.col-sm-6
+                    .story-picture
+                        img(src="img/cs-scs.jpg", alt="South Coast Swords")
+                    h1.block-title South Coast Swords
+                    p.main-text
+                        | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis molestie augue quis ante placerat, feugiat tristique orci laoreet.
+                    a(href="#").button.button-small Read their story
+                li.story-block.col-sm-6
+                    .story-picture
+                        img(src="img/cs-kkr.jpg", alt="Knick Knack Records")
+                    h1.block-title Knick Knack Records
+                    p.main-text
+                        | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis molestie augue quis ante placerat, feugiat tristique orci laoreet.
+                    a(href="#").button.button-small Read their story
 
-    section.section.section-testimonials
-        .section-wrapper
+    section.story-section
+        .story-section-wrapper
             .container
                 h1.section-header.l-text-align.center Testimonials
                 p.section-description.l-text-align.center
-                    | Maecenas ut nibh et justo condimentum rutrum.
+                    | Lorem ipsum dolor sit amet, consectetur adipisicing elit.
                     br
-                    | Morbi a dapibus nisl. Pellentesque vulputate urna id leo pellentesque
-                .carousel-wrapper
-                    #owl-demo.owl-carousel.owl-theme
-                        .item
-                            .text-content
+                    | Maecenas pharetra pulvinar leo, ut tristique neque fermentum quis. Aliquam pharetra, dui vel volutpat dapibus, metus odio cursus sapien, eu dictum mauris velit at nibh.
+                #owl-testimonials.owl-carousel.owl-theme
+                    .item
+                        .item-wrapper.clearfix
+                            .image-content.col-md-6
+                                img(src="/img/karigrain.png", alt="")
+                            .text-content.col-md-6
                                 p.testimonial-text
-                                    | Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda commodi explicabo minus qui? Accusamus earum iure maiores necessitatibus nihil odit possimus quidem quisquam ratione rem! Eaque in ipsum rem sequi.
-                                p.author John Smith
-                            .image-content
-                                img(src='../img/iPhone_engine.png', alt='')
-                        .item
-                            .text-content
+                                    | Nullam erat nulla, feugiat ac ultrices sit amet, aliquet et nibh. Integer ac malesuada odio. Ut nibh purus, tempus a sollicitudin vitae, fringilla quis ligula. Aliquam consectetur bibendum est, non bibendum erat convallis id. Nam ac lorem vitae metus sollicitudin mattis. Fusce sollicitudin gravida erat sit amet pretium. Phasellus volutpat lacus et nulla ullamcorper convallis. Sed felis libero, rhoncus sit amet turpis ut, aliquet congue felis. Sed pharetra, leo sit amet semper tempor, nibh ex elementum erat, vehicula suscipit risus leo at felis. Phasellus vel vehicula est.
+                                p.author Lisa Strain, Kari Grain
+                                a(href="#").button.button-small Read Story
+                    .item
+                        .item-wrapper.clearfix
+                            .image-content.col-md-7
+                                img(src="/img/pocono.png", alt="")
+                            .text-content.col-md-5
                                 p.testimonial-text
-                                    | Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda commodi explicabo minus qui? Accusamus earum iure maiores necessitatibus nihil odit possimus quidem quisquam ratione rem! Eaque in ipsum rem sequi.
-                                p.author John Smith
-                            .image-content
-                                img(src='../img/testimonials-img-01.png', alt='')
-                        .item
-                            .text-content
+                                    | Nam ac lorem vitae metus sollicitudin mattis. Fusce sollicitudin gravida erat sit amet pretium. Phasellus volutpat lacus et nulla ullamcorper convallis. Sed felis libero, rhoncus sit amet turpis ut, aliquet congue felis. Sed pharetra, leo sit amet semper tempor, nibh ex elementum erat, vehicula suscipit risus leo at felis. Phasellus vel vehicula est.
+                                p.author Michael Hendrix, Mt Pocono Vapes LLC
+                                a(href="#").button.button-small Read Story
+                    .item
+                        .item-wrapper.clearfix
+                            .image-content.col-md-6
+                                img(src="/img/southcoast.png", alt="")
+                            .text-content.col-md-6
                                 p.testimonial-text
-                                    | Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda commodi explicabo minus qui? Accusamus earum iure maiores necessitatibus nihil odit possimus quidem quisquam ratione rem! Eaque in ipsum rem sequi.
-                                p.author John Smith
-                            .image-content
-                                img(src='../img/testimonials-img-01.png', alt='')
+                                    | Nam ac lorem vitae metus sollicitudin mattis. Fusce sollicitudin gravida erat sit amet pretium. Phasellus volutpat lacus et nulla ullamcorper convallis. Sed felis libero, rhoncus sit amet turpis ut, aliquet congue felis. Sed pharetra, leo sit amet semper tempor, nibh ex elementum erat, vehicula suscipit risus leo at felis. Phasellus vel vehicula est.
+                                p.author Jonathan Mayshar, South Coast Swords
+                                a(href="#").button.button-small Read Story
 
     section.clients-links
         .container
-            ul
-                li
+            .client-logo-box
+                .logo-box-wrapper
                     a(href="http://richkidsbrand.com")
                         img(src="img/logos/Richkidsbrand.png" alt="richkidsbrand")
-                li
+            .client-logo-box
+                .logo-box-wrapper
                     a(href="http://karigran.com")
                         img(src="img/logos/Karigran.png" alt="karigran logo")
-                li
+            .client-logo-box
+                .logo-box-wrapper
                     a(href="http://poconovapes.com")
                         img(src="img/logos/Poconovapes.png" alt="poconovapes logo")
-                li
+            .client-logo-box
+                .logo-box-wrapper
                     a(href="http://southcoastswords.com")
                         img(src="img/logos/Southcoastswords.png" alt="southcoastswords logo")
-                li
+            .client-logo-box
+                .logo-box-wrapper
                     a(href="http://knickknackrecords.com")
                         img(src="img/logos/KnickKnackRecords.png" alt="KnickKnackRecords logo")
