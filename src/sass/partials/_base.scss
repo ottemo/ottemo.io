@@ -83,6 +83,10 @@ section.diagonal:before {
   &.accent {
     font-size: 20px;
     line-height: 32px;
+    @include respond-to(xs) {
+      font-size: 18px;
+      line-height: 28px;
+    }
   }
 }
 

@@ -704,23 +704,26 @@ footer {
   }
 }
 
+.section-founders {
+  .person-list {
+
+  }
+}
+
 
 .persons-list {
   list-style: none;
   margin: 0;
-  padding: 0;
+  padding-left: 0;
   text-align: center;
   .item {
-    display: inline-block;
-    width: 25%;
-    padding: 24px;
-    margin: 0 -2px;
-    vertical-align: top;
+    padding-bottom: 24px;
     .person-photo {
       width: 100%;
       img {
         width: 100%;
       }
+
     }
     .person-name {
       display: block;
@@ -922,7 +925,13 @@ footer {
 */
 
 .company-top {
-  @include diagonal-background(500px, -20%);
+  overflow: hidden;
+  @include diagonal-top(-5deg, 500px, -400px);
+  @include diagonal-bottom(-5deg, 500px, -400px);
+  @include respond-to(mobile) {
+    text-align: center;
+    padding-top: 70px;
+  }
 }
 
 /*
