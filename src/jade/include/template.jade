@@ -34,36 +34,35 @@ html(lang='en')
                     li.nav-item
                         a(href='/company.html') Company
         .body-wrapper
-            header.header
+            header#header.header
                 .container
-                    .mobile-menu-btn
-                        a#mobile-menu-btn(href="#")
-                            i.fa.fa-bars(aria-hidden='true')
+                    .hamburger-menu-btn
+                        a#hamburger-menu-btn(href="#")
+                            i.menu-icon.fa.fa-bars(aria-hidden='true')
                     .logo
                         a(href='/')
                             img(src='/img/ottemo-logo.svg', alt='Ottemo logo')
-                    .navigation
-                        nav
-                            ul
-                                li.nav-item
-                                    a(href='/features.html') Features
-                                li.nav-item
-                                    a(href='/customers.html') Customers
-                                li.nav-item
-                                    a(href='#') Migrate
-                                    ul.submenu
-                                        li.nav-item
-                                            a(href='/migrate-magento') Magento
-                                        li.nav-item
-                                            a(href='/migrate-magento') Shopify
-                                li.nav-item
-                                    a(href='/pricing.html') Pricing
-                                li.nav-item
-                                    a(href='/blog.html') Blog
-                                li.nav-item
-                                    a(href='#') Demo Store
-                                li.nav-item
-                                    a(href='/company.html') Company
+                    nav.navigation
+                        ul
+                            li.nav-item
+                                a(href='/features.html') Features
+                            li.nav-item
+                                a(href='/customers.html') Customers
+                            li.nav-item
+                                a(href='#') Migrate
+                                ul.submenu
+                                    li.nav-item
+                                        a(href='/migrate-magento') Magento
+                                    li.nav-item
+                                        a(href='/migrate-magento') Shopify
+                            li.nav-item
+                                a(href='/pricing.html') Pricing
+                            li.nav-item
+                                a(href='/blog.html') Blog
+                            li.nav-item
+                                a(href='#') Demo Store
+                            li.nav-item
+                                a(href='/company.html') Company
                     .action-button
                         a.button.button-small(href='/getstarted.html') Get started
             block content

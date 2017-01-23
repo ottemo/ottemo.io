@@ -1,8 +1,16 @@
+@import "mixins";
+@import "variables";
+
+
+/*
+  Hamburger menu.
+  Available only when window width less than 1200px
+*/
 .mobile-navigation {
   position: fixed;
-  display: none;
   left: 0;
   top: 0;
+  display: none;
   width: 300px;
   height: 100%;
   background-color: $dark-grey;
@@ -29,27 +37,27 @@
   @include respond-to(medium) {
     display: block;
   }
-  @include respond-to(small) {
-    display: block;
-  }
-  @include respond-to(xs) {
+  @include respond-to(mobile) {
     display: block;
   }
 }
 
+/*
+  Main navigation
+*/
 .header {
   position: fixed;
   top: 0;
   width: 100%;
-  text-align: center;
   background-color: rgba(255,255,255,.8);
+  text-align: center;
   z-index: 1000;
-  .mobile-menu-btn {
-    display: block;
+  .hamburger-menu-btn {
     position: fixed;
     left: 0;
+    display: block;
     margin: 16px;
-    .fa-bars {
+    .menu-icon {
       font-size: 32px;
       color: $grey;
     }
@@ -61,12 +69,10 @@
     height: 25px;
     margin: 20px 0;
     display: inline-block;
-    float: none;
     img {
       height: 100%;
     }
     @include respond-to(xs) {
-      float: none;
       margin: 20px 0 20px 40px;
     }
     @include respond-to(large) {
@@ -83,11 +89,11 @@
         display: inline-block;
         position: relative;
         a {
+          margin: 10px;
+          color: $grey;
           font-size: 16px;
           font-weight: 700;
-          color: $grey;
           text-transform: uppercase;
-          margin: 10px;
         }
         &:hover {
           a {
@@ -138,12 +144,11 @@
 }
 
 section {
-  position: relative;
   padding: 50px 0;
+  position: relative;
   @include respond-to(mobile) {
     padding: 24px 0;
-    .section-header,
-    .section-header-l2 {
+    .section-header, .section-header-l2 {
       text-align: center;
     }
   }
@@ -185,10 +190,7 @@ section {
   &.opened {
     transform: translate(280px, 0);
   }
-  @include respond-to(xs) {
-    padding-top: 0;
-  }
-  @include respond-to(small) {
+  @include respond-to(mobile) {
     padding-top: 0;
   }
 }
@@ -223,14 +225,18 @@ section {
   font-size: 24px;
   font-weight: 300;
   @include respond-to(mobile) {
-    font-size: 20px;
-    line-height: 32px;
+    font-size: 18px;
+    line-height: 28px;
     text-align: center;
   }
 }
 
 .top-section {
   overflow: hidden;
+  padding: 0;
+  @include respond-to(mobile) {
+    margin-top: 65px;
+  }
   @include diagonal-background(500px, -180px);
   .top-section-wrapper {
     display:table;
@@ -322,20 +328,11 @@ section {
 
 .section-features {
   padding: 50px 0;
-  background-color: $dark-grey;
-  background-image: url("../img/imac-features.png");
-  background-repeat: no-repeat;
-  background-position: right center;
+  background: $dark-grey url("../img/imac-features.png") no-repeat right -100px center;
   background-size: 48% auto;
-  @include respond-to(xs) {
+  @include respond-to(mobile) {
     text-align: center;
-    background-image: none;
-    background-color: $dark-grey;
-  }
-  @include respond-to(small) {
-    text-align: center;
-    background-image: none;
-    background-color: $dark-grey;
+    background: $dark-grey none;
   }
   .image-content {
     img {
@@ -424,6 +421,9 @@ section {
             margin-bottom: 8px;
             background-image: url("../img/quotes.svg");
             background-size: cover;
+            @include respond-to(xs) {
+              display: none;
+            }
           }
         }
         .author {
@@ -447,8 +447,8 @@ section {
   @include respond-to(xs) {
     text-align: center;
   }
-  @include respond-to(small) {
-    text-align: center;
+  @include respond-to(mobile) {
+    padding-top: 0;
   }
   .post-wrapper {
     margin-bottom: 50px;
@@ -609,24 +609,17 @@ footer {
     padding: 0;
 
   }
-  .two-column-layout {
-    padding-top: 120px;
-    .page-content {
-      .image-content {
-        img {
-          width: 100%;
-        }
-      }
-    }
+}
+
+.features-page-content {
+  @include respond-to(xs) {
+    text-align: center;
   }
 }
 
 /*  Operations  */
 .section-order-management {
   .section-header {
-    text-align: center;
-  }
-  @include respond-to(mobile) {
     text-align: center;
   }
 }
@@ -636,7 +629,7 @@ footer {
 /*****************/
 
 .section-case-studies {
-  padding: 50px 0;
+  padding: 50px 0 0;
   @include respond-to(mobile) {
     text-align: center;
     padding-top: 70px;
@@ -704,13 +697,6 @@ footer {
   }
 }
 
-.section-founders {
-  .person-list {
-
-  }
-}
-
-
 .persons-list {
   list-style: none;
   margin: 0;
@@ -767,7 +753,7 @@ footer {
       }
     }
   }
-  .post-title {
+  .post-title a {
     font-size: 20px;
   }
   &.single-post {
@@ -837,56 +823,67 @@ footer {
 /*
   Pricing
 */
-
-.pricing-grid {
-  text-align: center;
-  .pricing {
-    display: inline-block;
-    vertical-align: top;
-    width: 230px;
-    border: 1px solid #dadada;
-    margin: 0 16px;
-    .group-title {
-      font-size: 18px;
-      font-weight: 400;
-      padding: 16px;
-      color: $white;
-      background-color: $grey;
-      h1 {
-        margin: 0;
+.section-pricing {
+  @include respond-to(mobile) {
+    padding: 65px 0 0;
+  }
+  .pricing-grid {
+    text-align: center;
+    .pricing {
+      display: inline-block;
+      vertical-align: top;
+      width: 230px;
+      border: 1px solid #dadada;
+      margin: 0 16px;
+      @include respond-to(small) {
+        width: 200px;
       }
-    }
-    .price {
-      color: $ottemo-blue;
-      font-size: 20px;
-      width: 100%;
-      height: 170px;
-      border-bottom: 1px solid #dadada;
-      display: table;
-      .price-inner {
+      @include respond-to(xs) {
+        margin-bottom: 32px;
+      }
+      .group-title {
+        font-size: 18px;
+        font-weight: 400;
         padding: 16px;
-        display: table-cell;
+        color: $white;
+        background-color: $grey;
+        h1 {
+          margin: 0;
+        }
+      }
+      .price {
+        color: $ottemo-blue;
+        font-size: 20px;
         width: 100%;
-        height: 100%;
-        vertical-align: middle;
-        span {
-          display: inline-block;
-          &.dollar-sign {
-            vertical-align: top;
-            padding-top: 8px;
-          }
-          &.dollars {
-            font-size: 40px;
+        height: 170px;
+        border-bottom: 1px solid #dadada;
+        display: table;
+        .price-inner {
+          padding: 16px;
+          display: table-cell;
+          width: 100%;
+          height: 100%;
+          vertical-align: middle;
+          span {
+            display: inline-block;
+            &.dollar-sign {
+              vertical-align: top;
+              padding-top: 8px;
+            }
+            &.dollars {
+              font-size: 40px;
+            }
           }
         }
       }
-    }
-    .details {
-      font-size: 18px;
-      padding: 16px;
+      .details {
+        font-size: 18px;
+        padding: 16px;
+      }
     }
   }
 }
+
 
 /*
   Contacts
@@ -894,24 +891,15 @@ footer {
 
 .contacts-top {
   height: 600px;
-  @include diagonal-background(500px, -60%);
-  .contacts-top-wrapper {
-    height: 100%;
-    .contacts-column {
-      height: 100%;
-      .contacts-text-block {
-        padding-top: 100px;
-      }
-      .contact-image-block {
-        display: block;
-        height: 100%;
-      }
-    }
+  background-image: url(img/contact-img.jpg);
+  .contact-image-mobile {
+    display: none;
   }
 }
 
 .contact-form-section {
   background-color: $light-grey;
+  padding-top: 0;
   .contacts-form-side {
     margin: 0 auto;
     input {
@@ -954,9 +942,7 @@ footer {
     .top-section-inner {
       display: table-cell;
       vertical-align: middle;
-      background: url("/img/MagentoDif.png");
-      background-repeat: no-repeat;
-      background-position: 70% center;
+      background: url("/img/MagentoDif.png") no-repeat 70% center;
       @include respond-to(small) {
         background-size: 60%;
         background-position: 80% center;
@@ -987,6 +973,7 @@ footer {
 }
 
 .story-section {
+  margin-top: -60px;
   @include diagonal-top(-3deg, 120px, 60px);
   @include diagonal-bottom(-3deg, 120px, 60px);
   .story-section-wrapper {
@@ -1020,6 +1007,9 @@ footer {
           font-size: 20px;
           font-weight: 300;
           font-style: italic;
+          @include respond-to(xs) {
+            font-size: 16px;
+          }
           &:before {
             content: "";
             display: block;
@@ -1028,6 +1018,9 @@ footer {
             margin-bottom: 8px;
             background-image: url("../img/quotes.svg");
             background-size: cover;
+            @include respond-to(xs) {
+              display: none;
+            }
           }
         }
         .author {
@@ -1035,6 +1028,9 @@ footer {
           font-weight: 300;
           color: $grey;
           font-style: italic;
+          @include respond-to(xs) {
+            font-size: 18px;
+          }
         }
       }
       .image-content {

@@ -15,16 +15,15 @@ $(document).ready(function() {
     $('.grid').masonry({
         // options
         itemSelector: '.grid-item',
-        //columnWidth: 200
     });
 
-    $('#mobile-menu-btn').click(function(){
+    $('#hamburger-menu-btn').click(function(){
         $('.body-wrapper').toggleClass('opened');
     });
 
     $(function() {
         $(window).resize(function() {
-            $('#main-section').height($(window).height());
+            $('#main-section').height($(window).height() - $("#header").height());
         });
         $(window).resize();
     });

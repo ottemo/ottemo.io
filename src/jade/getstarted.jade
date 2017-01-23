@@ -1,7 +1,17 @@
 extends include/template
 block content
 
-    section.section.contacts-top
+    section.contacts-top.clearfix
+        .container
+            .contact-image-mobile.col-sm-6
+                img(src="img/contact-img.jpg").contact-image-block
+            .col-sm-6
+                h1.section-header How fast is your
+                    br
+                    | eCommerce platform?
+
+
+    //section.contacts-top
         .section-wrapper.container
             .contacts-top-wrapper.l-block-two-side
                 .contacts-column.l-block-side.l-align-left
@@ -13,10 +23,10 @@ block content
                     img(src="img/contact-img.jpg").contact-image-block
 
 
-    section.section.contact-form-section
+    section.contact-form-section
         .section-wrapper.container
             .text-side.col-lg-5
-                h2.section-header-l2 We guarantee
+                h1.section-header We guarantee
                     br
                     | it could be faster!
                 p.section-description We would love to show you a demo so you can see just how fast. Drop us a note and we'll get you more info...
