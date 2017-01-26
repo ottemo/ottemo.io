@@ -102,7 +102,7 @@ gulp.task('compile_sass', function() {
 // Compile js
 gulp.task('compile_js', function() {
     return gulp.src(paths.js)
-        .pipe($.concat('main.js'))
+        //.pipe($.concat('main.js'))
         .pipe(gulp.dest(paths.dist + '/js'))
         .pipe(reload({
             stream: true

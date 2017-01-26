@@ -51,6 +51,19 @@
   }
 }
 
+@mixin diagonal-bottom-color($deg, $height, $bottom, $color) {
+  &:after {
+    content: "";
+    display: block;
+    position: absolute;
+    height: $height;
+    width: 100%;
+    transform: skewY($deg);
+    background-color: $color;
+    bottom: $bottom;
+  }
+}
+
 @mixin respond-to($breakpoint) {
   @if $breakpoint == "xs" {
     @media (min-width: 320px) and (max-width: 766px) {
