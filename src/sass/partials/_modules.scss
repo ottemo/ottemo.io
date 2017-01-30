@@ -1103,27 +1103,69 @@ footer {
 // Why Ottemo Section
 
 .advantage-section {
-  @include diagonal-bottom-color(-3deg, 200px, -150px, $light-grey);
-  padding: 100px 0;
-  background: url("/img/advantage-img.png") no-repeat right bottom;
-  background-size: contain;
-}
-
-.runner-section {
-  @include diagonal-bottom-color(-3deg, 200px, -120px, $white);
-  background-color: $light-grey;
-  padding: 0;
-  .section-wrapper {
-    padding: 300px 0;
-    background: url("/img/runner.png") no-repeat left bottom;
+  @include respond-to(large) {
+    //height: 890px;
+    padding: 100px 0 200px;
+    background: url("/img/advantage-img.jpg") no-repeat right bottom;
     background-size: contain;
+    @include diagonal-bottom-color(-3deg, 200px, -150px, $light-grey);
+    img {
+      display: none;
+    }
+  }
+  @include respond-to(medium) {
+    @include diagonal-bottom-color(-3deg, 160px, -100px, $light-grey);
+  }
+  img {
+    width: 100%;
+  }
+  @include respond-to(small) {
+    @include diagonal-bottom-color(-3deg, 160px, -100px, $light-grey);
+    padding-top: 120px;
   }
 }
 
+.runner-section {
+  @include respond-to(large) {
+    @include diagonal-bottom-color(-3deg, 200px, -120px, $white);
+  }
+  background-color: $light-grey;
+  padding: 0;
+  .section-wrapper {
+    img {
+      display: none;
+      width: 100%;
+    }
+    @include respond-to(large) {
+      padding: 180px 0 320px;
+      background: url("/img/runner.png") no-repeat left center;
+      background-size: contain;
+    }
+    @include respond-to(medium) {
+      padding: 180px 0 320px;
+      background: url("/img/runner.png") no-repeat left center;
+      background-size: contain;
+    }
+    @include respond-to(small) {
+      @include diagonal-bottom-color(-3deg, 160px, -100px, $light-grey);
+      padding-top: 50px;
+      text-align: center;
+      img {
+        display: block;
+      }
+    }
+  }
+  @include respond-to(medium) {
+    @include diagonal-bottom-color(-3deg, 160px, -100px, $white);
+  }
+
+}
+
 .customer-trends-section {
-  padding: 100px 0;
-  background: url(/img/responsive-design.png) no-repeat right center;
-  background-size: auto 480px;
+  padding: 100px 0 200px;
+  background: url('/img/responsive-design.png') no-repeat right center;
+  background-size: contain;
+  @include diagonal-bottom-color(-3deg, 160px, -100px, $light-grey);
   .flexibility-banner {
     display: inline-block;
     margin-top: 24px;
@@ -1136,13 +1178,32 @@ footer {
   }
 }
 
-.best-innovetion-section {
-  @include diagonal-bottom-color(-3deg, 200px, -100px, $white);
+.best-innovation-section {
   background-color: $light-grey;
+  padding: 0;
   .section-wrapper {
-    padding: 150px 0;
-    background: url("/img/ipad-in-hands.png") no-repeat left bottom;
-    background-size: contain;
+
+    img {
+      width: 50%;
+    }
+    @include respond-to(large) {
+      padding: 100px 0 250px;
+      background: url("/img/ipad-in-hands.png") no-repeat left bottom;
+      background-size: contain;
+      img {
+        display: none;
+      }
+    }
+    @include respond-to(medium) {
+      text-align: center;
+      padding-bottom: 0;
+      .section-header {
+        text-align: center;
+      }
+      img {
+        margin-top: 40px;
+      }
+    }
   }
 }
 
@@ -1155,6 +1216,122 @@ footer {
     text-align: center;
     img {
       //max-height: 600px;
+    }
+  }
+}
+
+// Enterprise Cloud Edition Page
+
+.cloud-main-section {
+  background: url('/img/geometry.png') no-repeat right top;
+  text-align: center;
+  padding-top: 150px;
+  .large-header {
+    text-align: center;
+    h1 {
+      font-size: 52px;
+      line-height: 52px;
+    }
+    h2 {
+      font-size: 60px;
+      line-height: 60px;
+      margin: 0;
+      color: $ottemo-blue;
+    }
+    h3 {
+      font-size: 24px;
+    }
+    a {
+      margin: 24px 0;
+    }
+    margin-bottom: 150px;
+  }
+  .section-description {
+    max-width: 75%;
+    margin: 0 auto;
+  }
+}
+
+.image-block {
+  img {
+    width: 100%;
+  }
+}
+
+.keep-simple-section {
+  background-color: $light-grey;
+  padding: 100px 0;
+  overflow: hidden;
+  @include diagonal-bottom-color(3deg, 160px, -100px, $white);
+  @include diagonal-top-color(-3deg, 160px, -100px, $white);
+  .section-wrapper {
+    padding: 230px 0;
+    background: url('/img/keep-it-simple.png') no-repeat center;
+    background-size: contain;
+  }
+}
+
+.move-fast-section {
+  background: url('/img/fast-move.jpg') no-repeat left center;
+  background-size: contain;
+  padding: 220px;
+}
+
+.commerce-confidence-section {
+  background-color: $light-grey;
+  padding: 180px 0;
+  overflow: hidden;
+  @include diagonal-bottom-color(3deg, 160px, -100px, $white);
+  @include diagonal-top-color(-3deg, 160px, -100px, $white);
+  .section-wrapper {
+    padding: 180px 0;
+    background: url('/img/analytics-bg.png') no-repeat center;
+    background-size: contain;
+  }
+}
+
+.best-technologies-section {
+  background: url('/img/trophy.png') no-repeat left center;
+  background-size: contain;
+  padding: 240px 0;
+  margin-bottom: 70px;
+}
+
+.bottom-banner {
+  background: url("/img/banner-bg.jpg") no-repeat center;
+  background-size: cover;
+  padding: 70px 0;
+  .banner-block {
+    width: 33.333%;
+    display: inline-block;
+    margin: 0 -2px;
+    text-align: center;
+    a {
+      display: block;
+      border: 4px solid $ottemo-blue;
+      width: 280px;
+      margin: 0 auto;
+      padding: 32px 8px;
+      background-color: rgba(255,255,255,.65);
+      transition: .3s ease;
+      &:hover {
+        background-color: rgba(255,255,255,.85);
+        text-decoration: none;
+      }
+      .logo {
+
+      }
+      .words {
+        color: $ottemo-blue;
+        text-transform: uppercase;
+        .caption {
+          font-size: 18px;
+        }
+        .number {
+          font-size: 40px;
+          font-weight: 700;
+        }
+      }
     }
   }
 }

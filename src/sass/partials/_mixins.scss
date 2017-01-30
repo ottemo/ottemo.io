@@ -61,6 +61,21 @@
     transform: skewY($deg);
     background-color: $color;
     bottom: $bottom;
+    left: 0;
+  }
+}
+
+@mixin diagonal-top-color($deg, $height, $top, $color) {
+  &:before {
+    content: "";
+    display: block;
+    position: absolute;
+    height: $height;
+    width: 100%;
+    transform: skewY($deg);
+    background-color: $color;
+    top: $top;
+    left: 0;
   }
 }
 
