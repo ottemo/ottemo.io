@@ -1,5 +1,7 @@
 doctype html
 html(lang='en')
+    - var pageId = "";
+    block vars
     head
         meta(charset='UTF-8')
         meta(name="viewport", content="width=device-width, initial-scale=1.0, maximum-scale=1.0")
@@ -9,7 +11,7 @@ html(lang='en')
         link(rel='stylesheet', href='/css/owl.carousel.css')
         link(rel='stylesheet', href='/css/owl.transitions.css')
         link(rel='stylesheet', href='/css/style.css')
-    body
+    body(id='#{pageId}')
         .mobile-navigation
             nav
                 ul
@@ -25,7 +27,7 @@ html(lang='en')
                             li.nav-item
                                 a(href='/why-ottemo.html') Why Ottemo?
                             li.nav-item
-                                a(href='/professional-services.html') Professional Services
+                                a(href='/consulting.html') Professional Services
                     li.nav-item
                         a(href='/customers.html') Clients
                     li.nav-item
@@ -60,7 +62,7 @@ html(lang='en')
                                     li.nav-item
                                         a(href='/why-ottemo.html') Why Ottemo?
                                     li.nav-item
-                                        a(href='/professional-services.html') Professional Services
+                                        a(href='/consulting.html') Professional Services
                             li.nav-item
                                 a(href='/customers.html') Clients
                             li.nav-item

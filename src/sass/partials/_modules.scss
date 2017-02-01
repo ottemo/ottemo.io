@@ -82,9 +82,10 @@
   .navigation {
     display: none;
     text-align: center;
-    margin: 10px 0;
+    margin-top: 21px;
     ul {
       padding: 0;
+      margin: 0;
       .nav-item {
         display: inline-block;
         position: relative;
@@ -1221,40 +1222,41 @@ footer {
 }
 
 // Enterprise Cloud Edition Page
-
-.cloud-main-section {
-  background: url('/img/geometry.png') no-repeat right top;
-  text-align: center;
-  padding-top: 150px;
-  .large-header {
+#enterprise-cloud-edition-page {
+  .cloud-main-section {
+    background: url('/img/geometry.png') no-repeat right top;
     text-align: center;
-    h1 {
-      font-size: 52px;
-      line-height: 52px;
+    padding-top: 150px;
+    .large-header {
+      text-align: center;
+      h1 {
+        font-size: 52px;
+        line-height: 52px;
+      }
+      h2 {
+        font-size: 60px;
+        line-height: 60px;
+        margin: 0;
+        color: $ottemo-blue;
+      }
+      h3 {
+        font-size: 24px;
+      }
+      a {
+        margin: 24px 0;
+      }
+      margin-bottom: 150px;
     }
-    h2 {
-      font-size: 60px;
-      line-height: 60px;
-      margin: 0;
-      color: $ottemo-blue;
+    .section-description {
+      max-width: 75%;
+      margin: 0 auto;
     }
-    h3 {
-      font-size: 24px;
-    }
-    a {
-      margin: 24px 0;
-    }
-    margin-bottom: 150px;
   }
-  .section-description {
-    max-width: 75%;
-    margin: 0 auto;
-  }
-}
 
-.image-block {
-  img {
-    width: 100%;
+  .image-block {
+    img {
+      width: 100%;
+    }
   }
 }
 
@@ -1334,4 +1336,84 @@ footer {
       }
     }
   }
+}
+
+// Consulting Page
+
+#consulting-page {
+
+
+  .ps-image-block {
+    text-align: center;
+    img {
+      height: 250px;
+      @include respond-to(small) {
+        width: 100%;
+        height: auto;
+      }
+      @include respond-to(xs) {
+        width: 50%;
+        height: auto;
+        margin-bottom: 16px;
+      }
+    }
+    &.mobile {
+      display: none;
+    }
+    @include respond-to(xs) {
+      &.not-mobile {
+        display: none;
+      }
+      &.mobile {
+        display: block;
+      }
+    }
+  }
+
+  .ps-text-block {
+    .section-header,
+    .section-description {
+      text-align: left;
+    }
+    @include respond-to(xs) {
+      text-align: center;
+      .section-header,
+      .section-description {
+        text-align: center;
+      }
+    }
+  }
+
+  .consulting-top-section {
+    background-color: $light-grey;
+    padding: 0;
+    .section-wrapper {
+      padding: 150px 0;
+      background: url("/img/consulting.png") no-repeat right top;
+      background-size: cover;
+      @include respond-to(small) {
+        padding: 80px 0;
+        .section-header,
+        .section-description {
+          text-align: left;
+        }
+      }
+      @include respond-to(xs) {
+        text-align: center;
+        padding: 80px 0 50px;
+        background-position: center;
+      }
+    }
+  }
+
+  .consulting-row {
+    padding: 100px 0;
+    &:nth-child(even) {
+      background-color: $light-grey;
+    }
+    @include respond-to(xs) {
+      padding: 50px 0;
+    }
+  }
+
 }

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 20.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 530 500" style="enable-background:new 0 0 530 500;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:none;stroke:#303036;stroke-width:18;stroke-miterlimit:10;}
+	.st1{fill:#4A9FD9;}
+	.st2{fill:#FFFFFF;}
+</style>
+<g>
+	<g>
+		<path class="st0" d="M68,157.3v48.6c0,11.2,9.2,20.4,20.4,20.4h10.2"/>
+		<rect x="19.2" y="30" class="st0" width="97.7" height="97.7"/>
+		<path class="st0" d="M462,157.3v48.6c0,11.2-9.2,20.4-20.4,20.4h-10.2"/>
+		
+			<rect x="413.2" y="30" transform="matrix(-1 -4.490598e-11 4.490598e-11 -1 924 157.712)" class="st0" width="97.7" height="97.7"/>
+		
+			<rect x="215.8" y="30" transform="matrix(-1 -4.490598e-11 4.490598e-11 -1 529.186 157.712)" class="st0" width="97.7" height="97.7"/>
+		<line class="st0" x1="264.6" y1="236" x2="264.6" y2="78.9"/>
+	</g>
+	<g>
+		<path class="st0" d="M68,342.7v-48.6c0-11.2,9.2-20.4,20.4-20.4h10.2"/>
+		<rect x="19.2" y="372.3" class="st0" width="97.7" height="97.7"/>
+		<path class="st0" d="M462,342.7v-48.6c0-11.2-9.2-20.4-20.4-20.4h-10.2"/>
+		
+			<rect x="413.2" y="372.3" transform="matrix(-1 4.491506e-11 -4.491506e-11 -1 924 842.288)" class="st0" width="97.7" height="97.7"/>
+		
+			<rect x="215.8" y="372.3" transform="matrix(-1 4.491506e-11 -4.491506e-11 -1 529.186 842.288)" class="st0" width="97.7" height="97.7"/>
+		<line class="st0" x1="264.6" y1="264" x2="264.6" y2="421.1"/>
+	</g>
+	<rect x="116.4" y="177.5" class="st1" width="296.3" height="147"/>
+	<rect x="213.3" y="240.4" class="st2" width="21.3" height="21.3"/>
+	<rect x="254" y="240.4" class="st2" width="21.3" height="21.3"/>
+	<rect x="294.7" y="240.4" class="st2" width="21.3" height="21.3"/>
+</g>
+</svg>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 20.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 530 530" style="enable-background:new 0 0 530 530;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#4A9FD9;}
+	.st1{fill:none;stroke:#303036;stroke-width:18;stroke-miterlimit:10;}
+	.st2{fill:#303036;}
+	.st3{fill:none;stroke:#FFFFFF;stroke-width:18;stroke-miterlimit:10;}
+	.st4{fill:#A0C8EB;}
+</style>
+<g>
+	<circle class="st0" cx="266.3" cy="333.3" r="67.3"/>
+	<line class="st1" x1="20.9" y1="84" x2="510.3" y2="84"/>
+	<rect x="60.9" y="43.3" class="st2" width="20.8" height="20.8"/>
+	<rect x="101.7" y="43.3" class="st2" width="20.8" height="20.8"/>
+	<rect x="142.5" y="43.3" class="st2" width="20.8" height="20.8"/>
+	<polyline class="st3" points="234.2,327 259.7,352.5 299.2,313 	"/>
+	<path class="st1" d="M356.3,433.1h154V24.1H20.9v409.1h154"/>
+	<line class="st1" x1="265.6" y1="169.5" x2="265.6" y2="217"/>
+	<line class="st1" x1="265.6" y1="505" x2="265.6" y2="456"/>
+	<path class="st4" d="M53.7,118.5v282.2H156c-8.3-18.8-13.6-40.4-13.6-64.9V227.5l123.2-58l123.2,58v108.2
+		c0,24.5-5.3,46.1-13.6,64.9h104.4V118.5H53.7z"/>
+	<path class="st1" d="M265.6,169.5l-123.2,58v108.2c0,102.2,91.2,153.8,116.6,166.3c4.1,2,6.5,3,6.5,3s2.4-1,6.5-3
+		c25.4-12.4,116.6-64.1,116.6-166.3V227.5L265.6,169.5z"/>
+</g>
+</svg>
