@@ -28,7 +28,7 @@
       }
     }
     .submenu {
-      display: none;
+      //display: none;
     }
     li {
       border: none;
@@ -82,7 +82,7 @@
   .navigation {
     display: none;
     text-align: center;
-    margin-top: 21px;
+    margin-top: 20px;
     ul {
       padding: 0;
       margin: 0;
@@ -92,9 +92,11 @@
         a {
           margin: 10px;
           color: $grey;
-          font-size: 16px;
-          font-weight: 700;
-          text-transform: uppercase;
+          font-size: 18px;
+          font-weight: 500;
+          &:focus {
+            text-decoration: none;
+          }
         }
         &:hover {
           a {
@@ -109,6 +111,7 @@
           color: $ottemo-blue;
         }
         .submenu {
+          min-width: 200px;
           display: none;
           position: absolute;
           list-style: none;
@@ -116,10 +119,21 @@
           background-color: $white;
           border-radius: 2px;
           box-shadow: 0 5px 10px rgba(0,0,0,.15);
-          .nav-item a {
-            display: block;
-            min-width: 100px;
-            margin: 4px 10px;
+          .nav-item {
+            width: 100%;
+            a {
+              display: block;
+              color: $grey;
+              padding: 8px 0;
+              min-width: 100px;
+              margin: 4px 10px;
+            }
+            &:hover {
+              background-color: $light-grey;
+              a {
+                color: $ottemo-light-blue;
+              }
+            }
           }
         }
       }
@@ -709,6 +723,14 @@ footer {
       }
     }
   }
+}
+
+/*****************/
+/* Clients page */
+/*****************/
+
+#single-client-page {
+
 }
 
 .clients-links {
@@ -1471,4 +1493,149 @@ footer {
     }
   }
 
+}
+
+
+#single-client-page {
+  .client-top-image {
+    height: 600px;
+    background: radial-gradient(ellipse at center, #4c4c4c 0%,#000000 100%);
+    .wrapper {
+      display: table;
+      margin: 0 auto;
+      height: 100%;
+      width: 100%;
+      background-size: cover;
+
+      &.richkids-bg {
+        background: url("../img/clients-rich-kids-bg.jpg") no-repeat center;
+      }
+      &.karigran-bg {
+        background: url("../img/clients-karigran-bg.jpg") no-repeat center;
+      }
+      &.pocono-bg {
+        background: url("../img/clients-pocono-bg.jpg") no-repeat center;
+      }
+      .inner {
+        display: table-cell;
+        vertical-align: middle;
+        text-align: center;
+        color: $white;
+        .client-logo {
+          margin-bottom: 32px;
+          img {
+            max-height: 150px;
+          }
+        }
+        .client-description {
+          font-size: 24px;
+          font-weight: 300;
+        }
+      }
+    }
+  }
+
+  .customer-profile {
+    text-align: center;
+    img {
+      width: 100%;
+    }
+    @include respond-to(small) {
+      padding-top: 70px;
+    }
+  }
+
+  .client-feedback {
+    background-color: $light-grey;
+    text-align: center;
+    .feedback {
+      font-size: 20px;
+      margin-bottom: 24px;
+    }
+    .author {
+      list-style: none;
+      li {
+        font-size: 18px;
+        display: inline-block;
+        vertical-align: middle;
+        &.photo {
+          width: 60px;
+          height: 60px;
+          border-radius: 50%;
+          overflow: hidden;
+          background-color: $white;
+          margin-right: 8px;
+          img {
+            width: 100%;
+            height: 100%;
+          }
+        }
+        &.name {
+          font-weight: 700;
+          &:after {
+            content: ",";
+          }
+        }
+      }
+    }
+  }
+
+  .challenges {
+    .image-block {
+      overflow: hidden;
+      text-align: center;
+      img {
+        width: 65%;
+        @include respond-to(medium) {
+          width: 100%;
+        }
+      }
+    }
+  }
+
+  .solution {
+    .image-block {
+      text-align: center;
+      img {
+        width: 70%;
+      }
+      &.karigran img {
+        height: 500px;
+        width: auto;
+      }
+    }
+  }
+
+  .results {
+    text-align: center;
+    border-top: 1px solid #dadada;
+    .result-values {
+      margin: 60px 0;
+      .value {
+        display: inline-block;
+        width: 33.333%;
+        margin: 0 -2px;
+        padding: 16px;
+        border-right: 2px solid #dadada;
+        &:last-child {
+          border: none;
+        }
+        .number {
+          font-size: 40px;
+          color: $ottemo-blue;
+        }
+        .text {
+          text-transform: uppercase;
+          font-weight: 700;
+        }
+        @include respond-to(xs) {
+          display: block;
+          width: 75%;
+          margin: 0 auto;
+          border-right: none;
+          border-bottom: 2px solid #dadada;
+        }
+      }
+    }
+  }
 }

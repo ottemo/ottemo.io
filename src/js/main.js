@@ -37,3 +37,12 @@ $(document).ready(function() {
     })
 });
 
+$(window).scroll(function() {
+    $('.animated').each(function(){
+        var imagePos = $(this).offset().bottom;
+        var topOfWindow = $(window).scrollTop();
+        if (imagePos < topOfWindow+200) {
+            $(this).addClass('wobble');
+        }
+    });
+});

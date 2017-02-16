@@ -46,6 +46,10 @@ p, a, span {
     color: $white;
     background-color: $ottemo-blue;
   }
+  &:focus {
+    text-decoration: none;
+    color: $white;
+  }
 }
 
 .link {
@@ -53,6 +57,10 @@ p, a, span {
   font-weight: 700;
   color: $ottemo-blue;
   &:hover {
+    color: $ottemo-light-blue;
+    text-decoration: none;
+  }
+  &:focus {
     color: $ottemo-light-blue;
     text-decoration: none;
   }
