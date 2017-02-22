@@ -1,4 +1,6 @@
 extends include/template
+block vars
+    - var pageId = 'company-page';
 block content
     section.company-top
         .section-wrapper.layer-top.container
@@ -20,21 +22,41 @@ block content
                 | Ottemo is determined to democratize commerce by building the fastest, most scalable and complete unified commerce platform.
 
     section.section-founders
-        .container.l-text-align.center
-            h1.section-header.l-text-align.center The Founders
-            p.section-description
-                | Driven and Passionate about democratizing commerce!
-            ul.persons-list
-                li.item.col-sm-3.col-sm-offset-3.col-xs-6
-                    .person-photo
-                        img(src="img/profile-placeholder.png", alt="")
-                    strong.person-name Gavin Smith
-                    span.person-position Co-Founder / CEO
-                li.item.col-sm-3.col-xs-6
-                    .person-photo
-                        img(src="img/profile-placeholder.png", alt="")
-                    strong.person-name James Vastbinder
-                    span.person-position Co-Founder / CEO
+        .container
+            .team-member
+                .member-info.photo
+                    img(src="img/profile-placeholder.png", alt="")
+                .member-info.bio
+                    span.name Gavin Smith
+                    span.position Co-Founder / CEO
+                    p.bio
+                        | Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+
+            .team-member
+                .member-info.photo
+                    img(src="img/profile-placeholder.png", alt="")
+                .member-info.bio
+                    span.name Gavin Smith
+                    span.position Co-Founder / CEO
+                    p.bio
+                        | Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+
+        //
+            .container.l-text-align.center
+                h1.section-header.l-text-align.center The Founders
+                p.section-description
+                    | Driven and Passionate about democratizing commerce!
+                ul.persons-list
+                    li.item.col-sm-3.col-sm-offset-3.col-xs-6
+                        .person-photo
+                            img(src="img/profile-placeholder.png", alt="")
+                        strong.person-name Gavin Smith
+                        span.person-position Co-Founder / CEO
+                    li.item.col-sm-3.col-xs-6
+                        .person-photo
+                            img(src="img/profile-placeholder.png", alt="")
+                        strong.person-name James Vastbinder
+                        span.person-position Co-Founder / CEO
 
     section.section-investors
         .container.l-text-align.center

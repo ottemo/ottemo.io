@@ -1,50 +1,46 @@
 extends include/template
+block vars
+    - var pageId = 'contact-page';
 block content
 
-    section.contacts-top.clearfix
+    .contacts-top
         .container
-            .contact-image-mobile.col-sm-6
-                img(src="img/contact-img.jpg").contact-image-block
-            .col-sm-6
-                h1.section-header How fast is your
-                    br
-                    | eCommerce platform?
-
-
-    //section.contacts-top
-        .section-wrapper.container
-            .contacts-top-wrapper.l-block-two-side
-                .contacts-column.l-block-side.l-align-left
-                    .contacts-text-block
-                        h1.section-header How fast is your
-                            br
-                            | eCommerce platform?
-                .contacts-column.l-block-side.l-align-right
-                    img(src="img/contact-img.jpg").contact-image-block
-
+            h1.section-header.l-text-align.center Let's Chit-Chat
+            p.section-description.l-text-align.center
+                | If you are in the Seattle area we'd love to grab coffee and learn more about your company's needs.
+                | If you aren't we'll have to mail you a coffee and settle for chatting on the phone.
 
     section.contact-form-section
-        .section-wrapper.container
-            .text-side.col-lg-5
-                h1.section-header We guarantee
-                    br
-                    | it could be faster!
-                p.section-description We would love to show you a demo so you can see just how fast. Drop us a note and we'll get you more info...
-            .contacts-form-side.col-lg-7
-                form(method="post")
-                    p.input-field
-                        label(for="contact-name") Your Name
-                        input(type="text")#contact-name
-                    p.input-field
-                        label(for="contact-email") Your Email
-                        input(type="email")#contact-email
-                    p.input-field
-                        label(for="contact-company-type") Your Company Type
-                        input(type="email")#contact-company-type
-                    p.input-field
-                        label(for="contact-web-url") Your Website URL
-                        input(type="email")#contact-web-url
-                    p.input-field
-                        label(for="contact-phone") Your Phone Number
-                        input(type="email")#contact-phone
-                    a(href="#").contact-submit.button.button-big Submit Comment
+        .container
+            #mc_embed_signup.contact-form-box
+                form#mc-embedded-subscribe-form.validate(action='//ottemo.us3.list-manage.com/subscribe/post?u=06234e0e565e218e32eaef8c7&id=22ca4132bd', method='post', name='mc-embedded-subscribe-form', target='_blank', novalidate='')
+                    #mc_embed_signup_scroll
+                        .row
+                            .col-sm-6
+                                input#mce-NAME.form-field(type='text', placeholder='Name', value='', name='NAME')
+                            .col-sm-6
+                                input#mce-COMPANY.form-field(type='text', placeholder='Company', value='', name='COMPANY')
+                        .row
+                            .col-sm-6
+                                input#mce-PHONE.form-field(type='text', placeholder='Phone', name='PHONE', value='')
+                            .col-sm-6
+                                input#mce-EMAIL.form-field.required.email(type='email', placeholder='Email', value='', name='EMAIL')
+                        .row
+                            .col-sm-12
+                                textarea#mce-MESSAGE.form-field(rows='6', maxlength='256', placeholder='Any questions for us?', name='MESSAGE')
+                        #mce-responses.clear
+                            #mce-error-response.response(style='display:none')
+                            #mce-success-response.response(style='display:none')
+                        // real people should not fill this in and expect good things - do not remove this or risk form bot signups
+                        div(style='position: absolute; left: -5000px;', aria-hidden='true')
+                            input(type='text', name='b_06234e0e565e218e32eaef8c7_22ca4132bd', tabindex='-1', value='')
+                        .clear.col-sm-12.l-text-align.center
+                            input#mc-embedded-subscribe.button.button-big(type='submit', value='Send', name='subscribe')
+
+    .banner
+
+    .office-address
+        span.country United States
+        span 901 Occidental Ave S
+        span Suite 404
+        span Seattle, WA 98134

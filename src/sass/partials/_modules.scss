@@ -618,6 +618,51 @@ footer {
   }
 }
 
+#platform-overview-page {
+  .superior-roi {
+    padding: 90px 0;
+    margin-bottom: 50px;
+    background: url("/img/superior-roi.jpg") no-repeat 90% center;
+    background-size: contain;
+
+    @include respond-to(small) {
+      background: none;
+    }
+  }
+  .flexibility {
+    padding: 200px 0;
+    margin-bottom: 50px;
+    background: url("/img/flexibility.jpg") no-repeat center left;
+    background-size: contain;
+  }
+  .hosting {
+    padding: 150px 0;
+    margin-bottom: 50px;
+    background: url("/img/hosting.jpg") no-repeat center right;
+    background-size: contain;
+  }
+  .customer-experience {
+    padding: 200px 0;
+    //margin-bottom: -75px;
+    background: url("/img/customer-experience.jpg") no-repeat center left;
+    background-size: contain;
+  }
+  .post-order {
+    padding: 200px 0;
+    margin-bottom: -75px;
+    background: url("/img/post-order.jpg") no-repeat center left;
+    background-size: contain;
+  }
+  .checkout {
+    padding: 150px 0;
+    margin-bottom: 50px;
+    background: url("/img/checkout-iphone.jpg") no-repeat center right;
+    background-size: contain;
+  }
+}
+
+
+
 
 /*****************/
 /* Features page */
@@ -972,21 +1017,54 @@ footer {
   Contacts
 */
 
-.contacts-top {
-  height: 600px;
-  background-image: url(img/contact-img.jpg);
-  .contact-image-mobile {
-    display: none;
+#contact-page {
+  .contacts-top {
+    background-color: $light-grey;
+    padding: 70px 0 30px;
   }
-}
 
-.contact-form-section {
-  background-color: $light-grey;
-  padding-top: 0;
-  .contacts-form-side {
-    margin: 0 auto;
-    input {
-      width: 100%;
+  .contact-form-section {
+    background-color: $light-grey;
+    padding-top: 0;
+    .contact-form-box {
+      width: 75%;
+      margin: 40px auto;
+      .row {
+        margin-bottom: 32px;
+      }
+      .form-field {
+        width: 100%;
+        &::-webkit-input-placeholder {
+          font-size: 16px;
+        }
+      }
+      @include respond-to(xs) {
+        width: 100%;
+        .row {
+          margin: 0;
+          .form-field {
+            margin-bottom: 32px;
+          }
+        }
+      }
+    }
+  }
+  .banner {
+    width: 100%;
+    height: 350px;
+    background: url("/img/seattle-bg.jpg") no-repeat left;
+    background-size: cover;
+  }
+  .office-address {
+    text-align: center;
+    margin-bottom: 70px;
+    span {
+      display: block;
+      font-size: 18px;
+      &.country {
+        font-size: 32px;
+        padding: 32px 0;
+      }
     }
   }
 }
@@ -994,14 +1072,28 @@ footer {
 /*
   Company
 */
-
-.company-top {
-  overflow: hidden;
-  @include diagonal-top(-5deg, 500px, -400px);
-  @include diagonal-bottom(-5deg, 500px, -400px);
-  @include respond-to(mobile) {
-    text-align: center;
-    padding-top: 70px;
+#company-page {
+  .company-top {
+    overflow: hidden;
+    @include diagonal-top(-5deg, 500px, -400px);
+    @include diagonal-bottom(-5deg, 500px, -400px);
+    @include respond-to(mobile) {
+      text-align: center;
+      padding-top: 70px;
+    }
+  }
+  .section-founders {
+    .team-member {
+      width: 50%;
+      float: left;
+      .member-info {
+        width: 50%;
+        float: left;
+        &.photo img {
+          width: 100%;
+        }
+      }
+    }
   }
 }
 
@@ -1299,37 +1391,10 @@ footer {
 }
 
 // Enterprise Cloud Edition Page
-#enterprise-cloud-edition-page {
-  .cloud-main-section {
-    background: url('/img/geometry.png') no-repeat right top;
-    text-align: center;
-    padding-top: 150px;
-    .large-header {
-      text-align: center;
-      h1 {
-        font-size: 52px;
-        line-height: 52px;
-      }
-      h2 {
-        font-size: 60px;
-        line-height: 60px;
-        margin: 0;
-        color: $ottemo-blue;
-      }
-      h3 {
-        font-size: 24px;
-      }
-      a {
-        margin: 24px 0;
-      }
-      margin-bottom: 150px;
-    }
-    .section-description {
-      max-width: 75%;
-      margin: 0 auto;
-    }
-  }
+#ottemo-commerce-cloud-page {
+  .block.hero {
 
+  }
   .image-block {
     img {
       width: 100%;
@@ -1638,4 +1703,53 @@ footer {
       }
     }
   }
+}
+
+.block {
+  &.hero {
+    text-align: center;
+    padding: 200px 0;
+    background: url('/img/poligonal-background-2.png') no-repeat right top;
+    background-size: contain;
+    .hero-header-1 {
+      font-size: 52px;
+      line-height: 52px;
+    }
+    .hero-header-2 {
+      font-size: 60px;
+      line-height: 60px;
+      margin: 0;
+      color: $ottemo-blue;
+    }
+    .hero-header-3 {
+      font-size: 24px;
+    }
+    a {
+      margin: 24px 0;
+    }
+    .hero-text-container {
+      max-width: 75%;
+      margin: 0 auto;
+    }
+  }
+  &.article {
+    padding: 50px 0;
+  }
+}
+
+.text {
+  font-weight: 300;
+  &.base {
+    font-size: 16px;
+    line-height: 28px;
+  }
+  &.medium {
+    font-size: 20px;
+    line-height: 32px;
+  }
+  &.large {
+    font-size: 24px;
+    line-height: 42px;
+  }
+
 }
