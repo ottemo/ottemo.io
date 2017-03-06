@@ -49,7 +49,7 @@
   position: fixed;
   top: 0;
   width: 100%;
-  background-color: rgba(255,255,255,.8);
+  background-color: $white;
   text-align: center;
   z-index: 1000;
   .hamburger-menu-btn {
@@ -170,15 +170,19 @@ section {
 }
 
 //next prev buttons style
-.owl-buttons {
+.owl-controls {
   position: absolute;
-  bottom: 50px;
-  right: 0;
+  width: 100%;
+  top: 40%;
+}
+.owl-buttons {
+  position: relative;
   @include respond-to(xs) {
     position: static;
     margin-top: 24px;
   }
   div {
+    position: absolute;
     display: inline-block;
     width: 50px;
     height: 50px;
@@ -186,10 +190,11 @@ section {
     background-size: cover;
     &.owl-prev {
       background-image: url("../img/arrow-left.svg");
-      margin-right: 18px;
+      left: 0;
     }
     &.owl-next {
       background-image: url("../img/arrow-right.svg");
+      right: 0;
     }
   }
 }
@@ -205,9 +210,9 @@ section {
   &.opened {
     transform: translate(280px, 0);
   }
-  @include respond-to(mobile) {
+  /*@include respond-to(mobile) {
     padding-top: 0;
-  }
+  }*/
 }
 
 .section-header {
@@ -286,8 +291,8 @@ section {
       }
       .text-content {
         .hero-caption {
-          font-size: 60px;
-          line-height: 68px;
+          font-size: 48px;
+          line-height: 60px;
           font-weight: 400;
           margin: 24px 0;
           @include respond-to(xs) {
@@ -297,11 +302,7 @@ section {
           }
         }
         .hero-description {
-          font-size: 24px;
-          font-weight: 300;
-          @include respond-to(xs) {
-            font-size: 18px;
-          }
+          margin-bottom: 36px;
         }
         @include respond-to(xs) {
           text-align: center;
@@ -383,108 +384,6 @@ section {
           font-size: 18px;
         }
       }
-    }
-  }
-}
-
-.section-testimonials {
-  padding: 50px 0;
-  position: relative;
-  overflow: hidden;
-  @include respond-to(xs) {
-    text-align: center;
-  }
-  .testimonials-wrapper {
-    position: relative;
-    @include diagonal-background(500px, -200px);
-    .testimonials-header {
-      position: absolute;
-      @include respond-to(xs) {
-        position: static;
-      }
-      @include respond-to(small) {
-        position: static;
-        text-align: center;
-        h1 {
-          text-align: center;
-        }
-      }
-    }
-    .item {
-      .item-wrapper {
-        padding: 50px 0;
-        position: relative;
-        @include respond-to(xs) {
-          padding: 0;
-        }
-        @include respond-to(small) {
-          padding: 0;
-        }
-      }
-      .text-content {
-        padding-top: 230px;
-        @include respond-to(xs) {
-          padding-top: 0;
-        }
-        @include respond-to(small) {
-          padding-top: 0;
-        }
-        .testimonial-text {
-          font-size: 20px;
-          font-weight: 300;
-          font-style: italic;
-          &:before {
-            content: "";
-            display: block;
-            width: 32px;
-            height: 32px;
-            margin-bottom: 8px;
-            background-image: url("../img/quotes.svg");
-            background-size: cover;
-            @include respond-to(xs) {
-              display: none;
-            }
-          }
-        }
-        .author {
-          font-size: 24px;
-          font-weight: 300;
-          color: $grey;
-          font-style: italic;
-        }
-      }
-      .image-content {
-        img {
-          width: 98%;
-        }
-      }
-    }
-  }
-}
-
-.section-blog {
-  padding: 50px 0;
-  @include respond-to(xs) {
-    text-align: center;
-  }
-  @include respond-to(mobile) {
-    padding-top: 0;
-  }
-  .post-wrapper {
-    margin-bottom: 50px;
-    .post-picture {
-      width: 100%;
-      img {
-        width: 100%;
-      }
-    }
-    .post-title {
-      font-size: 30px;
-      font-weight: 400;
-    }
-    .post-description {
-      font-size: 20px;
-      font-weight: 300;
     }
   }
 }
@@ -618,7 +517,147 @@ footer {
   }
 }
 
+#homepage {
+
+  .clients {
+    text-align: center;
+    background-color: $light-grey;
+    padding-bottom: 70px;
+    .clients-row {
+      margin: 50px 0;
+      .logo {
+        position: relative;
+        overflow: hidden;
+        display: inline-block;
+        vertical-align: middle;
+        padding-top: 50px;
+        margin: 0 -2px;
+        width: 16.666%;
+        height: 150px;
+        .additional {
+          position: absolute;
+          top: -148px;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background-color: $ottemo-blue-transp;
+          transition: .3s ease;
+          a {
+            display: block;
+            color: $white;
+            text-transform: uppercase;
+            text-decoration: none;
+            font-weight: 700;
+            padding-top: 115px;
+          }
+        }
+        &:hover {
+          .additional {
+            top: 0;
+          }
+        }
+        img {
+          width: 70%;
+        }
+      }
+    }
+  }
+
+  .solutions {
+    text-align: center;
+    padding: 70px 0;
+    .solutions-group {
+      margin: 50px 0;
+      .solution {
+        .icon {
+          height: 120px;
+          img {
+            height: 100%;
+          }
+        }
+        .solution-name {
+          min-height: 60px;
+        }
+      }
+    }
+  }
+
+  .testimonials {
+    text-align: center;
+    .testimonials-wrapper {
+      margin-bottom: 25px;
+      padding: 50px 0;
+      position: relative;
+      text-align: left;
+      font-style: italic;
+      .quote {
+        height: 400px;
+        .author {
+          font-size: 24px;
+        }
+        .left-side {
+          text-align: right;
+          margin-top: 50px;
+          @include respond-to(medium) {
+            margin: 0;
+          }
+        }
+        .right-side {
+          text-align: left;
+          img {
+            height: 400px;
+
+          }
+        }
+      }
+    }
+  }
+}
+
+#homepage,
+#ottemo-commerce-cloud-page {
+  .blog {
+    background-color: $light-grey;
+    padding: 50px 0;
+    @include respond-to(xs) {
+      text-align: center;
+    }
+    @include respond-to(mobile) {
+      padding-top: 0;
+    }
+    .post-wrapper {
+      color: $dark-grey;
+      text-decoration: none;
+      margin-bottom: 50px;
+      .post-picture {
+        width: 100%;
+        img {
+          width: 100%;
+        }
+      }
+      .post-title {
+        font-size: 30px;
+        font-weight: 400;
+      }
+      .post-description {
+        font-size: 20px;
+        font-weight: 300;
+      }
+    }
+  }
+}
+
 #platform-overview-page {
+  .superior-roi-2 {
+    .image-container {
+      height: 620px;
+      img {
+        transform: translateY(-100px);
+        max-height: 100%;
+      }
+    }
+  }
+
   .superior-roi {
     padding: 90px 0;
     margin-bottom: 50px;
@@ -643,8 +682,13 @@ footer {
   }
   .customer-experience {
     padding: 200px 0;
-    //margin-bottom: -75px;
     background: url("/img/customer-experience.jpg") no-repeat center left;
+    background-size: contain;
+  }
+  .business-intelligence {
+    padding: 150px 0;
+    margin-bottom: 50px;
+    background: url("/img/BusinessIntellgence.jpg") no-repeat center right;
     background-size: contain;
   }
   .post-order {
@@ -1073,24 +1117,91 @@ footer {
   Company
 */
 #company-page {
-  .company-top {
-    overflow: hidden;
-    @include diagonal-top(-5deg, 500px, -400px);
-    @include diagonal-bottom(-5deg, 500px, -400px);
-    @include respond-to(mobile) {
-      text-align: center;
-      padding-top: 70px;
-    }
-  }
-  .section-founders {
+  .team {
+    margin-bottom: 70px;
     .team-member {
-      width: 50%;
       float: left;
+      cursor: pointer;
+      overflow: hidden;
+      width: 33.333%;
+      color: $white;
+      position: relative;
+      background: $dark-grey;
+      img {
+        max-width: calc(100% + 20px);
+        width: calc(100% + 20px);
+        height: auto;
+        vertical-align: middle;
+        transition: .5s;
+      }
       .member-info {
-        width: 50%;
-        float: left;
-        &.photo img {
-          width: 100%;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        padding: 20px;
+        width: 100%;
+        transform: translate3d(0,10px,0);
+        transition: .3s;
+        background: linear-gradient(to bottom,rgba(0,0,0,0) 0,rgba(0,0,0,.7) 100%);
+        .member-name {
+          font-size: 30px;
+          font-weight: 100;
+          line-height: 1;
+          margin-bottom: 10px;
+          color: #fff;
+        }
+        .member-title {
+          font-size: 16px;
+          transition-delay: .3s;
+          transform: translate3d(0,100%,0);
+          display: none;
+        }
+      }
+      .member-bio {
+        opacity: 0;
+        height: 100%;
+        width: 100%;
+        transform: scale(3,3);
+        transition: .3s;
+        position: absolute;
+        top: 0;
+        left: 0;
+        padding: 30px;
+        font-size: 16px;
+        background: rgba(0,0,0,.5);
+        font-weight: 400;
+      }
+      .member-name {
+        font-family: 'Roboto Slab', serif;
+        font-size: 24px;
+      }
+      .member-title {
+        font-family: 'Lato', sans-serif;
+      }
+      &:hover {
+        img {
+          transform: translate3d(-18px,0,0);
+        }
+        .member-info {
+          transform: translate3d(0,0,0);
+          .member-title {
+            transition-delay: 0s;
+            //opacity: 1;
+            display: block;
+            transform: translate3d(0,0,0);
+          }
+        }
+      }
+      &.active {
+        img {
+          transform: translate3d(-18px,0,0) scale(1.1);
+        }
+        .member-info {
+          transform: translate3d(0,100%,0);
+        }
+        .member-bio {
+          opacity: 1;
+          transform: scale(1,1);
         }
       }
     }
@@ -1270,15 +1381,79 @@ footer {
   }
 }
 
-// Why Ottemo Section
+// Why Ottemo Page
+#why-ottemo-page {
+
+  .ottemo-power {
+    display: table;
+    height: 770px;
+    width: 100%;
+    background-color: $light-grey;
+    .background {
+      display: table-cell;
+      vertical-align: middle;
+      background: url("/img/Thepowerofottemo.png") no-repeat bottom right;
+      background-size: contain;
+    }
+    @include respond-to(medium) {
+      .background {
+        vertical-align: top;
+        padding-top: 70px;
+        text-align: center;
+      }
+    }
+  }
+
+  .built-to-grow {
+    padding: 100px 0;
+    text-align: center;
+    img {
+      max-width: 100%;
+      margin-bottom: 40px;
+    }
+  }
+
+  .consumer-trends {
+    padding: 100px 0;
+    background: url('/img/fera-responsive.png') no-repeat right center;
+    background-size: contain;
+    margin-top: -50px;
+  }
+
+  .grow-sales {
+    padding: 200px 0;
+    margin-top: -50px;
+    background: url("/img/growsales.jpg") no-repeat center left;
+    background-size: contain;
+  }
+
+  .committed-to-success {
+    display: table;
+    height: 500px;
+    width: 100%;
+    .image-block {
+      height: 100%;
+      text-align: center;
+      img {
+        height: 100%;
+      }
+    }
+  }
+
+  .professional-services {
+    padding: 200px 0;
+    margin-bottom: 50px;
+    background: url("/img/Professionalservices.jpg") no-repeat center left;
+    background-size: contain;
+  }
+}
+
 
 .advantage-section {
   @include respond-to(large) {
-    //height: 890px;
     padding: 100px 0 200px;
     background: url("/img/advantage-img.jpg") no-repeat right bottom;
     background-size: contain;
-    @include diagonal-bottom-color(-3deg, 200px, -150px, $light-grey);
     img {
       display: none;
     }
@@ -1331,23 +1506,6 @@ footer {
 
 }
 
-.customer-trends-section {
-  padding: 100px 0 200px;
-  background: url('/img/responsive-design.png') no-repeat right center;
-  background-size: contain;
-  @include diagonal-bottom-color(-3deg, 160px, -100px, $light-grey);
-  .flexibility-banner {
-    display: inline-block;
-    margin-top: 24px;
-    color: $ottemo-blue;
-    text-transform: uppercase;
-    font-size: 48px;
-    font-weight: 900;
-    border: 4px solid $ottemo-blue;
-    padding: 16px;
-  }
-}
-
 .best-innovation-section {
   background-color: $light-grey;
   padding: 0;
@@ -1377,113 +1535,169 @@ footer {
   }
 }
 
-.boost-sales-section {
-  padding-bottom: 0;
-  .section-text {
-    padding-top: 280px;
-  }
-  .section-image {
-    text-align: center;
-    img {
-      //max-height: 600px;
-    }
-  }
-}
-
-// Enterprise Cloud Edition Page
+// Ottemo Commerce Cloud Page
 #ottemo-commerce-cloud-page {
   .block.hero {
 
   }
-  .image-block {
-    img {
-      width: 100%;
-    }
-  }
-}
-
-.keep-simple-section {
-  background-color: $light-grey;
-  padding: 100px 0;
-  overflow: hidden;
-  @include diagonal-bottom-color(3deg, 160px, -100px, $white);
-  @include diagonal-top-color(-3deg, 160px, -100px, $white);
-  .section-wrapper {
-    padding: 230px 0;
-    background: url('/img/keep-it-simple.png') no-repeat center;
-    background-size: contain;
-  }
-}
-
-.move-fast-section {
-  background: url('/img/fast-move.jpg') no-repeat left center;
-  background-size: contain;
-  padding: 220px;
-}
-
-.commerce-confidence-section {
-  background-color: $light-grey;
-  padding: 180px 0;
-  overflow: hidden;
-  @include diagonal-bottom-color(3deg, 160px, -100px, $white);
-  @include diagonal-top-color(-3deg, 160px, -100px, $white);
-  .section-wrapper {
-    padding: 180px 0;
-    background: url('/img/analytics-bg.png') no-repeat center;
-    background-size: contain;
-  }
-}
-
-.best-technologies-section {
-  background: url('/img/trophy.png') no-repeat left center;
-  background-size: contain;
-  padding: 240px 0;
-  margin-bottom: 70px;
-}
-
-.bottom-banner {
-  background: url("/img/banner-bg.jpg") no-repeat center;
-  background-size: cover;
-  padding: 70px 0;
-  .banner-block {
-    width: 33.333%;
-    display: inline-block;
-    margin: 0 -2px;
+  .cloud-platform {
     text-align: center;
-    a {
-      display: block;
-      border: 4px solid $ottemo-blue;
-      width: 280px;
-      margin: 0 auto;
-      padding: 32px 8px;
-      background-color: rgba(255,255,255,.65);
-      transition: .3s ease;
-      &:hover {
-        background-color: rgba(255,255,255,.85);
-        text-decoration: none;
+    .image-block {
+      img {
+        width: 100%;
       }
-      .logo {
+    }
+  }
 
-      }
-      .words {
-        color: $ottemo-blue;
-        text-transform: uppercase;
-        .caption {
-          font-size: 18px;
+  .heavy-lifting {
+      padding: 230px 0;
+      background: url('/img/OttemoDoesTheHeavyLifting.png') no-repeat center;
+      background-size: contain;
+  }
+
+  .get-faster {
+    padding: 200px 0;
+    background: url('/img/GetToMarketFaster.jpg') no-repeat left center;
+    background-size: contain;
+
+  }
+  .make-easy {
+    padding: 200px 0;
+    margin-bottom: 50px;
+    background: url('/img/MakeItEasy.jpg') no-repeat center right;
+    background-size: contain;
+  }
+
+  .scalability {
+    background: url('/img/scalability.jpg') no-repeat left center;
+    background-size: contain;
+    padding: 240px 0;
+    margin: -100px 0 70px;
+  }
+
+  .bottom-banner {
+    background: url("/img/BottomOfOttemoClouldCommercepage.jpg") no-repeat center;
+    background-size: cover;
+    padding: 100px 0;
+    .banner-block {
+      width: 50%;
+      display: inline-block;
+      margin: 0 -2px;
+      text-align: center;
+      a {
+        display: block;
+        border: 4px solid $ottemo-blue;
+        width: 350px;
+        margin: 0 auto;
+        padding: 50px 24px;
+        background-color: rgba(255,255,255,.65);
+        transition: .3s ease;
+        &:hover {
+          background-color: rgba(255,255,255,.85);
+          text-decoration: none;
         }
-        .number {
-          font-size: 40px;
-          font-weight: 700;
+        .logo {
+          width: 80%;
+          height: 100px;
+          margin: 0 auto 16px;
+          position: relative;
+          img {
+            position: absolute;
+            top: 50%;
+            left: 0;
+            transform: translateY(-50%);
+            width: 100%;
+          }
+        }
+        .words {
+          color: $dark-grey;
+          text-transform: uppercase;
+          .caption {
+            font-size: 18px;
+          }
+          .number {
+            font-size: 40px;
+            font-weight: 700;
+          }
         }
       }
     }
   }
+
+  .blog {
+    .section-header {
+      margin-bottom: 32px;
+    }
+    .post-wrapper {
+      height: 410px;
+      .post-picture {
+        height: 200px;
+        overflow: hidden;
+        img {
+          width: 100%;
+
+        }
+      }
+      .post-title {
+        font-size: 24px;
+      }
+    }
+  }
+
 }
+
 
 // Consulting Page
+#services-page {
 
-#consulting-page {
-
+  .subnav {
+    display: none;
+    width: 100%;
+    background-color: $dark-grey;
+    position: fixed;
+    left: 0;
+    top: 65px;
+    z-index: 100;
+    text-align: center;
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      .nav-item {
+        display: inline-block;
+        position: relative;
+        a {
+          display: block;
+          font-size: 16px;
+          line-height: 1;
+          color: $grey;
+          padding: 24px 8px;
+          text-decoration: none;
+          transition: .3s ease;
+          &:hover {
+            color: $ottemo-light-blue;
+          }
+        }
+        &.active {
+          a {
+            color: $ottemo-light-blue;
+          }
+          &:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: $ottemo-light-blue;
+          }
+        }
+      }
+    }
+    @include respond-to(large) {
+      display: block;
+    }
+  }
 
   .ps-image-block {
     text-align: center;
@@ -1529,6 +1743,7 @@ footer {
   .consulting-top-section {
     background-color: $light-grey;
     padding: 0;
+    //margin-top: 59px;
     .section-wrapper {
       padding: 150px 0;
       background: url("/img/consulting.png") no-repeat right top;
@@ -1546,9 +1761,12 @@ footer {
         background-position: center;
       }
     }
+    @include respond-to(large) {
+      margin-top: 59px;
+    }
   }
 
-  .consulting-row {
+  .services-row {
     padding: 100px 0;
     &:nth-child(even) {
       background-color: $light-grey;
@@ -1602,6 +1820,7 @@ footer {
 
   .customer-profile {
     text-align: center;
+    background-color: $light-grey;
     img {
       width: 100%;
     }
@@ -1610,50 +1829,12 @@ footer {
     }
   }
 
-  .client-feedback {
-    background-color: $light-grey;
-    text-align: center;
-    .feedback {
-      font-size: 20px;
-      margin-bottom: 24px;
-    }
-    .author {
-      list-style: none;
-      li {
-        font-size: 18px;
-        display: inline-block;
-        vertical-align: middle;
-        &.photo {
-          width: 60px;
-          height: 60px;
-          border-radius: 50%;
-          overflow: hidden;
-          background-color: $white;
-          margin-right: 8px;
-          img {
-            width: 100%;
-            height: 100%;
-          }
-        }
-        &.name {
-          font-weight: 700;
-          &:after {
-            content: ",";
-          }
-        }
-      }
-    }
-  }
-
   .challenges {
     .image-block {
       overflow: hidden;
       text-align: center;
       img {
-        width: 65%;
-        @include respond-to(medium) {
-          width: 100%;
-        }
+        width: 100%;
       }
     }
   }
@@ -1665,8 +1846,7 @@ footer {
         width: 70%;
       }
       &.karigran img {
-        height: 500px;
-        width: auto;
+        width: 100%;
       }
     }
   }
@@ -1706,9 +1886,10 @@ footer {
 }
 
 .block {
+  position: relative;
   &.hero {
     text-align: center;
-    padding: 200px 0;
+    padding: 150px 0;
     background: url('/img/poligonal-background-2.png') no-repeat right top;
     background-size: contain;
     .hero-header-1 {
@@ -1752,4 +1933,22 @@ footer {
     line-height: 42px;
   }
 
+}
+
+.heading {
+  font-family: 'Roboto Slab', serif;
+  &.h1 {
+    font-size: 40px;
+    font-weight: 400;
+    line-height: 52px;
+    margin: 8px 0;
+    @include respond-to(xs) {
+      font-size: 30px;
+      line-height: 40px;
+    }
+    @include respond-to(small) {
+      font-size: 30px;
+      line-height: 40px;
+    }
+  }
 }

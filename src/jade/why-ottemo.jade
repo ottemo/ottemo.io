@@ -5,68 +5,77 @@ extends include/template
 block vars
     - var pageId = 'why-ottemo-page';
 block content
-    section.advantage-section
-        .container
-            .col-lg-6
-                h1.section-header The Power of Ottemo
-                p.section-description.medium
-                    | Why go with Ottemo? Lower Total Cost of Ownership and get to market 3x faster than other solutions in the market. Take
-                    | advantage of the world's most powerful and versatile Enterprise Cloud Commerce Platform. Ottemo offers the easiest,
-                    | fastest way to deploy enterprise commerce sites to the cloud with limitless scalability. Ottemo gives you the power of the
-                    | cloud to create flexible, customizable sites that adapt quickly to changing buying patterns. Now you have a unified,
-                    | innovative, fast and agile platform that provides a premium customer buying experience. You get a significantly lower
-                    | TCO than merchants on competitive commerce platforms--helping boost online sales and maximizing gross margins.
-                    | That's the Ottemo Advantage.
-        img(src="/img/advantage-img-md.jpg")
 
-    section.runner-section
-        .section-wrapper
+    .block.ottemo-power
+        .background
             .container
-                .col-md-6.col-md-offset-6
-                    h1.section-header Built to Grow With You
+                .col-lg-6
+                    h1.heading.h1 The Power of Ottemo
                     p.section-description.medium
-                        | Built on an API-first open architecture. Ottemo grows alongside you. Our fast, flexible APIs seamlessly integrate with all
-                        | your enterprise applications. As new touchpoints and channels develop or business users need new functionality, Ottemo
-                        | is easily and fully extendable to meet all your future needs. You can rapidly scale with confidence because our
-                        | cost-effective platform increases your operational efficiency every step of the way.
-            img(src="/img/runner.png")
-    section.customer-trends-section
+                        | Why go with Ottemo? Lower Total Cost of Ownership and get to market 3x faster than
+                        | other solutions. Take advantage of the world's most powerful and versatile Enterprise
+                        | Cloud Commerce Platform. Ottemo offers the easiest, fastest way to deploy enterprise
+                        | commerce sites to the cloud with limitless scalability. Ottemo gives you the power of the
+                        | cloud to create flexible, customizable sites that adapt quickly to changing buying
+                        | patterns. Now you have a unified, innovative, fast and agile platform that provides a
+                        | premium customer buying experience. You get a significantly lower TCO than
+                        | merchants on competitive commerce platforms--helping boost online sales and
+                        | maximizing gross margins. That's the Ottemo Advantage.
+
+    .block.article.built-to-grow
+        .container
+            h1.heading.h1 Built to Grow With You
+            p.section-description.medium
+                | Built on an API-first open architecture. Ottemo grows alongside you. Our fast, flexible APIs seamlessly integrate with all
+                | your enterprise applications. As new touchpoints and channels develop or business users need new functionality, Ottemo
+                | is easily and fully extendable to meet all your future needs. You can rapidly scale with confidence because our
+                | cost-effective platform increases your operational efficiency every step of the way.
+            img(src="/img/BuiltToGrow.png")
+
+    .block.article.consumer-trends
         .container
             .col-md-6
-                h1.section-header Stay on top of Consumer Trends
+                h1.section-header
+                    | Stay on top
+                    br
+                    | of Consumer Trends
                 p.section-description.medium
                     | Customers change their behavior on a whim, challenging you to constantly innovate to keep up. By merging our advanced
                     | capabilities with the flexibility of the cloud, Ottemo gives you the power to create unique, mobile, branded customer
                     | experiences for each shopper. Adapt quickly and respond rapidly to shifting consumer tastes and trends. That's the
                     | Ottemo Advantage.
-    section.best-innovation-section
-        .section-wrapper
-            .container
-                .col-lg-6.col-lg-offset-6
-                    h1.section-header Cut Costs & Grow Sales.
-                    p.section-description.medium
-                        | Our clients realize a 100+ percent reduction in Total Costs of Ownership. You don't have to worry about infrastructure
-                        | anymore. Put the money you spend on hardware, hosting, and maintenance where it counts: gaining new customers and
-                        | growing sales. Now your team can put their energy into revenue-producing, strategic projects rather than spending time
-                        | on endless upgrades, monitoring servers, and code patches. Our cloud-based solution means we can support and scale
-                        | your growth plans on demand. Anything less is too slow in today's fast-paced commerce industry.
-            img(src="/img/ipad-in-hands-md.png")
-    section.boost-sales-section
+
+    .block.article.grow-sales
         .container
-            .section-text.col-md-6
-                h1.section-header Committed to Your Success
-                p.section-description.medium
-                    | We a re 100% co mmitted to ensuring your continuous success on Ottemo. That’s why we created the Customer Success
-                    | team. To ensure your success and continued growth, you get a dedicated account management team to address any key
-                    | issues and opportunities to help optimize the Ottemo platform for your needs. You have a single point of contact whose
-                    | number 1 goal is to make your business succeed.
-            .section-image.col-md-6
-                img(src="/img/man-with-laptop.png" alt="Man with laptop")
-    section
+            .col-md-6.col-md-offset-6
+                h1.section-header Cut Costs & Grow Sales.
+                p.text.medium
+                    | Our clients realize a 75%+ reduction in Total Costs of Ownership. You don't have to worry about
+                    | infrastructure anymore. We take care of the hardware, hosting, and maintenance so you have
+                    | time to put that energy where it counts: gaining new customers and growing sales. Never think
+                    | about endless upgrades, monitoring servers, or code patches again. Our cloud-based solution
+                    | means we can support and scale your growth plans on-demand. Anything less is too slow in
+                    | today's fast-paced commerce industry.
+
+    .block.article.committed-to-success
         .container
             .col-md-6
+                h1.section-header Committed to Your Success
+                p.text.medium
+                    | Our engineers and product development team are hyper-focused on making the world's
+                    | most innovative and flexible enterprise cloud commerce solutions. Our Professional
+                    | Services team will give you the extra support you need. With extensive expertise in
+                    | taking commerce sites from proof-of-concept to implementation, to market. We work
+                    | with our customers and partners to simplify the launching process and take you to
+                    | market faster via the cloud with optimized performance to ensure your success.
+            .col-md-6.image-block
+                img(src="/img/Commitedtoyoursuccess.jpg")
+
+    .block.article.professional-services
+        .container
+            .col-md-6.col-md-offset-6
                 h1.section-header Professional Services
-                p.section-description.medium
+                p.text.medium
                     | Our engineers and product development team is laser focused on making the world's most innovative and flexible
                     | enterprise cloud commerce solutions. Our Professional Services team will give you the extra support you need. With
                     | extensive expertise in taking commerce sites from proof-of-concept to implementation. We work with our customers and

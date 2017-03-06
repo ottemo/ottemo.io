@@ -1,4 +1,6 @@
 extends include/template
+block vars
+    - var pageId = 'homepage';
 block extraStyles
     link(rel='stylesheet', href='/css/animate.css')
 block content
@@ -10,29 +12,121 @@ block content
                     .image-content.col-md-6
                         img(src="/img/ultimo-theme.png", alt="Ultimo Theme")
                     .text-content.col-md-6
-                        h1.hero-caption.animated
-                            | The Unified
-                            | Commerce Platform
-                        p.hero-description
-                            | A unified commerce experience across mobile, web and store all in real-time
-                        a.button.button-big(href="#") Learn More
+                        h1.hero-caption
+                            | A Powerful enterprise ecommerce platform that
+                            | works for you.
+                        p.text.large.hero-description
+                            | Sell more. Scale more.
+                        a.button.button-big(href="/platform-overview.html") Explore the Platform
 
-    section.section-capabilities
+    .block.article.clients
         .container
-            h1.section-header.l-text-align.center
-                | Commerce is expensive,
-                br
-                | complex and slow.  We're here to change that
-            .capabilities-wrapper
-                .block-image-side.col-sm-8
-                    img(src="../img/ipad-capabilities.png", alt="")
-                .block-text-side.col-sm-4
-                    ul
-                        li Commerce
-                        li Site Search
-                        li Analytics
-                        li Order Management
-                        li One-to-One Personalization
+            h1.heading.h1
+                | Ottemo Clients
+            p.text.large Just some of the great companies powered by Ottemo
+            .clients-row
+                .logo
+                    .additional
+                        a(href="/case-studies/karigran.html") See Their Story
+                    img(src="img/logos/Karigran.png" alt="karigran logo")
+                .logo
+                    img(src="img/logos/Poconovapes.png" alt="poconovapes logo")
+                .logo
+                    img(src="img/logos/Southcoastswords.png" alt="southcoastswords logo")
+                .logo
+                    img(src="img/logos/Richkidsbrand.png" alt="richkidsbrand")
+                .logo
+                    img(src="img/logos/gholkars.svg" alt="Gholkar’s Logo")
+                .logo
+                    img(src="img/logos/ferastyle-logo.png" alt="FeraStyle Logo")
+
+    .block.article.solutions
+        .container
+            h1.heading.h1
+                | Breakthrough Solutions for The Enterprise
+            .solutions-group
+                .solution.col-md-3.col-sm-6
+                    .icon
+                        img(src="/img/future-icon.svg" alt="icon")
+                    .solution-name
+                        h3
+                            | Future
+                            br
+                            | of Commerce
+                    p.text.base
+                        | Our forward-thinking enterprise commerce solutions enable the flexibility, speed, and
+                        | innovations needed to stay ahead of the always evolving world of online commerce.
+                .solution.col-md-3.col-sm-6
+                    .icon
+                        img(src="/img/experience-icon.svg" alt="icon")
+                    .solution-name
+                        h3 Personalised Experiences
+                    p.text.base
+                        | Our next-level framework allows you to create fully customizable experiences that captivates
+                        | your customers while staying consistent on all devices.
+                .solution.col-md-3.col-sm-6
+                    .icon
+                        img(src="/img/stayahead-icon.svg" alt="icon")
+                    .solution-name
+                        h3
+                            | Stay
+                            br
+                            | Ahead
+                    p.text.base
+                        | We consistently and seamlessly deploy new features and enhancements to keep you on top of
+                        | best-in-class technologies so your platform is always evolving.
+                .solution.col-md-3.col-sm-6
+                    .icon
+                        img(src="/img/integration-icon.svg" alt="icon")
+                    .solution-name
+                        h3 Integrate
+                    p.text.base
+                        | Fully integrate to your existing enterprise technology stack that runs your business (ERP, CRM,
+                        | OMS, Fulfillment, and more).
+
+    .block.article.testimonials
+        .container
+            h1.heading.h1 Our clients success is our success
+            p.text.large
+                | Ottemo is powering the next generation of digital commerce
+            #owl-testimonials.testimonials-wrapper
+                .quote
+                    .left-side.col-md-5.col-md-offset-1
+                        p.text.medium
+                            | Ottemo completely transformed our online business. It doesn’t
+                            | seem possible that a simple platform switch could result in mobile sales
+                            | almost immediately doubling, then tripling. The backend ease for our
+                            | shipping department was worth the switch alone. Ottemo is a
+                            | straight-forward solution that was a welcome relief from Magento and the
+                            | lack of support we were experiencing.”
+                        span.author Lisa Strain, Co-founder, Karigran
+                    .right-side.col-md-6
+                        img(src="/img/karigran.png")
+                .quote
+                    .left-side.pocono.col-md-5.col-md-offset-1
+                        p.text.medium
+                            | You guys rock! Our website relies on flash sales so instant
+                            | on-demand scalability is a requirement without crashing or performances
+                            | issues, since making the move we haven’t had to worry at all. Our web
+                            | sales were pretty bad before we switched over to Ottemo. It was like
+                            | instantly pouring rocket fuel into our revenue. My only regret is not making
+                            | the move sooner.
+                        span.author Corinne Miller, Owner, Pocono Vapes
+                    .right-side.col-md-6
+                        img(src="/img/pv-testimonial.jpg")
+                .quote
+                    .left-side.col-md-5.col-md-offset-1
+                        p.text.medium
+                            | We recently switched from another popular eCommerce platform
+                            | and I’ve got to say that the difference has been night and day. While our
+                            | new site performs much faster, the biggest differentiator has been the
+                            | level of personal service. The dev team at Ottemo really bends over
+                            | backwards to make sure our needs get met.
+                        span.author RJ Mckeehan, Co-founder, South Coast Swords
+                    .right-side.col-md-6
+                        img(src="/img/southcoast.png")
+
+            a.button.button-big(href="/clients.html") Read Their Stories
 
     section.section-features
         .container
@@ -40,7 +134,7 @@ block content
                 img(src="/img/imac-features.png" alt="Features image")
             .text-content.col-md-6
                 .feature-block
-                    h1.block-title Lightning Fast Store
+                    h1.block-title Lighting Fast Enterprise Commerce
                     p.block-description
                         | Ottemo is architected for high performance. We handle hosting, scaling, integration touch points for you. Now you can rest assured that you are serving up the fastest possible Digital Commerce experience.
                 .feature-block
@@ -48,55 +142,22 @@ block content
                     p.block-description
                         | Connecting data and cloud to navigate your digital transformation using mobile-first engagement and one-to-one personalization to provide a seamless customer experience across all touchpoints.
                 .feature-block
-                    h1.block-title Scales Effortlessly
+                    h1.block-title Limitless Scalability Without Hassles
                     p.block-description
-                        | Ottemo makes growing your online business a breeze. Hosted and managed by our experts in the cloud, your site is able to scale from small business to enterprise size without ever having to upgrade or switch platforms.
+                        | Most commerce solutions
+                        | aren't very easy to use and aren't good at growing with you. Ottemo lets you
+                        | expand fast without clunky upgrades or messy platform-switching, and our
+                        | experienced team expertly hosts and manages your site.
                 .feature-block
-                    h1.block-title Real-Time Engagement
+                    h1.block-title Superior ROI
                     p.block-description
-                        | With real-time analytics you'll be able to respond to your customers with time relevant context. Make informed decisions and engage them with confidence.
-                a.button.button-big.dark-bg(href="#") View All Features
+                        | Our modern cloud platform is ¼ the cost of homegrown
+                        | and on-premise solutions. Spend less time managing infrastructure and
+                        | technology - Ottemo gives you routine SaaS updates with state-of-the-art
+                        | features and functionality.
+                a.button.button-big.dark-bg(href="/why-ottemo.html") Learn More
 
-
-    section.section-testimonials
-        .testimonials-wrapper
-            .container
-                .testimonials-header.col-md-6
-                    h1.section-header
-                        | Lorem ipsum
-                        br
-                        |  dolor sit amet consectetur
-                    p.section-description Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem ea error illum
-                #owl-testimonials.owl-carousel.owl-theme
-                    .item
-                        .item-wrapper.clearfix
-                            .text-content.col-sm-6
-                                p.testimonial-text
-                                    | Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda commodi explicabo minus qui? Accusamus earum iure maiores necessitatibus nihil odit possimus quidem quisquam ratione rem! Eaque in ipsum rem sequi.
-                                p.author John Smith
-                            .image-content.col-sm-6
-                                img(src="../img/iPhone_engine.png", alt="")
-                    .item
-                        .item-wrapper.clearfix
-                            .text-content.col-sm-6
-                                p.testimonial-text
-                                    | Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda commodi explicabo minus qui? Accusamus earum iure maiores necessitatibus nihil odit possimus quidem quisquam ratione rem! Eaque in ipsum rem sequi.
-                                p.author John Smith
-                            .image-content.col-sm-6
-                                img(src="../img/iPhone_engine.png", alt="")
-                    .item
-                        .item-wrapper.clearfix
-                            .text-content.col-sm-6
-                                p.testimonial-text
-                                    | Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda commodi explicabo minus qui? Accusamus earum iure maiores necessitatibus nihil odit possimus quidem quisquam ratione rem! Eaque in ipsum rem sequi.
-                                p.author John Smith
-                            .image-content.col-sm-6
-                                img(src="../img/iPhone_engine.png", alt="")
-
-
-
-
-    section.section-blog
+    .block.article.blog
         .container
             .post-wrapper.col-md-6
                 .post-picture
@@ -104,7 +165,7 @@ block content
                 h1.post-title The Tools Your Business Needs
                 p.post-description
                     | By delivering a full suite of digital business solutions we can string together your islands of old technology and help you with your unified commerce needs. Grow your business to become as efficient as possible.
-                a.button.button-big(href="#") More features
+                a.button.button-big(href="/ottemo-commerce-cloud.html") See Commerce Cloud
             .post-wrapper.col-md-6
                 .post-picture
                     img(src="img/tabs2_slide1.jpg", alt="")

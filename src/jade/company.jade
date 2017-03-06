@@ -2,86 +2,81 @@ extends include/template
 block vars
     - var pageId = 'company-page';
 block content
-    section.company-top
-        .section-wrapper.layer-top.container
-            h1.section-header.l-text-align.center A Little About Us
-            p.section-description.l-text-align.center Meet the people behind our company and culture
-            h2.section-header-l2.l-text-align.center
-                | In early 2013 we set out to build
-                br
-                | a Unified Commerce platform for retailers
-            p.cite.l-text-align.center
-                | We are solving all of the problems we have experienced over our many years, from first click to ship
-            p.main-text.accent
-                | In the last 20 years many things have changed as the Internet has evolved and matured. In the past, visitors browsed using desktop computers, while in today’s multimedia-centric world, many visitors are using their phone or tablet devices. Where we once used simple web pages, we now have dynamic user-driven content. Simply storing and maintaining data has transformed into using Big Data and machine learning to drive a unique experience for each site visitor. When you have a large digital commerce budget, the available technology is endless; but for the Small and Medium Enterprise retailer, the options have changed little over the same timespan.
-            p.main-text.accent
-                | Our team has over 100 years combined experience in retail and commerce. When we analyzed the required feature set necessary for what we needed to do for our own business, we came to the realization there wasn't a solution on the market that mapped to our requirements. Most often the software that came closest to matching our needs was not even remotely affordable for the Small and Medium Retailer, let alone a fast-growing startup. Commerce is very complex, prohibitively expensive and many sites are not mobile responsive or too slow for today's savvy shopper.
-            p.main-text.accent
-                | We decided it was time for a change, and that change is Ottemo.
-            p.main-text.accent
-                | Ottemo is determined to democratize commerce by building the fastest, most scalable and complete unified commerce platform.
 
-    section.section-founders
-        .container
-            .team-member
-                .member-info.photo
-                    img(src="img/profile-placeholder.png", alt="")
-                .member-info.bio
-                    span.name Gavin Smith
-                    span.position Co-Founder / CEO
-                    p.bio
-                        | Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+    .team.clearfix
+        .team-member
+            img(src="img/profile-placeholder.png", alt="")
+            .member-info
+                .member-name Gavin Smith
+                .member-title Co-Founder / CEO
+            .member-bio
+                .member-name Gavin Smith
+                .member-title Co-Founder / CEO
+                p
+                    | Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+                    | tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+                    | veniam, quis nostrud exercitation ullamco
+        .team-member
+            img(src="img/profile-placeholder.png", alt="")
+            .member-info
+                .member-name James Vastbinder
+                .member-title Co-Founder / CTO
+            .member-bio
+                .member-name James Vastbinder
+                .member-title Co-Founder / CTO
+                p
+                    | Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+                    | tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+                    | veniam, quis nostrud exercitation ullamco
+        .team-member
+            img(src="img/profile-placeholder.png", alt="")
+            .member-info
+                .member-name Stan Barer
+                .member-title Co­founder and Chairman of Emeritus Saltchuk Resources Inc.
+            .member-bio
+                .member-name Stan Barer
+                .member-title Co­founder and Chairman of Emeritus Saltchuk Resources Inc.
+                p
+                    | Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+                    | tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+                    | veniam, quis nostrud exercitation ullamco
+        .team-member
+            img(src="img/profile-placeholder.png", alt="")
+            .member-info
+                .member-name Loretta Soffe
+                .member-title Former Executive Vice President, Nordstroms
+            .member-bio
+                .member-name Loretta Soffe
+                .member-title Former Executive Vice President, Nordstroms
+                p
+                    | Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+                    | tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+                    | veniam, quis nostrud exercitation ullamco
+        .team-member
+            img(src="img/profile-placeholder.png", alt="")
+            .member-info
+                .member-name Bob Baldridge
+                .member-title Former Owner and CEO, Circuit Technology
+            .member-bio
+                .member-name Bob Baldridge
+                .member-title Former Owner and CEO, Circuit Technology
+                p
+                    | Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+                    | tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+                    | veniam, quis nostrud exercitation ullamco
+        .team-member
+            img(src="img/profile-placeholder.png", alt="")
+            .member-info
+                .member-name Gavin Smith
+                .member-title Co-Founder / CEO
+            .member-bio
+                .member-name Gavin Smith
+                .member-title Co-Founder / CEO
+                p
+                    | Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+                    | tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+                    | veniam, quis nostrud exercitation ullamco
 
-            .team-member
-                .member-info.photo
-                    img(src="img/profile-placeholder.png", alt="")
-                .member-info.bio
-                    span.name Gavin Smith
-                    span.position Co-Founder / CEO
-                    p.bio
-                        | Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
-
-        //
-            .container.l-text-align.center
-                h1.section-header.l-text-align.center The Founders
-                p.section-description
-                    | Driven and Passionate about democratizing commerce!
-                ul.persons-list
-                    li.item.col-sm-3.col-sm-offset-3.col-xs-6
-                        .person-photo
-                            img(src="img/profile-placeholder.png", alt="")
-                        strong.person-name Gavin Smith
-                        span.person-position Co-Founder / CEO
-                    li.item.col-sm-3.col-xs-6
-                        .person-photo
-                            img(src="img/profile-placeholder.png", alt="")
-                        strong.person-name James Vastbinder
-                        span.person-position Co-Founder / CEO
-
-    section.section-investors
-        .container.l-text-align.center
-            h1.section-header.l-text-align.center Investors & Advisors
-            ul.persons-list
-                li.item.col-sm-3.col-xs-6
-                    .person-photo
-                        img(src="img/profile-placeholder.png", alt="")
-                    strong.person-name Stan Barer
-                    span.person-position Co­founder and Chairman of Emeritus Saltchuk Resources Inc.
-                li.item.col-sm-3.col-xs-6
-                    .person-photo
-                        img(src="img/profile-placeholder.png", alt="")
-                    strong.person-name Loretta Soffe
-                    span.person-position Former Executive Vice President, Nordstroms
-                li.item.col-sm-3.col-xs-6
-                    .person-photo
-                        img(src="img/profile-placeholder.png", alt="")
-                    strong.person-name Bob Baldridge
-                    span.person-position Former Owner and CEO, Circuit Technology
-                li.item.col-sm-3.col-xs-6
-                    .person-photo
-                        img(src="img/profile-placeholder.png", alt="")
-                    strong.person-name Bob Baldridge
-                    span.person-position Former Owner and CEO, Circuit Technology
 
     .contact-us-banner.container
         h1.section-header Jobs

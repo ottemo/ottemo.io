@@ -3,7 +3,29 @@
 
 extends include/template
 block vars
-    - var pageId = 'consulting-page';
+    - var pageId = 'services-page';
+block subnav
+    header.subnav
+        .container
+            nav.navigation
+                ul
+                    li.nav-item
+                        a(href='#packages') Packages
+                    li.nav-item
+                        a(href='#support') Support
+                    li.nav-item
+                        a(href='#success') Customer Success
+                    li.nav-item
+                        a(href='#onboarding') On-Boarding
+                    li.nav-item
+                        a(href='#integrations') Integrations
+                    li.nav-item
+                        a(href='#migration') Migration
+                    li.nav-item
+                        a(href='#continuity') Business Continuity
+                    li.nav-item
+                        a(href='#theme') Theme Development
+
 block content
 
     section.consulting-top-section
@@ -17,7 +39,7 @@ block content
                         | Ottemo ECG is the in-house consulting services organization that provides strategic counsel and problem-solving point services.
                     a(href="/contact.html").button.button-big Speack to an expert
 
-    .consulting-row
+    .services-row#packages
         .container
             .col-sm-4.ps-image-block
                 img(src="/img/ps-architecture.svg" alt="Architectural Advisory")
@@ -34,7 +56,7 @@ block content
                     | experience that helps you get support from important stakeholders, streamlines your
                     | operations and accelerates your business' future growth.
 
-    .consulting-row
+    .services-row#support
         .container
             .ps-image-block.mobile
                 img(src="/img/ps-tech-consulting.svg" alt="Support")
@@ -50,7 +72,7 @@ block content
             .col-sm-4.ps-image-block.not-mobile
                 img(src="/img/ps-tech-consulting.svg" alt="Support")
 
-    .consulting-row
+    .services-row#success
         .container
             .col-sm-4.ps-image-block
                 img(src="/img/ps-code-audit.svg" alt="Customer Success")
@@ -62,7 +84,7 @@ block content
                     | continued growth, you get a dedicated account management team to address any issues or
                     | concerns and help optimize the Ottemo platform for your needs.
 
-    .consulting-row
+    .services-row#onboarding
         .container
             .ps-image-block.mobile
                 img(src="/img/ps-helth-check.svg" alt="On-Boarding and Implementation")
@@ -76,7 +98,7 @@ block content
             .col-sm-4.ps-image-block.not-mobile
                 img(src="/img/ps-helth-check.svg" alt="On-Boarding and Implementation")
 
-    .consulting-row
+    .services-row#integrations
         .container
             .col-sm-4.ps-image-block
                 img(src="/img/ps-perfomance.svg" alt="Integrations and Custom Development")
@@ -88,7 +110,7 @@ block content
                     | custom widgets to give your business a powerful brand experience, impacting customers
                     | across every channel and device.
 
-    .consulting-row
+    .services-row#migration
         .container
             .ps-image-block.mobile
                 img(src="/img/ps-prefered-service.svg" alt="Re-Platforming and Migration")
@@ -103,7 +125,7 @@ block content
             .col-sm-4.ps-image-block.not-mobile
                 img(src="/img/ps-prefered-service.svg" alt="Re-Platforming and Migration")
 
-    .consulting-row
+    .services-row#continuity
         .container
             .col-sm-4.ps-image-block
                 img(src="/img/ps-tam.svg" alt="Business Continuity")
@@ -115,7 +137,7 @@ block content
                     | business functions, customer service-level agreements, risk management, infrastructure
                     | support, disaster recovery and more.
 
-    .consulting-row
+    .services-row#theme
         .container
             .ps-image-block.mobile
                 img(src="/img/ps-tech-consulting.svg" alt="Theme Development")
