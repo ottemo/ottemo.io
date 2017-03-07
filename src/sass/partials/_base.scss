@@ -57,6 +57,13 @@ p, a, span, ul {
   font-size: 16px;
   font-weight: 700;
   color: $ottemo-blue;
+  &.white {
+    color: $white;
+    &:hover {
+      color: $white;
+      text-decoration: underline;
+    }
+  }
   &:hover {
     color: $ottemo-light-blue;
     text-decoration: none;

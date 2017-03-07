@@ -66,8 +66,8 @@
     }
   }
   .logo {
-    height: 25px;
-    margin: 20px 0;
+    height: 36px;
+    margin: 16px 0;
     display: inline-block;
     img {
       height: 100%;
@@ -355,6 +355,12 @@ section {
     text-align: center;
     background: $dark-grey none;
   }
+  .heading {
+    &.h1 {
+      color: $white;
+      text-align: center;
+    }
+  }
   .image-content {
     img {
       max-width: 70%;
@@ -442,7 +448,7 @@ footer {
     }
   }
   .links {
-    margin-bottom: 24px;
+    margin-bottom: 50px;
     .col {
       @include respond-to(mobile) {
         border-bottom: 1px solid rgba(255,255,255,.1);
@@ -454,6 +460,7 @@ footer {
         font-weight: 700;
         text-transform: uppercase;
         color: $grey;
+        margin-bottom: 16px;
         &:focus {
           text-decoration: none;
         }
@@ -476,8 +483,16 @@ footer {
         list-style: none;
         padding: 0;
         li a {
-          color: $white;
-          font-weight: 300;
+          font-family: 'Lato', sans-serif;
+          color: $light-grey;
+          opacity: .7;
+          display: block;
+          margin-bottom: 8px;
+          text-decoration: none;
+          transition: opacity .1s;
+          &:hover {
+            opacity: 1;
+          }
         }
         @include respond-to(mobile) {
           display: none;
@@ -524,7 +539,7 @@ footer {
     background-color: $light-grey;
     padding-bottom: 70px;
     .clients-row {
-      margin: 50px 0;
+      margin: 50px 0 0;
       .logo {
         position: relative;
         overflow: hidden;
@@ -567,7 +582,7 @@ footer {
     text-align: center;
     padding: 70px 0;
     .solutions-group {
-      margin: 50px 0;
+      margin: 50px 0 0;
       .solution {
         .icon {
           height: 120px;
@@ -615,7 +630,8 @@ footer {
 }
 
 #homepage,
-#ottemo-commerce-cloud-page {
+#ottemo-commerce-cloud-page,
+#why-ottemo-page {
   .blog {
     background-color: $light-grey;
     padding: 50px 0;
@@ -648,6 +664,9 @@ footer {
 }
 
 #platform-overview-page {
+  .page-title {
+    text-align: center;
+  }
   .superior-roi-2 {
     .image-container {
       height: 620px;
@@ -824,10 +843,12 @@ footer {
 
 .clients-links {
   .client-logo-box {
+    position: relative;
     display: inline-table;
+    overflow: hidden;
     vertical-align: top;
     width: 33.333%;
-    height: 175px;
+    height: 190px;
     margin: 0 -2px;
     border-right: 1px solid #dadada;
     border-bottom: 1px solid #dadada;
@@ -847,19 +868,36 @@ footer {
         border-bottom: none;
       }
     }
+    .client-story {
+      position: absolute;
+      bottom: -100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      text-align: center;
+      width: 100%;
+      height: 100%;
+      padding: 16px;
+      background: $ottemo-light-blue;
+      z-index: 100;
+      transition: .1s ease-in-out;
+      p {
+        color: $white;
+        font-size: 18px;
+        font-weight: 700;
+      }
+    }
+    &:hover .client-story {
+      bottom: 0;
+    }
     .logo-box-wrapper {
       display: table-cell;
       vertical-align: middle;
       text-align: center;
-      a {
-        opacity: .5;
-        transition: .3s ease;
-        &:hover {
-          opacity: 1;
-        }
-      }
+      width: 100%;
       img {
-        max-width: 80%;
+        max-width: 60%;
       }
     }
     @include respond-to(xs) {
@@ -1440,11 +1478,10 @@ footer {
     }
   }
 
-  .professional-services {
-    padding: 200px 0;
-    margin-bottom: 50px;
-    background: url("/img/Professionalservices.jpg") no-repeat center left;
-    background-size: contain;
+  .banner {
+    text-align: center;
+    background: $light-grey;
+    padding: 32px 0;
   }
 }
 
@@ -1573,55 +1610,6 @@ footer {
     background-size: contain;
     padding: 240px 0;
     margin: -100px 0 70px;
-  }
-
-  .bottom-banner {
-    background: url("/img/BottomOfOttemoClouldCommercepage.jpg") no-repeat center;
-    background-size: cover;
-    padding: 100px 0;
-    .banner-block {
-      width: 50%;
-      display: inline-block;
-      margin: 0 -2px;
-      text-align: center;
-      a {
-        display: block;
-        border: 4px solid $ottemo-blue;
-        width: 350px;
-        margin: 0 auto;
-        padding: 50px 24px;
-        background-color: rgba(255,255,255,.65);
-        transition: .3s ease;
-        &:hover {
-          background-color: rgba(255,255,255,.85);
-          text-decoration: none;
-        }
-        .logo {
-          width: 80%;
-          height: 100px;
-          margin: 0 auto 16px;
-          position: relative;
-          img {
-            position: absolute;
-            top: 50%;
-            left: 0;
-            transform: translateY(-50%);
-            width: 100%;
-          }
-        }
-        .words {
-          color: $dark-grey;
-          text-transform: uppercase;
-          .caption {
-            font-size: 18px;
-          }
-          .number {
-            font-size: 40px;
-            font-weight: 700;
-          }
-        }
-      }
-    }
   }
 
   .blog {
@@ -1949,6 +1937,58 @@ footer {
     @include respond-to(small) {
       font-size: 30px;
       line-height: 40px;
+    }
+  }
+}
+
+#ottemo-commerce-cloud-page,
+#why-ottemo-page {
+  .bottom-banner {
+    background: url("/img/BottomOfOttemoClouldCommercepage.jpg") no-repeat center;
+    background-size: cover;
+    padding: 100px 0;
+    .banner-block {
+      width: 50%;
+      display: inline-block;
+      margin: 0 -2px;
+      text-align: center;
+      a {
+        display: block;
+        border: 4px solid $ottemo-blue;
+        width: 350px;
+        margin: 0 auto;
+        padding: 50px 24px;
+        background-color: rgba(255,255,255,.65);
+        transition: .3s ease;
+        &:hover {
+          background-color: rgba(255,255,255,.85);
+          text-decoration: none;
+        }
+        .logo {
+          width: 80%;
+          height: 100px;
+          margin: 0 auto 16px;
+          position: relative;
+          img {
+            position: absolute;
+            top: 50%;
+            left: 0;
+            transform: translateY(-50%);
+            width: 100%;
+          }
+        }
+        .words {
+          color: $dark-grey;
+          text-transform: uppercase;
+          .caption {
+            font-size: 18px;
+          }
+          .number {
+            font-size: 40px;
+            font-weight: 700;
+          }
+        }
+      }
     }
   }
 }
