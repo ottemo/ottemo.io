@@ -971,6 +971,9 @@ footer {
           opacity: .65;
         }
       }
+      @include respond-to(mobile) {
+        margin-bottom: 32px;
+      }
     }
   }
 }
@@ -2184,6 +2187,24 @@ footer {
       }
       &.karigran img {
         width: 100%;
+      }
+    }
+  }
+
+  .integrations {
+    text-align: center;
+    .integration-block {
+      position: relative;
+      display: inline-block;
+      width: 25%;
+      margin: 0 -2px;
+      padding: 0 8px;
+      .integration-logo {
+        width: 100%;
+      }
+      .integration-name {
+        position: absolute;
+        left: -9999px;
       }
     }
   }
