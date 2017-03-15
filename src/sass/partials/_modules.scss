@@ -2196,11 +2196,16 @@ footer {
     .integration-block {
       position: relative;
       display: inline-block;
-      width: 25%;
+      width: 20%;
       margin: 0 -2px;
       padding: 0 8px;
       .integration-logo {
         width: 100%;
+        transition: .15s ease;
+        &:hover {
+          transform: scale(1.05);
+          box-shadow: 0 3px 15px rgba(0,0,0,.15);
+        }
       }
       .integration-name {
         position: absolute;
