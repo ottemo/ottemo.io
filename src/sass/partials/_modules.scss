@@ -2,6 +2,108 @@
 @import "variables";
 
 
+.block {
+  position: relative;
+  &.hero {
+    text-align: center;
+    padding: 150px 0;
+    background: url('/img/poligonal-background-2.png') no-repeat right top;
+    background-size: contain;
+    .hero-header-1 {
+      font-size: 52px;
+      line-height: 52px;
+    }
+    .hero-header-2 {
+      font-size: 60px;
+      line-height: 60px;
+      margin: 0;
+      color: $ottemo-blue;
+    }
+    .hero-header-3 {
+      font-size: 24px;
+    }
+    a {
+      margin: 24px 0;
+    }
+    .hero-text-container {
+      max-width: 75%;
+      margin: 0 auto;
+    }
+    @include respond-to(medium) {
+      padding: 100px 0;
+    }
+    @include respond-to(small) {
+      padding: 100px 0;
+    }
+    @include respond-to(xs) {
+      padding: 80px 0;
+      .hero-header-1 {
+        font-size: 40px;
+        line-height: 48px;
+      }
+      .hero-header-2 {
+        font-size: 42px;
+        line-height: 1em;
+      }
+    }
+  }
+  &.article {
+    padding: 50px 0;
+    @include respond-to(mobile) {
+      text-align: center;
+    }
+  }
+}
+
+.text {
+  font-weight: 300;
+  &.base {
+    font-size: 16px;
+    line-height: 28px;
+  }
+  &.medium {
+    font-size: 20px;
+    line-height: 32px;
+    @include respond-to(small) {
+      font-size: 18px;
+      line-height: 30px;
+    }
+    @include respond-to(xs) {
+      font-size: 16px;
+      line-height: 28px;
+    }
+  }
+  &.large {
+    font-size: 24px;
+    line-height: 1.75em;
+    @include respond-to(small) {
+      font-size: 20px;
+    }
+    @include respond-to(xs) {
+      font-size: 18px;
+    }
+  }
+
+}
+
+.heading {
+  font-family: 'Roboto Slab', serif;
+  &.h1 {
+    font-size: 40px;
+    font-weight: 400;
+    line-height: 52px;
+    margin: 8px 0;
+    @include respond-to(xs) {
+      font-size: 30px;
+      line-height: 40px;
+    }
+    @include respond-to(small) {
+      font-size: 30px;
+      line-height: 40px;
+    }
+  }
+}
+
 /*
   Hamburger menu.
   Available only when window width less than 1200px
@@ -647,6 +749,7 @@ footer {
 #homepage,
 #ottemo-commerce-cloud-page,
 #why-ottemo-page {
+
   .blog {
     background-color: $light-grey;
     padding: 50px 0;
@@ -692,42 +795,6 @@ footer {
 
 #platform-overview-page {
 
-  .block.article {
-    .mobile {
-      display: none;
-      margin-left: auto;
-      margin-right: auto;
-      @include respond-to(small) {
-        display: block;
-        width: 75%;
-      }
-      @include respond-to(xs) {
-        display: block;
-        width: 100%;
-      }
-    }
-    .image-block {
-      position: relative;
-      img {
-        position: absolute;
-        &.left {
-          right: 0;
-        }
-        &.right {
-          left: 0;
-        }
-      }
-      @include respond-to(mobile) {
-        display: none;
-      }
-    }
-    @include respond-to(mobile) {
-      padding-bottom: 0;
-      padding-top: 0;
-      margin-bottom: 50px;
-    }
-  }
-
   .page-title {
     text-align: center;
   }
@@ -735,9 +802,6 @@ footer {
   .superior-roi {
     padding: 100px 0;
     margin-bottom: 50px;
-    .mobile {
-
-    }
     .article-image {
       top: -100px;
     }
@@ -1843,57 +1907,48 @@ footer {
 
   .cloud-platform {
     text-align: center;
-    .image-block {
+    .cloud-image-block {
       margin-bottom: 32px;
       img {
         width: 100%;
       }
     }
+    @include respond-to(mobile) {
+      .cloud-image-block {
+        margin-bottom: 8px;
+      }
+    }
   }
 
   .heavy-lifting {
-      padding: 230px 0;
-      background: url('/img/OttemoDoesTheHeavyLifting.png') no-repeat center;
-      background-size: contain;
+    padding: 200px 0;
+    margin-bottom: 50px;
+    .article-image {
+      top: -200px;
+    }
+    .mobile {
+      margin-bottom: -32px;
+    }
   }
 
   .get-faster {
     padding: 200px 0;
-    background: url('/img/GetToMarketFaster.jpg') no-repeat left center;
-    background-size: contain;
-
+    .article-image {
+      top: -200px;
+    }
   }
   .make-easy {
     padding: 200px 0;
-    margin-bottom: 50px;
-    background: url('/img/MakeItEasy.jpg') no-repeat center right;
-    background-size: contain;
+    .article-image {
+      top: -280px;
+    }
   }
 
   .scalability {
-    background: url('/img/scalability.jpg') no-repeat left center;
-    background-size: contain;
-    padding: 240px 0;
-    margin: -100px 0 70px;
-  }
-
-  .blog {
-    .section-header {
-      margin-bottom: 32px;
-    }
-    .post-wrapper {
-      height: 410px;
-      .post-picture {
-        height: 200px;
-        overflow: hidden;
-        img {
-          width: 100%;
-
-        }
-      }
-      .post-title {
-        font-size: 24px;
-      }
+    padding: 200px 0;
+    margin-bottom: 100px;
+    .article-image {
+      top: -250px;
     }
   }
 
@@ -2166,108 +2221,6 @@ footer {
   }
 }
 
-.block {
-  position: relative;
-  &.hero {
-    text-align: center;
-    padding: 150px 0;
-    background: url('/img/poligonal-background-2.png') no-repeat right top;
-    background-size: contain;
-    .hero-header-1 {
-      font-size: 52px;
-      line-height: 52px;
-    }
-    .hero-header-2 {
-      font-size: 60px;
-      line-height: 60px;
-      margin: 0;
-      color: $ottemo-blue;
-    }
-    .hero-header-3 {
-      font-size: 24px;
-    }
-    a {
-      margin: 24px 0;
-    }
-    .hero-text-container {
-      max-width: 75%;
-      margin: 0 auto;
-    }
-    @include respond-to(medium) {
-      padding: 100px 0;
-    }
-    @include respond-to(small) {
-      padding: 100px 0;
-    }
-    @include respond-to(xs) {
-      padding: 80px 0;
-      .hero-header-1 {
-        font-size: 40px;
-        line-height: 48px;
-      }
-      .hero-header-2 {
-        font-size: 42px;
-        line-height: 1em;
-      }
-    }
-  }
-  &.article {
-    padding: 50px 0;
-    @include respond-to(mobile) {
-      text-align: center;
-    }
-  }
-}
-
-.text {
-  font-weight: 300;
-  &.base {
-    font-size: 16px;
-    line-height: 28px;
-  }
-  &.medium {
-    font-size: 20px;
-    line-height: 32px;
-    @include respond-to(small) {
-      font-size: 18px;
-      line-height: 30px;
-    }
-    @include respond-to(xs) {
-      font-size: 16px;
-      line-height: 28px;
-    }
-  }
-  &.large {
-    font-size: 24px;
-    line-height: 1.75em;
-    @include respond-to(small) {
-      font-size: 20px;
-    }
-    @include respond-to(xs) {
-      font-size: 18px;
-    }
-  }
-
-}
-
-.heading {
-  font-family: 'Roboto Slab', serif;
-  &.h1 {
-    font-size: 40px;
-    font-weight: 400;
-    line-height: 52px;
-    margin: 8px 0;
-    @include respond-to(xs) {
-      font-size: 30px;
-      line-height: 40px;
-    }
-    @include respond-to(small) {
-      font-size: 30px;
-      line-height: 40px;
-    }
-  }
-}
-
 #ottemo-commerce-cloud-page,
 #why-ottemo-page {
   .bottom-banner {
@@ -2326,6 +2279,45 @@ footer {
           width: 100%;
           margin: 16px 0;
         }
+      }
+    }
+  }
+}
+
+#platform-overview-page,
+#ottemo-commerce-cloud-page {
+  .block.article {
+    .mobile {
+      display: none;
+      margin-left: auto;
+      margin-right: auto;
+      @include respond-to(small) {
+        display: block;
+        width: 75%;
+      }
+      @include respond-to(xs) {
+        display: block;
+        width: 100%;
+      }
+    }
+    .image-block {
+      position: relative;
+      img {
+        position: absolute;
+        &.left {
+          right: 0;
+        }
+        &.right {
+          left: 0;
+        }
+      }
+    }
+    @include respond-to(mobile) {
+      padding-bottom: 0;
+      padding-top: 0;
+      margin-bottom: 50px;
+      .image-block img {
+        display: none;
       }
     }
   }

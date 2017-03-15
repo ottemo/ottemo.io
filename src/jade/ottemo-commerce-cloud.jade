@@ -13,7 +13,7 @@ block content
             a(href="/contact.html").button.button-big Get Started
 
     .block.article.cloud-platform
-        .image-block
+        .cloud-image-block
             img(src="/img/ece-main-image.jpg")
         .container
             h1.heading.h1
@@ -32,20 +32,26 @@ block content
     .block.article.heavy-lifting
         .container
             .col-md-6
-                h1.section-header
+                img(src='/img/OttemoDoesTheHeavyLifting2.png' alt='').mobile
+                h1.heading.h1
                     | Ottemo Does
                     br
                     | The Heavy Lifting
-                p.section-description.medium
+                p.text.medium
                     | Never worry again about monitoring servers, handling upgrades or implementing security.
                     | Ottemo Commerce Cloud managed service gives you future-proof infrastructure and cloud
                     | hosting that’s fully optimized so you deploy fast. No more uncertainty about traffic spikes
                     | and holiday hassles. We handle the technology so you can focus on business.
+            .col-md-6.image-block
+                img(src='/img/OttemoDoesTheHeavyLifting2.png' alt='').article-image.right
 
     .block.article.get-faster
         .container
-            .col-md-6.col-md-offset-6
-                h1.section-header Get to Market Faster
+            .col-md-6.image-block
+                img(src='/img/GetToMarketFaster.jpg' alt='').article-image.left
+            .col-md-6
+                img(src='/img/GetToMarketFaster.jpg' alt='').mobile
+                h1.heading.h1 Get to Market Faster
                 p.text.medium
                     | Ottemo Commerce Cloud accelerates your commerce to supersonic speed. The power of the
                     | cloud combined with our industry-leading tools and technologies allows you to radically
@@ -55,18 +61,24 @@ block content
     .block.article.make-easy
         .container
             .col-md-6
-                h1.section-header Make it Easy
+                img(src='/img/MakeItEasy.jpg' alt='').mobile
+                h1.heading.h1 Make it Easy
                 p.text.medium
                     | Hosting your store in the cloud ensures your customers get content fast no matter where
                     | they are. Your site is continually optimized around the clock. Take advantage of secure,
                     | global, high-performance and cost-effective cloud infrastructure that is constantly
                     | improving.
+            .col-md-6.image-block
+                img(src='/img/MakeItEasy.jpg' alt='').article-image.right
 
     .block.article.scalability
         .container
+            .col-md-6.image-block
+                img(src='/img/scalability.jpg' alt='').article-image.left
             .col-md-6.col-md-offset-6
-                h1.section-header Limitless Scalability
-                p.section-description.medium
+                img(src='/img/scalability.jpg' alt='').mobile
+                h1.heading.h1 Limitless Scalability
+                p.text.medium
                     | Cyber Monday sales spikes? Ottemo is built on the cutting-edge Google Cloud, so you can
                     | handle traffic increases with ease. Specifically designed to scale and grow with you as you
                     | expand, Ottemo Commerce Cloud kicks in extra resources when demand seems
@@ -91,9 +103,9 @@ block content
                             .number 3x
                             .caption faster page loads on all devices
 
-    .block.article.blog
+    .block.blog
         .container
-            h1.section-header.l-text-align.center Latest Content
+            h1.heading.h1 Latest Content
             a(href="http://blog.ottemo.io/2016/11/07/tips-and-tricks-for-better-e-commerce-product-photography/").post-wrapper.col-md-4.col-sm-6
                 .post-picture
                     img(src="img/blog/blog-image-1.jpg", alt="e-commerce product photography")
