@@ -2028,6 +2028,7 @@ footer {
 
   .ps-image-block {
     text-align: center;
+    padding-top: 8px;
     img {
       height: 250px;
       @include respond-to(small) {
