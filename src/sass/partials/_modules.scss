@@ -72,11 +72,12 @@
     img {
       height: 100%;
     }
-    @include respond-to(xs) {
-      margin: 20px 0 20px 40px;
-    }
     @include respond-to(large) {
       float: left;
+    }
+    @include respond-to(xs) {
+      height: 28px;
+      margin: 18px 0 18px 40px;
     }
   }
   .navigation {
@@ -607,6 +608,9 @@ footer {
       font-style: italic;
       .quote {
         height: 400px;
+        @include respond-to(small) {
+          height: 600px;
+        }
         .author {
           font-size: 24px;
         }
@@ -616,12 +620,23 @@ footer {
           @include respond-to(medium) {
             margin: 0;
           }
+          @include respond-to(small) {
+            margin-top: 0;
+            text-align: center;
+          }
         }
         .right-side {
           text-align: left;
           img {
             height: 400px;
 
+          }
+          @include respond-to(small) {
+            text-align: center;
+            img {
+              margin-top: 24px;
+              height: 300px;
+            }
           }
         }
       }
@@ -635,11 +650,11 @@ footer {
   .blog {
     background-color: $light-grey;
     padding: 50px 0;
+    h1 {
+      margin-bottom: 32px;
+    }
     @include respond-to(xs) {
       text-align: center;
-    }
-    @include respond-to(mobile) {
-      padding-top: 0;
     }
     .post-wrapper {
       color: $dark-grey;
@@ -659,68 +674,131 @@ footer {
         font-size: 20px;
         font-weight: 300;
       }
+      @include respond-to(small) {
+        .post-title {
+          font-size: 26px;
+          line-height: 32px;
+        }
+      }
+      @include respond-to(xs) {
+        .post-title {
+          font-size: 24px;
+          line-height: 32px;
+        }
+      }
     }
   }
 }
 
 #platform-overview-page {
+
+  .block.article {
+    .mobile {
+      display: none;
+      margin-left: auto;
+      margin-right: auto;
+      @include respond-to(small) {
+        display: block;
+        width: 75%;
+      }
+      @include respond-to(xs) {
+        display: block;
+        width: 100%;
+      }
+    }
+    .image-block {
+      position: relative;
+      img {
+        position: absolute;
+        &.left {
+          right: 0;
+        }
+        &.right {
+          left: 0;
+        }
+      }
+      @include respond-to(mobile) {
+        display: none;
+      }
+    }
+    @include respond-to(mobile) {
+      padding-bottom: 0;
+      padding-top: 0;
+      margin-bottom: 50px;
+    }
+  }
+
   .page-title {
     text-align: center;
   }
-  .superior-roi-2 {
-    .image-container {
-      height: 620px;
-      img {
-        transform: translateY(-100px);
-        max-height: 100%;
-      }
-    }
-  }
 
   .superior-roi {
-    padding: 90px 0;
+    padding: 100px 0;
     margin-bottom: 50px;
-    background: url("/img/superior-roi.jpg") no-repeat 90% center;
-    background-size: contain;
+    .mobile {
 
+    }
+    .article-image {
+      top: -100px;
+    }
+    @include respond-to(medium) {
+      padding: 50px 0;
+      .article-image {
+        top: -50px;
+      }
+    }
     @include respond-to(small) {
-      background: none;
+      text-align: center;
+      padding: 32px 0;
     }
   }
+
   .flexibility {
-    padding: 200px 0;
-    margin-bottom: 50px;
-    background: url("/img/flexibility.jpg") no-repeat center left;
-    background-size: contain;
+    padding: 100px 0;
+    margin-bottom: 150px;
+    .article-image {
+        top: -100px;
+    }
   }
+
   .hosting {
-    padding: 150px 0;
-    margin-bottom: 50px;
-    background: url("/img/hosting.jpg") no-repeat center right;
-    background-size: contain;
+    padding: 100px 0;
+    margin-bottom: 100px;
+    .article-image {
+      top: -130px;
+    }
   }
   .customer-experience {
-    padding: 200px 0;
-    background: url("/img/customer-experience.jpg") no-repeat center left;
-    background-size: contain;
+    padding: 100px 0;
+    margin-bottom: 50px;
+    .article-image {
+      top: -70px;
+    }
   }
   .business-intelligence {
-    padding: 150px 0;
+    padding: 100px 0;
     margin-bottom: 50px;
-    background: url("/img/BusinessIntellgence.jpg") no-repeat center right;
-    background-size: contain;
+    .article-image {
+      top: -80px;
+    }
   }
   .post-order {
-    padding: 200px 0;
-    margin-bottom: -75px;
-    background: url("/img/post-order.jpg") no-repeat center left;
-    background-size: contain;
+    padding: 100px 0;
+    .article-image {
+      top: -80px;
+    }
   }
   .checkout {
-    padding: 150px 0;
+    padding: 100px 0;
     margin-bottom: 50px;
-    background: url("/img/checkout-iphone.jpg") no-repeat center right;
-    background-size: contain;
+    .article-image {
+      top: -50px;
+    }
+  }
+  .banner {
+    text-align: center;
+    background: $light-grey;
+    padding: 32px 0;
   }
 }
 
@@ -1100,9 +1178,47 @@ footer {
 */
 
 #contact-page {
+  .select-wrapper {
+    position: relative;
+    background: $white;
+    height: 48px;
+    border: 1px solid #a9a9a9;
+    opacity: 1;
+    transition: opacity .1s ease;
+    &.disabled {
+      opacity: .5
+    }
+    &:after {
+      display: block;
+      content: "\E600";
+      font-size: 1em;
+      position: absolute;
+      top: 1.1rem;
+      right: 1rem;
+    }
+    .select-label {
+      margin: 0 8px 0;
+      line-height: 48px;
+      color: #757575;
+      font-size: 16px;
+      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif
+    }
+    .select-element {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      margin: 0;
+      opacity: 0;
+      z-index: 99;
+    }
+  }
+
   .contacts-top {
     background-color: $light-grey;
     padding: 70px 0 30px;
+    text-align: center;
   }
 
   .contact-form-section {
@@ -1124,7 +1240,8 @@ footer {
         width: 100%;
         .row {
           margin: 0;
-          .form-field {
+          .form-field,
+          .select-wrapper {
             margin-bottom: 32px;
           }
         }
@@ -1155,7 +1272,13 @@ footer {
   Company
 */
 #company-page {
+  .about-team {
+    color: $white;
+    text-align: center;
+    background: $dark-grey;
+  }
   .team {
+    background: $dark-grey;
     margin-bottom: 70px;
     .team-member {
       float: left;
@@ -1208,6 +1331,21 @@ footer {
         font-size: 16px;
         background: rgba(0,0,0,.5);
         font-weight: 400;
+        overflow-y: scroll;
+        &::-webkit-scrollbar
+        {
+          width: 4px;  /* for vertical scrollbars */
+        }
+
+        &::-webkit-scrollbar-track
+        {
+          background: rgba(0, 0, 0, 0.1);
+        }
+
+        &::-webkit-scrollbar-thumb
+        {
+          background: rgba(0, 0, 0, 0.5);
+        }
       }
       .member-name {
         font-family: 'Roboto Slab', serif;
@@ -1215,6 +1353,7 @@ footer {
       }
       .member-title {
         font-family: 'Lato', sans-serif;
+        margin-bottom: 16px;
       }
       &:hover {
         img {
@@ -1440,40 +1579,164 @@ footer {
         text-align: center;
       }
     }
+    @include respond-to(small) {
+      height: auto;
+      .background {
+        vertical-align: top;
+        padding: 50px 0;
+        text-align: center;
+        background: none;
+      }
+    }
+    @include respond-to(xs) {
+      height: auto;
+      .background {
+        vertical-align: top;
+        padding: 32px 0;
+        text-align: center;
+        background: none;
+      }
+    }
   }
 
   .built-to-grow {
-    padding: 100px 0;
+    padding-top: 100px;
     text-align: center;
+    .mobile {
+      display: none;
+      width: 75%;
+      margin: 0 auto 32px;
+    }
+    a {
+      margin: 24px 0;
+    }
     img {
       max-width: 100%;
       margin-bottom: 40px;
     }
+    @include respond-to(small) {
+      padding-top: 50px;
+      padding-bottom: 0;
+      .mobile {
+        display: block;
+      }
+      .desktop {
+        display: none;
+      }
+
+    }
+    @include respond-to(xs) {
+      padding-top: 32px;
+      padding-bottom: 0;
+      a {
+        margin: 0 0 24px;
+      }
+    }
   }
 
   .consumer-trends {
-    padding: 100px 0;
-    background: url('/img/fera-responsive.png') no-repeat right center;
-    background-size: contain;
-    margin-top: -50px;
+    .mobile {
+      display: none;
+      width: 100%;
+      margin-bottom: -32px;
+    }
+    a {
+      margin: 8px 0;
+    }
+    @include respond-to(small) {
+      text-align: center;
+      padding-bottom: 0;
+      .mobile {
+        display: block;
+      }
+      .image-block {
+        display: none;
+      }
+    }
+    @include respond-to(xs) {
+      text-align: center;
+      padding-bottom: 0;
+      .mobile {
+        display: block;
+        margin-bottom: -24px;
+      }
+      .image-block {
+        display: none;
+      }
+    }
   }
 
   .grow-sales {
-    padding: 200px 0;
-    margin-top: -50px;
-    background: url("/img/growsales.jpg") no-repeat center left;
-    background-size: contain;
+    padding: 100px 0;
+    .image-block {
+      position: relative;
+      img {
+        position: absolute;
+        right: 0;
+        top: -100px;
+      }
+    }
+    a {
+      margin: 8px 0;
+    }
+    .mobile {
+      margin: 0 auto;
+      width: 60%;
+      display: none;
+    }
+    @include respond-to(medium) {
+      .image-block img {
+        right: -200px;
+      }
+    }
+    @include respond-to(small) {
+      padding: 50px 0;
+      text-align: center;
+      .image-block {
+        display: none;
+      }
+      .mobile {
+        display: block;
+      }
+    }
+    @include respond-to(xs) {
+      padding: 50px 0;
+      text-align: center;
+      .image-block {
+        display: none;
+      }
+      .mobile {
+        width: 100%;
+        display: block;
+      }
+    }
   }
 
   .committed-to-success {
-    display: table;
-    height: 500px;
-    width: 100%;
+    padding: 100px 0;
     .image-block {
-      height: 100%;
-      text-align: center;
+      position: relative;
       img {
-        height: 100%;
+        position: absolute;
+        top: -100px;
+        //width: 90%;
+
+      }
+    }
+    @include respond-to(small) {
+      text-align: center;
+      padding: 32px 0;
+      .image-block img {
+        position: static;
+      }
+    }
+    @include respond-to(xs) {
+      text-align: center;
+      padding: 32px 0;
+      .image-block img {
+        position: static;
+        width: 100%;
+        margin: 0 auto;
       }
     }
   }
@@ -1481,7 +1744,10 @@ footer {
   .banner {
     text-align: center;
     background: $light-grey;
-    padding: 32px 0;
+    padding: 64px 0;
+    .heading.h1 {
+      margin-bottom: 24px;
+    }
   }
 }
 
@@ -1574,12 +1840,11 @@ footer {
 
 // Ottemo Commerce Cloud Page
 #ottemo-commerce-cloud-page {
-  .block.hero {
 
-  }
   .cloud-platform {
     text-align: center;
     .image-block {
+      margin-bottom: 32px;
       img {
         width: 100%;
       }
@@ -1641,13 +1906,32 @@ footer {
   .subnav {
     display: none;
     width: 100%;
+    color: $grey;
     background-color: $dark-grey;
     position: fixed;
     left: 0;
-    top: 65px;
+    top: 68px;
     z-index: 100;
-    text-align: center;
+    vertical-align: bottom;
+    .nav-title {
+      position: relative;
+      float: left;
+      font-size: 16px;
+      line-height: 1;
+      color: $ottemo-light-blue;
+      padding: 24px 8px;
+      &:after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 4px;
+        background: $ottemo-light-blue;
+      }
+    }
     ul {
+      float: right;
       list-style: none;
       padding: 0;
       margin: 0;
@@ -1761,6 +2045,15 @@ footer {
     }
     @include respond-to(xs) {
       padding: 50px 0;
+    }
+  }
+
+  .banner {
+    margin: 70px 0;
+    .banner-inner {
+      text-align: center;
+      padding: 70px 0;
+      background: $light-grey;
     }
   }
 
@@ -1900,9 +2193,29 @@ footer {
       max-width: 75%;
       margin: 0 auto;
     }
+    @include respond-to(medium) {
+      padding: 100px 0;
+    }
+    @include respond-to(small) {
+      padding: 100px 0;
+    }
+    @include respond-to(xs) {
+      padding: 80px 0;
+      .hero-header-1 {
+        font-size: 40px;
+        line-height: 48px;
+      }
+      .hero-header-2 {
+        font-size: 42px;
+        line-height: 1em;
+      }
+    }
   }
   &.article {
     padding: 50px 0;
+    @include respond-to(mobile) {
+      text-align: center;
+    }
   }
 }
 
@@ -1915,10 +2228,24 @@ footer {
   &.medium {
     font-size: 20px;
     line-height: 32px;
+    @include respond-to(small) {
+      font-size: 18px;
+      line-height: 30px;
+    }
+    @include respond-to(xs) {
+      font-size: 16px;
+      line-height: 28px;
+    }
   }
   &.large {
     font-size: 24px;
-    line-height: 42px;
+    line-height: 1.75em;
+    @include respond-to(small) {
+      font-size: 20px;
+    }
+    @include respond-to(xs) {
+      font-size: 18px;
+    }
   }
 
 }
@@ -1987,6 +2314,17 @@ footer {
             font-size: 40px;
             font-weight: 700;
           }
+        }
+      }
+    }
+    @include respond-to(xs) {
+      padding: 16px;
+      .banner-block {
+        display: block;
+        width: 100%;
+        a {
+          width: 100%;
+          margin: 16px 0;
         }
       }
     }

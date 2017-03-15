@@ -8,13 +8,13 @@ block subnav
     header.subnav
         .container
             nav.navigation
+                .nav-title
+                    span Ottemo Cloud Services
                 ul
                     li.nav-item
                         a(href='#packages') Packages
                     li.nav-item
                         a(href='#support') Support
-                    li.nav-item
-                        a(href='#success') Customer Success
                     li.nav-item
                         a(href='#onboarding') On-Boarding
                     li.nav-item
@@ -32,57 +32,40 @@ block content
         .section-wrapper
             .container
                 .col-sm-5
-                    h1.section-header Expert
-                        br
-                        | Consulting Group
-                    p.section-description
-                        | Ottemo ECG is the in-house consulting services organization that provides strategic counsel and problem-solving point services.
-                    a(href="/contact.html").button.button-big Speack to an expert
+                    h1.heading.h1 Ottemo Cloud Services
+                    p.text.large
+                        | Your strategic partner for success. Direct access to our expert team of
+                        | developers, strategists and designers.
+                    a(href="/contact.html").button.button-big Speak To An Expert
 
     .services-row#packages
         .container
             .col-sm-4.ps-image-block
                 img(src="/img/ps-architecture.svg" alt="Architectural Advisory")
             .col-sm-8.ps-text-block
-                h1.section-header
-                    | Ottemo Professional
-                    br
-                    | Services Packages
-                p.section-description
-                    | Ottemo Professional Services Packages are bundled offerings that address the most
-                    | common challenges enterprise commerce customers face. Our expert service and support
-                    | team has designed Services Packages that focus on key needs of e-commerce clients. We'll
-                    | guide you through your service options, helping you develop a targeted, in-depth
-                    | experience that helps you get support from important stakeholders, streamlines your
-                    | operations and accelerates your business' future growth.
+                h1.heading.h1
+                    | Ottemo Professional Services
+                p.text.large
+                    | With Ottemo Professional Services, you gain
+                    | access to a dedicated team of expert developers, strategists and designers.
+                    | Choose from a full range of professional services designed to help expand your
+                    | business, make you more efficient and enhance your customer experience, all
+                    | through the Ottemo platform.
 
     .services-row#support
         .container
             .ps-image-block.mobile
                 img(src="/img/ps-tech-consulting.svg" alt="Support")
             .col-sm-8.ps-text-block
-                h1.section-header Support
-                p.section-description
-                    | Your online presence is the core of your business, so we make sure it runs right. We staff a
-                    | dedicated technical support and development team to provide around-the-clock support to
-                    | our customers and partners. We'll help you with any question you have--about Ottemo
-                    | applications and features, APIs, tool sets or others. If you prefer self-serve support, our
-                    | extensive knowledge base can often get you the answer you need. And it's more than
-                    | support. Do you have an idea for a feature? Let us know.
+                h1.heading.h1 Support
+                p.text.large
+                    | Your online presence is the core of your business, so we make sure it
+                    | runs right. We staff a dedicated technical support and development team to
+                    | provide around-the-clock support to our customers and partners. We'll help you
+                    | with any question you have--about Ottemo applications and features, APIs, tool
+                    | sets or others.
             .col-sm-4.ps-image-block.not-mobile
                 img(src="/img/ps-tech-consulting.svg" alt="Support")
-
-    .services-row#success
-        .container
-            .col-sm-4.ps-image-block
-                img(src="/img/ps-code-audit.svg" alt="Customer Success")
-            .col-sm-8.ps-text-block
-                h1.section-header Customer Success
-                p.section-description
-                    | You know in your own business that support after the sale is critical to repeat business and
-                    | referrals. That's why we created the Customer Success team. To ensure your success and
-                    | continued growth, you get a dedicated account management team to address any issues or
-                    | concerns and help optimize the Ottemo platform for your needs.
 
     .services-row#onboarding
         .container
@@ -140,7 +123,7 @@ block content
     .services-row#theme
         .container
             .ps-image-block.mobile
-                img(src="/img/ps-tech-consulting.svg" alt="Theme Development")
+                img(src="/img/ps-code-audit.svg" alt="Theme Development")
             .col-sm-8.ps-text-block
                 h1.section-header Theme Development
                 p.section-description
@@ -148,4 +131,13 @@ block content
                     | custom-tailored to reflect your core brand values. The result is a beautiful, engaging site
                     | that customers love to use.
             .col-sm-4.ps-image-block.not-mobile
-                img(src="/img/ps-tech-consulting.svg" alt="Theme Development")
+                img(src="/img/ps-code-audit.svg" alt="Theme Development")
+
+    .block.banner
+        .banner-inner.container
+            h1.heading.h1
+                | We’re more than a platform,
+                br
+                | we’re your partner.
+            p.text.large Speak to a team member and get started today.
+            a(href='/contact.html').button.button-big Get A Custom Quote

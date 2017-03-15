@@ -38,6 +38,7 @@ $(document).ready(function() {
 
     $('.team-member').click(function() {
         $('.team-member').removeClass('active');
+        $(this).find('.member-bio').scrollTop(0);
         $(this).addClass('active');
     })
 
@@ -59,6 +60,31 @@ $(document).ready(function() {
                 $(this).parent().addClass('active');
             }
         });
+    });
+
+    $('.select-element').on('change', function() {
+        var selectedValue = this.value;
+        var selectLabel = $(this).parents('.select-wrapper').find('.select-label');
+        if (selectedValue) {
+            selectLabel.text(selectedValue);
+        } else {
+            var defaultLabelText = selectLabel.data('default-text');
+            selectLabel.text(defaultLabelText);
+        }
+
+        if ($(this).is('#mce-COUNTRY')) {
+            if (selectedValue == 'United States of America') {
+                $('#mce-STATE')
+                    .prop('disabled', false)
+                    .parents('.select-wrapper').removeClass('disabled');
+            } else {
+                $('#mce-STATE')
+                    .val('')
+                    .prop('disabled', true)
+                    .parents('.select-wrapper').addClass('disabled')
+                    .find('.select-label').text('State/Province');
+            }
+        }
     });
 
 });
