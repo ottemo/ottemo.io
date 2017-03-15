@@ -2156,10 +2156,22 @@ footer {
         }
       }
     }
+    @include respond-to(small) {
+      height: 450px;
+    }
+    @include respond-to(xs) {
+      height: 300px;
+    }
   }
 
   .customer-profile {
     text-align: center;
+    h1 {
+      margin-bottom: 32px;
+    }
+    p {
+      text-align: left;
+    }
     background-color: $light-grey;
     img {
       width: 100%;
@@ -2167,14 +2179,41 @@ footer {
     @include respond-to(small) {
       padding-top: 70px;
     }
+    .client-site-image {
+      &.pocono-site {
+        padding-top: 20px;
+      }
+    }
+    .client-site {
+      font-size: 20px;
+    }
+
+    @include respond-to(mobile) {
+      p {
+        text-align: center;
+      }
+    }
+
+    @include respond-to(small) {
+      img {
+        width: 75%;
+        margin-bottom: -24px;
+      }
+    }
   }
 
   .challenges {
     .image-block {
+      padding-top: 50px;
       overflow: hidden;
       text-align: center;
       img {
         width: 100%;
+      }
+    }
+    @include respond-to(mobile) {
+      .image-block {
+        display: none;
       }
     }
   }
@@ -2187,6 +2226,15 @@ footer {
       }
       &.karigran img {
         width: 100%;
+      }
+    }
+    ul li {
+      margin-bottom: 8px;
+    }
+    @include respond-to(small) {
+      .image-block img {
+        height: 500px;
+        width: auto;
       }
     }
   }
@@ -2211,38 +2259,61 @@ footer {
         position: absolute;
         left: -9999px;
       }
+      @include respond-to(small) {
+        width: 25%;
+      }
+      @include respond-to(xs) {
+        width: 50%;
+      }
     }
   }
 
   .results {
     text-align: center;
     border-top: 1px solid #dadada;
+    margin-bottom: 50px;
+
     .result-values {
-      margin: 60px 0;
+      margin-top: 32px;
       .value {
         display: inline-block;
-        width: 33.333%;
+        vertical-align: top;
         margin: 0 -2px;
-        padding: 16px;
-        border-right: 2px solid #dadada;
-        &:last-child {
-          border: none;
-        }
+        padding: 8px;
+        width: 25%;
+        transition: .15s ease;
         .number {
+          height: 60px;
           font-size: 40px;
           color: $ottemo-blue;
         }
         .text {
+          height: 50px;
           text-transform: uppercase;
           font-weight: 700;
         }
-        @include respond-to(xs) {
-          display: block;
-          width: 75%;
-          margin: 0 auto;
-          border-right: none;
-          border-bottom: 2px solid #dadada;
+        &:hover {
+          transform: scale(1.05);
+          box-shadow: 0 3px 15px rgba(0,0,0,.15);
         }
+        @include respond-to(small) {
+          width: 33.333%;
+        }
+        @include respond-to(xs) {
+          width: 50%;
+        }
+      }
+    }
+  }
+
+  @include respond-to(mobile) {
+    ul.mobile-list {
+      list-style: none;
+      padding-left: 0;
+      li {
+        box-shadow: 0 1px 3px rgba(0,0,0,.15);
+        padding: 8px;
+        margin-bottom: 16px;
       }
     }
   }
