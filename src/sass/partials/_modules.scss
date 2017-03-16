@@ -59,18 +59,16 @@
   font-weight: 300;
   &.base {
     font-size: 16px;
-    line-height: 28px;
+    line-height: 1.5em;
   }
   &.medium {
     font-size: 20px;
-    line-height: 32px;
+    line-height: 1.75em;
     @include respond-to(small) {
       font-size: 18px;
-      line-height: 30px;
     }
     @include respond-to(xs) {
       font-size: 16px;
-      line-height: 28px;
     }
   }
   &.large {
@@ -108,6 +106,7 @@
   Hamburger menu.
   Available only when window width less than 1200px
 */
+
 .mobile-navigation {
   position: fixed;
   left: 0;
@@ -115,25 +114,67 @@
   display: none;
   width: 300px;
   height: 100%;
-  background-color: $dark-grey;
+  background-color: $light-grey;
   z-index: 0;
   ul {
     margin: 0;
     padding: 0;
-    li {
-      padding: 16px;
-      border-bottom: 1px solid #3b3b42;
-      a {
-        color: $grey;
-        text-transform: uppercase;
-        font-size: 16px;
+  }
+  .mobile-menu {
+    .active {
+      .item {
+        color: $ottemo-blue;
       }
     }
-    .submenu {
-      //display: none;
+    .dropdown {
+      position: relative;
+      &::before {
+        top: 27px;
+        height: 8px;
+        border-top: 3px solid #dbe0df;
+        border-bottom: 3px solid #dbe0df;
+      }
+      &::after {
+        content: '';
+        position: absolute;
+        right: 28px;
+        width: 18px;
+        z-index: 1;
+      }
+      .item {
+        position: relative;
+        display: block;
+        padding: 24px 36px;
+        font-size: 17px;
+        font-weight: bold;
+        color: #202121;
+        cursor: pointer;
+        background-color: $light-grey;
+        border-bottom: 1px solid #e6eaea;
+        transition: background .3s ease-in-out,border .3s ease-in-out,color .3s ease-in-out;
+      }
+      ul {
+        //display: none;
+        a.item {
+          font-size: 13px;
+          font-weight: normal;
+          text-transform: uppercase;
+        }
+      }
     }
-    li {
-      border: none;
+    a {
+      position: relative;
+      display: block;
+      padding: 24px 36px;
+      font-size: 17px;
+      font-weight: bold;
+      color: #202121;
+      cursor: pointer;
+      background: #f4f7f6;
+      border-bottom: 1px solid #e6eaea;
+      &:hover {
+        background-color: #fcfcfc;
+      }
     }
   }
   @include respond-to(medium) {
@@ -312,6 +353,7 @@ section {
   transition: transform .4s ease;
   z-index: 1;
   &.opened {
+    box-shadow: 0 -3px 15px rgba(0,0,0,.3);
     transform: translate(280px, 0);
   }
   /*@include respond-to(mobile) {
@@ -990,7 +1032,7 @@ footer {
       text-align: center;
       margin: 50px 0 40px;
     }
-    .story-block {
+    .story-container {
       box-shadow: 0 0 5px rgba(0,0,0,.2);
       border-radius: 2px;
       margin-bottom: 50px;
@@ -1006,7 +1048,6 @@ footer {
           transition: .5s;
         }
         .client-logo {
-          max-height: 120px;
           max-width: 90%;
           position: absolute;
           top: 50%;
@@ -1016,9 +1057,50 @@ footer {
           z-index: 1;
         }
       }
-      .story-text {
-        padding: 0 24px 24px;
+      .story-block {
+        padding: 0 24px 16px;
+        .story-header {
+          padding: 8px 0 12px;
+          margin-bottom: 12px;
+          border-bottom: 1px solid #dadada;
+          .block-title {
+            float: left;
+          }
+          .button {
+            float: right;
+            margin-top: 14px;
+          }
+        }
+        p {
+          height: 72px;
+        }
+        @include respond-to(medium) {
+          p {
+            height: 94px;
+          }
+        }
+        @include respond-to(mobile) {
+          .story-header {
+            .block-title,
+            .button {
+              float: none;
+            }
+            .button {
+              margin-top: 0;
+            }
+          }
+
+          p {
+            height: 94px;
+          }
+        }
+        @include respond-to(xs) {
+          p {
+            height: auto;
+          }
+        }
       }
+
       &:hover {
         box-shadow: 0 2px 20px rgba(0,0,0,.2);
         .background {
@@ -1053,36 +1135,15 @@ footer {
     margin: 0 -2px;
     border-right: 1px solid #dadada;
     border-bottom: 1px solid #dadada;
-    transition: .1s ease;
-
-    .client-story {
-      display: none;
-      opacity: 0;
-      position: absolute;
-      text-align: center;
-      width: 100%;
-      height: 100%;
-      padding: 16px;
-      background: rgba(255,255,255,.8);
-      z-index: 100;
+    img {
       transition: .3s ease;
-      .story-inner {
-        width: 100%;
-        height: 100%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-direction: column;
-        p {
-          color: $dark-grey;
-          font-size: 18px;
-          line-height: 1.25em;
-        }
-      }
+      opacity: .7;
     }
+
     &:hover {
       img {
-        filter: blur(3px);
+        opacity: 1;
+        transform: scale(1.1);
       }
       .client-story {
         display: block;
@@ -1422,7 +1483,7 @@ footer {
       }
     }
   }
-  .banner {
+  .bottom-banner {
     width: 100%;
     height: 350px;
     background: url("/img/seattle-bg.jpg") no-repeat left;
@@ -1440,6 +1501,18 @@ footer {
       }
     }
   }
+
+  .banner {
+    text-align: center;
+    background: $light-grey;
+    padding: 64px 0;
+    .heading.h1 {
+      margin-bottom: 24px;
+    }
+    a {
+      text-transform: lowercase;
+    }
+  }
 }
 
 /*
@@ -1454,6 +1527,7 @@ footer {
   .team {
     background: $dark-grey;
     margin-bottom: 70px;
+    padding-bottom: 70px;
     .team-member {
       float: left;
       cursor: pointer;
@@ -1473,14 +1547,14 @@ footer {
         position: absolute;
         bottom: 0;
         left: 0;
-        padding: 20px;
+        padding: 16px;
         width: 100%;
         transform: translate3d(0,10px,0);
         transition: .3s;
         background: linear-gradient(to bottom,rgba(0,0,0,0) 0,rgba(0,0,0,.7) 100%);
         .member-name {
-          font-size: 30px;
-          font-weight: 100;
+          font-size: 24px;
+          font-weight: 300;
           line-height: 1;
           margin-bottom: 10px;
           color: #fff;
@@ -1501,8 +1575,7 @@ footer {
         position: absolute;
         top: 0;
         left: 0;
-        padding: 30px;
-        font-size: 16px;
+        padding: 16px;
         background: rgba(0,0,0,.5);
         font-weight: 400;
         overflow-y: scroll;
@@ -1537,7 +1610,6 @@ footer {
           transform: translate3d(0,0,0);
           .member-title {
             transition-delay: 0s;
-            //opacity: 1;
             display: block;
             transform: translate3d(0,0,0);
           }
@@ -1546,6 +1618,7 @@ footer {
       &.active {
         img {
           transform: translate3d(-18px,0,0) scale(1.1);
+          filter: blur(5px);
         }
         .member-info {
           transform: translate3d(0,100%,0);
@@ -1554,6 +1627,18 @@ footer {
           opacity: 1;
           transform: scale(1,1);
         }
+      }
+    }
+
+    @include respond-to(small) {
+      .team-member {
+        width: 50%;
+      }
+    }
+
+    @include respond-to(xs) {
+      .team-member {
+        width: 100%;
       }
     }
   }

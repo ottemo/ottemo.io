@@ -13,26 +13,29 @@ html(lang='en')
         link(rel='stylesheet', href='/css/style.css')
         block extraStyles
     body(id='#{pageId}')
+
         .mobile-navigation
-            nav
-                ul
-                    li.nav-item
-                        a(href='/why-ottemo.html') Why Ottemo?
-                    li.nav-item
-                        a(href='#') Products >
-                        ul.submenu
-                            li.nav-item
-                                a(href='/platform-overview.html') Platform Overview
-                            li.nav-item
-                                a(href='/ottemo-commerce-cloud.html') Ottemo Commerce Cloud
-                            li.nav-item
-                                a(href='/pro-services.html') Services
-                    li.nav-item
-                        a(href='/clients.html') Clients
-                    li.nav-item
-                        a(href='/blog.html') Blog
-                    li.nav-item
-                        a(href='/company.html') Company
+            ul.mobile-menu
+                li.active
+                    a(href='/').item Home
+                li
+                    a(href='/why-ottemo.html') Why Ottemo?
+                li.dropdown
+                    span.item Products
+                    ul
+                        li
+                            a(href='/platform-overview.html').item Platform Overview
+                        li
+                            a(href='/ottemo-commerce-cloud.html').item Ottemo Commerce Cloud
+                        li.nav-item
+                            a(href='/pro-services.html').item Services
+                li
+                    a(href='/clients.html').item Clients
+                li
+                    a(href='/blog.html').item Blog
+                li
+                    a(href='/company.html').item Company
+
         .body-wrapper
             header#header.header
                 .container
