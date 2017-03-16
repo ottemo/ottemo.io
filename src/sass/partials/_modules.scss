@@ -281,6 +281,7 @@ section {
 .owl-buttons {
   position: relative;
   @include respond-to(xs) {
+    display: none;
     position: static;
     margin-top: 24px;
   }
@@ -363,7 +364,7 @@ section {
   overflow: hidden;
   padding: 0;
   @include respond-to(mobile) {
-    margin-top: 65px;
+    //margin-top: 65px;
   }
   @include diagonal-background(500px, -180px);
   .top-section-wrapper {
@@ -642,40 +643,54 @@ footer {
     background-color: $light-grey;
     padding-bottom: 70px;
     .clients-row {
-      margin: 50px 0 0;
       .logo {
         position: relative;
         overflow: hidden;
         display: inline-block;
         vertical-align: middle;
-        padding-top: 50px;
         margin: 0 -2px;
-        width: 16.666%;
-        height: 150px;
+        width: 33.3333%;
         .additional {
+          display: none;
+          opacity: 0;
           position: absolute;
-          top: -148px;
+          top: 0;
           left: 0;
           width: 100%;
           height: 100%;
-          background-color: $ottemo-blue-transp;
-          transition: .3s ease;
+          background-color: rgba(255,255,255,.75);
+          transition: ease .15s;
           a {
-            display: block;
-            color: $white;
-            text-transform: uppercase;
-            text-decoration: none;
-            font-weight: 700;
-            padding-top: 115px;
+            margin-top: 50px;
           }
         }
         &:hover {
+          transform: scale(1.1);
+          box-shadow: 0 0 5px rgba(0,0,0,.2);
           .additional {
-            top: 0;
+            display: block;
+            opacity: 1;
           }
         }
         img {
           width: 70%;
+        }
+        @include respond-to(small) {
+          width: 50%;
+        }
+        @include respond-to(xs) {
+          width: 100%;
+          img {
+            width: 90%;
+          }
+          .additional {
+            a {
+              margin-top: 32px;
+            }
+          }
+          &:hover {
+            transform: scale(1.05);
+          }
         }
       }
     }
@@ -695,6 +710,9 @@ footer {
         }
         .solution-name {
           min-height: 60px;
+          @include respond-to(xs) {
+            min-height: 0;
+          }
         }
       }
     }
@@ -710,21 +728,17 @@ footer {
       font-style: italic;
       .quote {
         height: 400px;
-        @include respond-to(small) {
-          height: 600px;
-        }
         .author {
           font-size: 24px;
+        }
+        .mobile {
+          display: none;
         }
         .left-side {
           text-align: right;
           margin-top: 50px;
           @include respond-to(medium) {
             margin: 0;
-          }
-          @include respond-to(small) {
-            margin-top: 0;
-            text-align: center;
           }
         }
         .right-side {
@@ -733,12 +747,53 @@ footer {
             height: 400px;
 
           }
-          @include respond-to(small) {
+        }
+      }
+      @include respond-to(medium) {
+        .quote {
+          .left-side {
+            margin: 0;
+          }
+        }
+      }
+      @include respond-to(mobile) {
+        padding: 0 0 24px;
+        margin-bottom: 0;
+        .quote {
+          height: auto;
+          .mobile {
+            display: block;
+            margin-bottom: 16px;
             text-align: center;
             img {
               margin-top: 24px;
-              height: 300px;
             }
+          }
+          .left-side {
+            margin-top: 0;
+            text-align: center;
+          }
+          .right-side {
+            display: none;
+          }
+        }
+      }
+      @include respond-to(small) {
+        .quote {
+          .mobile img {
+            height: 300px;
+          }
+        }
+      }
+      @include respond-to(xs) {
+        .quote {
+          .author {
+            font-size: 18px;
+            font-weight: 700;
+          }
+          .mobile img {
+            width: 75%;
+            height: auto ;
           }
         }
       }
