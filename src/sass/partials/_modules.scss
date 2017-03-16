@@ -959,10 +959,10 @@ footer {
     background-color: $light-grey;
     .section-wrapper {
       padding: 150px 0;
-      background: url('/img/clients.png') no-repeat right center;
+      background: url('/img/clients.png') no-repeat right top;
       background-size: cover;
       @include respond-to(medium) {
-        background-position: center;
+        padding: 100px 0;
       }
       @include respond-to(small) {
         background-position: center;
@@ -2398,8 +2398,8 @@ footer {
           text-decoration: none;
         }
         .logo {
-          width: 80%;
-          height: 100px;
+          //width: 80%;
+          height: 130px;
           margin: 0 auto 16px;
           position: relative;
           img {
