@@ -1042,54 +1042,52 @@ footer {
 }
 
 .clients-links {
+
   .client-logo-box {
     position: relative;
     display: inline-table;
     overflow: hidden;
     vertical-align: top;
     width: 33.333%;
-    height: 190px;
+    height: 210px;
     margin: 0 -2px;
     border-right: 1px solid #dadada;
     border-bottom: 1px solid #dadada;
-    @include respond-to(xs) {
-      &:nth-child(2n+2) {
-        border-right: none;
-      }
-      &:last-child {
-        border-bottom: none;
-      }
-    }
-    @include respond-to(large-than-mobile) {
-      &:nth-child(3n+3) {
-        border-right: none;
-      }
-      &:nth-child(n+4) {
-        border-bottom: none;
-      }
-    }
+    transition: .1s ease;
+
     .client-story {
+      display: none;
+      opacity: 0;
       position: absolute;
-      bottom: -100%;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      flex-direction: column;
       text-align: center;
       width: 100%;
       height: 100%;
       padding: 16px;
-      background: $ottemo-light-blue;
+      background: rgba(255,255,255,.8);
       z-index: 100;
-      transition: .1s ease-in-out;
-      p {
-        color: $white;
-        font-size: 18px;
-        font-weight: 700;
+      transition: .3s ease;
+      .story-inner {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        p {
+          color: $dark-grey;
+          font-size: 18px;
+          line-height: 1.25em;
+        }
       }
     }
-    &:hover .client-story {
-      bottom: 0;
+    &:hover {
+      img {
+        filter: blur(3px);
+      }
+      .client-story {
+        display: block;
+        opacity: 1;
+      }
     }
     .logo-box-wrapper {
       display: table-cell;
@@ -1100,9 +1098,63 @@ footer {
         max-width: 60%;
       }
     }
-    @include respond-to(xs) {
+  }
+
+  @include respond-to(large-than-mobile) {
+    .client-logo-box {
+      /*&:nth-child(3n+3) {
+        border-right: none;
+      }
+      &:nth-child(n+4) {
+        border-bottom: none;
+      }*/
+    }
+  }
+
+
+  @include respond-to(large) {
+    .client-logo-box {
+      &:nth-child(3n+3) {
+        border-right: none;
+      }
+      &:nth-child(n+4) {
+        border-bottom: none;
+      }
+    }
+  }
+  @include respond-to(medium) {
+    .client-logo-box {
+      &:nth-child(3n+3) {
+        border-right: none;
+      }
+      &:nth-child(n+4) {
+        border-bottom: none;
+      }
+    }
+  }
+  @include respond-to(small) {
+    .client-logo-box {
       width: 50%;
-      height: 125px;
+      height: 200px;
+      &:nth-child(2n+2) {
+        border-right: none;
+      }
+      &:nth-child(n+5) {
+        border-bottom: none;
+      }
+      .client-story .story-inner p {
+        font-size: 16px;
+      }
+    }
+  }
+  @include respond-to(xs) {
+    .client-logo-box {
+      width: 100%;
+      height: 200px;
+      border-right: none;
+      .client-story .story-inner p {
+        font-size: 16px;
+      }
     }
   }
 }
