@@ -1521,13 +1521,17 @@ footer {
   Company
 */
 #company-page {
+  .about-me {
+    background-color: $light-grey;
+    text-align: center;
+  }
   .about-team {
     color: $white;
     text-align: center;
     background: $dark-grey;
   }
   .team {
-    background: $dark-grey;
+    background: $light-grey;
     margin-bottom: 70px;
     padding-bottom: 70px;
 
