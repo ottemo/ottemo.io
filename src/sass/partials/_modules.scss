@@ -356,9 +356,6 @@ section {
     box-shadow: 0 -3px 15px rgba(0,0,0,.3);
     transform: translate(280px, 0);
   }
-  /*@include respond-to(mobile) {
-    padding-top: 0;
-  }*/
 }
 
 .section-header {
@@ -1257,7 +1254,9 @@ footer {
   Blog
 */
 
-.post {
+
+
+/*.post {
   padding: 0 16px;
   margin-bottom: 40px;
   img {
@@ -1341,6 +1340,9 @@ footer {
     }
   }
 }
+*/
+
+
 
 
 /*
@@ -1485,8 +1487,8 @@ footer {
   }
   .bottom-banner {
     width: 100%;
-    height: 350px;
-    background: url("/img/seattle-bg.jpg") no-repeat left;
+    height: 460px;
+    background: url("/img/seattle-bg.jpg") no-repeat center;
     background-size: cover;
   }
   .office-address {
