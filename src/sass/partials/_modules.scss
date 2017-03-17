@@ -1528,14 +1528,15 @@ footer {
     background: $dark-grey;
     margin-bottom: 70px;
     padding-bottom: 70px;
-    .team-member {
+
+    .team-member,
+    .logo-box {
       float: left;
       cursor: pointer;
       overflow: hidden;
       width: 33.333%;
       color: $white;
       position: relative;
-      background: $dark-grey;
       img {
         max-width: calc(100% + 20px);
         width: calc(100% + 20px);
@@ -1543,6 +1544,13 @@ footer {
         vertical-align: middle;
         transition: .5s;
       }
+    }
+    .logo-box {
+      background: $light-grey;
+    }
+
+    .team-member {
+      background: $dark-grey;
       .member-info {
         position: absolute;
         bottom: 0;
@@ -2396,11 +2404,12 @@ footer {
 
   .challenges {
     .image-block {
-      padding-top: 50px;
+      //padding-top: 50px;
       overflow: hidden;
       text-align: center;
       img {
-        width: 100%;
+        max-width: 100%;
+        max-height: 560px;
       }
     }
     @include respond-to(mobile) {
@@ -2414,7 +2423,7 @@ footer {
     .image-block {
       text-align: center;
       img {
-        width: 70%;
+        width: 100%;
       }
       &.karigran img {
         width: 100%;
