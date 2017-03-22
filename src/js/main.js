@@ -29,7 +29,7 @@ $(document).ready(function() {
     });
 
 
-    $(document).on("click", ".category-group .category-link", function(e) {
+    $(document).on("click", ".col .category-link", function(e) {
         if($(window).width() <= 991) {
             e.preventDefault();
             $(this).toggleClass("expanded").siblings("ul").toggle()

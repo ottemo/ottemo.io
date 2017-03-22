@@ -233,7 +233,8 @@
       .nav-item {
         display: inline-block;
         position: relative;
-        a {
+        a,
+        span {
           margin: 10px;
           color: $grey;
           font-size: 18px;
@@ -243,7 +244,8 @@
           }
         }
         &:hover {
-          a {
+          a,
+          span {
             text-decoration: none;
             color: $ottemo-light-blue;
           }
@@ -547,7 +549,7 @@ section {
 
 footer {
   background-color: $dark-grey;
-  padding: 48px 0;
+  padding: 70px 0;
   .bottom-block {
     .copyright {
       float: left;
@@ -593,7 +595,13 @@ footer {
   .links {
     margin-bottom: 50px;
     .col {
+      display: inline;
+      width: 20%;
+      float: left;
       @include respond-to(mobile) {
+        display: block;
+        float: none;
+        width: 100%;
         border-bottom: 1px solid rgba(255,255,255,.1);
         padding-top: 8px;
         padding-bottom: 8px;
@@ -960,34 +968,6 @@ footer {
   }
 }
 
-
-
-
-/*****************/
-/* Features page */
-/*****************/
-
-.features-page {
-
-  .section {
-    padding: 0;
-
-  }
-}
-
-.features-page-content {
-  @include respond-to(xs) {
-    text-align: center;
-  }
-}
-
-/*  Operations  */
-.section-order-management {
-  .section-header {
-    text-align: center;
-  }
-}
-
 /*****************/
 /* Clients page */
 /*****************/
@@ -1254,9 +1234,7 @@ footer {
   Blog
 */
 
-
-
-/*.post {
+.post {
   padding: 0 16px;
   margin-bottom: 40px;
   img {
@@ -1340,75 +1318,6 @@ footer {
     }
   }
 }
-*/
-
-
-
-
-/*
-  Pricing
-*/
-.section-pricing {
-  @include respond-to(mobile) {
-    padding: 65px 0 0;
-  }
-  .pricing-grid {
-    text-align: center;
-    .pricing {
-      display: inline-block;
-      vertical-align: top;
-      width: 230px;
-      border: 1px solid #dadada;
-      margin: 0 16px;
-      @include respond-to(small) {
-        width: 200px;
-      }
-      @include respond-to(xs) {
-        margin-bottom: 32px;
-      }
-      .group-title {
-        font-size: 18px;
-        font-weight: 400;
-        padding: 16px;
-        color: $white;
-        background-color: $grey;
-        h1 {
-          margin: 0;
-        }
-      }
-      .price {
-        color: $ottemo-blue;
-        font-size: 20px;
-        width: 100%;
-        height: 170px;
-        border-bottom: 1px solid #dadada;
-        display: table;
-        .price-inner {
-          padding: 16px;
-          display: table-cell;
-          width: 100%;
-          height: 100%;
-          vertical-align: middle;
-          span {
-            display: inline-block;
-            &.dollar-sign {
-              vertical-align: top;
-              padding-top: 8px;
-            }
-            &.dollars {
-              font-size: 40px;
-            }
-          }
-        }
-      }
-      .details {
-        font-size: 18px;
-        padding: 16px;
-      }
-    }
-  }
-}
-
 
 /*
   Contacts
@@ -1487,9 +1396,23 @@ footer {
   }
   .bottom-banner {
     width: 100%;
-    height: 460px;
-    background: url("/img/seattle-bg.jpg") no-repeat center;
-    background-size: cover;
+    height: 390px;
+    background: url("/img/seattle-bg.jpg") $dark-grey no-repeat center;
+    background-size: contain;
+
+    @include respond-to(small) {
+      height: 300px;
+    }
+    @include respond-to(xs) {
+      height: 220px;
+    }
+  }
+  .company-address {
+    text-align: center;
+    font-size: 20px;
+    span {
+      display: block;
+    }
   }
   .office-address {
     text-align: center;
@@ -1557,6 +1480,9 @@ footer {
     }
     .logo-box {
       background: $light-grey;
+      img {
+        transform: translate3d(-9px,0,0);
+      }
     }
 
     .team-member {
@@ -1649,175 +1575,18 @@ footer {
     }
 
     @include respond-to(small) {
-      .team-member {
+      .team-member,
+      .logo-box {
         width: 50%;
       }
     }
 
     @include respond-to(xs) {
-      .team-member {
+      .team-member,
+      .logo-box {
         width: 100%;
       }
     }
-  }
-}
-
-/*
-  Migrate
-*/
-
-.section-migrate-top {
-  height: 450px;
-  overflow: hidden;
-  @include diagonal-background(500px, -200px);
-  @include respond-to(xs) {
-    height: auto;
-    text-align: center;
-    padding-top: 70px;
-  }
-  .top-section-wrapper {
-    display: table;
-    height: 100%;
-    width: 100%;
-    .top-section-inner {
-      display: table-cell;
-      vertical-align: middle;
-      background: url("/img/MagentoDif.png") no-repeat 70% center;
-      @include respond-to(small) {
-        background-size: 60%;
-        background-position: 80% center;
-        .section-header {
-          text-align: left;
-        }
-      }
-      @include respond-to(xs) {
-        background: none;
-      }
-      .mobile-image {
-        display: none;
-        @include respond-to(xs) {
-          display: block;
-          img {
-            width: 75%;
-          }
-        }
-      }
-    }
-  }
-}
-
-.differentiator-section {
-  @include respond-to(xs) {
-    text-align: center;
-  }
-}
-
-.story-section {
-  margin-top: -60px;
-  @include diagonal-top(-3deg, 120px, 60px);
-  @include diagonal-bottom(-3deg, 120px, 60px);
-  .story-section-wrapper {
-    position: relative;
-    padding: 0;
-    margin: 70px 0;
-    background-color: $light-grey;
-    z-index: 1;
-    @include respond-to(mobile) {
-      text-align: center;
-    }
-    .item-wrapper {
-      padding: 50px 0 0;
-      position: relative;
-      @include respond-to(xs) {
-        padding: 0;
-      }
-      @include respond-to(small) {
-        padding: 0;
-      }
-      .text-content {
-        .testimonial-title {
-          font-size: 32px;
-          font-weight: 400;
-        }
-        .testimonial-description {
-          font-size: 32px;
-          font-weight: 300;
-        }
-        .testimonial-text {
-          font-size: 20px;
-          font-weight: 300;
-          font-style: italic;
-          @include respond-to(xs) {
-            font-size: 16px;
-          }
-          &:before {
-            content: "";
-            display: block;
-            width: 32px;
-            height: 32px;
-            margin-bottom: 8px;
-            background-image: url("../img/quotes.svg");
-            background-size: cover;
-            @include respond-to(xs) {
-              display: none;
-            }
-          }
-        }
-        .author {
-          font-size: 24px;
-          font-weight: 300;
-          color: $grey;
-          font-style: italic;
-          @include respond-to(xs) {
-            font-size: 18px;
-          }
-        }
-      }
-      .image-content {
-        text-align: center;
-        img {
-          max-width: 98%;
-          max-height: 550px;
-          @include respond-to(xs) {
-            width: 85%;
-          }
-          @include respond-to(sm) {
-            width: 50%;
-          }
-        }
-      }
-    }
-  }
-}
-
-.wizard-section {
-  text-align: center;
-  img {
-    height: 250px;
-    margin: 24px 0;
-    @include respond-to(xs) {
-      width: 100%;
-      height: auto;
-    }
-  }
-}
-
-.tab-icon {
-  text-indent: 32px;
-  &:before {
-    content: url("/img/chain.svg");
-    position: absolute;
-    left: -16px;
-    width: 24px;
-    height: 24px;
-    @include respond-to(mobile) {
-      position: relative;
-      display: inline-block;
-      top: 3px;
-    }
-  }
-  @include respond-to(mobile) {
-    text-indent: 0;
   }
 }
 
@@ -1834,6 +1603,7 @@ footer {
     margin-bottom: 0;
   }
 }
+
 
 // Why Ottemo Page
 #why-ottemo-page {
@@ -2374,15 +2144,143 @@ footer {
     }
   }
 
+  .client-stats {
+    position: relative;
+    background: $light-grey;
+    &:before {
+      position: absolute;
+      content: '';
+      display: block;
+      height: 100%;
+      width: 50%;
+      background: $ottemo-blue;
+      z-index: 0;
+    }
+    .status-wrapper {
+      display: flex;
+      .stats-section {
+        z-index: 1;
+        display: flex;
+        align-items: center;
+        padding: 24px 16px;
+        &.client-quote {
+          width: 50%;
+          background-color: $ottemo-blue;
+          p {
+            color: $white;
+            opacity: .85;
+          }
+          .author {
+            color: $white;
+            font-weight: 700;
+          }
+        }
+        &.result-values {
+          background-color: $light-grey;
+          width: 50%;
+          .value {
+            float: left;
+            display: inline;
+            width: 33.333%;
+            text-align: center;
+            .number {
+              font-size: 36px;
+              span {
+                position: relative;
+                &:before {
+                  position: absolute;
+                  width: 32px;
+                  height: 32px;
+                  content: url('/img/ic_trending_up.svg');
+                  top: 4px;
+                  left: -36px;
+                }
+              }
+            }
+            .text {
+              height: 50px;
+              font-size: 12px;
+              text-transform: uppercase;
+              font-weight: 700;
+              @include respond-to(medium) {
+
+              }
+            }
+          }
+        }
+      }
+    }
+    @include respond-to(medium) {
+      .status-wrapper {
+        .stats-section {
+          &.result-values {
+            .value {
+              .text {
+                height: 60px;
+              }
+            }
+          }
+        }
+      }
+    }
+    @include respond-to(small) {
+      .status-wrapper {
+        .stats-section {
+          &.result-values {
+            .value {
+              width: 50%;
+              padding: 0 16px;
+            }
+          }
+        }
+      }
+    }
+    @include respond-to(xs) {
+      &:before {
+        display: none;
+      }
+      .status-wrapper {
+        display: block;
+        text-align: center;
+        .stats-section {
+          &.client-quote {
+            width: 100%;
+            position: relative;
+            &:before {
+              position: absolute;
+              content: '';
+              display: block;
+              height: 100%;
+              width: 200%;
+              top: 0;
+              left: -20%;
+              background: $ottemo-blue;
+              z-index: 0;
+            }
+          }
+          &.result-values {
+            width: 100%;
+            .value {
+              width: 50%;
+              padding: 0 16px;
+              margin-bottom: 8px;
+            }
+          }
+        }
+      }
+    }
+  }
+
   .customer-profile {
     text-align: center;
+    border-bottom: 1px solid #dadada;
+    background-color: $white;
     h1 {
       margin-bottom: 32px;
     }
     p {
       text-align: left;
     }
-    background-color: $light-grey;
     img {
       width: 100%;
     }
@@ -2483,38 +2381,6 @@ footer {
     text-align: center;
     border-top: 1px solid #dadada;
     margin-bottom: 50px;
-
-    .result-values {
-      margin-top: 32px;
-      .value {
-        display: inline-block;
-        vertical-align: top;
-        margin: 0 -2px;
-        padding: 8px;
-        width: 25%;
-        transition: .15s ease;
-        .number {
-          height: 60px;
-          font-size: 40px;
-          color: $ottemo-blue;
-        }
-        .text {
-          height: 50px;
-          text-transform: uppercase;
-          font-weight: 700;
-        }
-        &:hover {
-          transform: scale(1.05);
-          box-shadow: 0 3px 15px rgba(0,0,0,.15);
-        }
-        @include respond-to(small) {
-          width: 33.333%;
-        }
-        @include respond-to(xs) {
-          width: 50%;
-        }
-      }
-    }
   }
 
   @include respond-to(mobile) {
@@ -2628,6 +2494,22 @@ footer {
       .image-block img {
         display: none;
       }
+    }
+  }
+}
+
+#thankyou-page,
+#confirm-page {
+  .thankyou {
+    text-align: center;
+    padding: 150px 0;
+    img {
+      width: 130px;
+      height: auto;
+      margin-bottom: 24px;
+    }
+    @include respond-to(xs) {
+      padding: 60px 0;
     }
   }
 }

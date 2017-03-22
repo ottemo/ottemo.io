@@ -50,7 +50,7 @@ html(lang='en')
                             li.nav-item
                                 a(href='/why-ottemo.html') Why Ottemo
                             li.nav-item
-                                a(href='#') Products >
+                                span Products >
                                 ul.submenu
                                     li.nav-item
                                         a(href='/platform-overview.html') Platform Overview
@@ -61,18 +61,21 @@ html(lang='en')
                             li.nav-item
                                 a(href='/clients.html') Clients
                             li.nav-item
-                                a(href='http://blog.ottemo.io') Blog
+                                a(href='#') Resources >
+                                ul.submenu
+                                    li.nav-item
+                                        a(href='http://blog.ottemo.io') Blog
                             li.nav-item
                                 a(href='/company.html') Company
                     .action-button
-                        a.button.button-small(href='/contact.html') Contact Us
+                        a.button.button-small.inverted(href='/contact.html') Contact Us
             block subnav
             block content
             footer.footer
                 .container
                     .links.clearfix
-                        .category-group.col.col-md-3
-                            .category-link.expandable Platform
+                        .col
+                            .category-link.expandable Products
                             ul.subcategory-links
                                 li
                                     a(href='/why-ottemo.html') Why Ottemo
@@ -82,51 +85,60 @@ html(lang='en')
                                     a(href='/ottemo-commerce-cloud.html') Ottemo Commerce Cloud
                                 li
                                     a(href='/pro-services.html') Services
-                        .category-group.col.col-md-3
-                            .category-link.expandable Customers
+                                li
+                                    a(href='#') Partner's
+                        .col
+                            .category-link.expandable Clients
                             ul.subcategory-links
                                 li
-                                    a(href='/clients.html') Case Studies
+                                    a(href='/clients.html') Client Stories
                                 li
-                                    a(href='/clients.html') Customer stories
-                        .category-group.col.col-md-3
+                                    a(href='/case-studies/karigran.html') KariGran
+                                li
+                                    a(href='/case-studies/poconovapes.html') Pocono Vapes
+                        .col
                             .category-link.expandable Company
                             ul.subcategory-links
                                 li
-                                    a(href='/company.html') Our Team
+                                    a(href='/company.html') About Us
                                 li
-                                    a(href='/contact.html') Contact Us
-                        .category-group.col.col-md-3
-                            .category-link.expandable Blog
+                                    a(href='/company.html') Leadership Team
+                                li
+                                    a(href='/company.html') Careers
+                                li
+                                    a(href='/pro-services.html') Terms of Service
+                                li
+                                    a(href='#') Privacy Policy
+                        .col
+                            .category-link.expandable Resources
                             ul.subcategory-links
                                 li
                                     a(href='http://blog.ottemo.io') Ottemo Blog
+                        .col
+                            .category-link.expandable Ottemo Sales
+                            ul.subcategory-links
+                                li
+                                    a(href='mailto:info@ottemo.io') info@ottemo.io
 
                     .bottom-block.clearfix
                         .copyright
                             ul.l-inline-list
                                 li
                                     img.footer-logo(src='/img/ottemo-logo-white.svg', alt='')
-                                li 2016. All rights reserved.
+                                li 2017. All rights reserved.
                                 li
                                     a(href='#') Privacy Policy
                         .sm-icons
                             ul.l-inline-list
                                 li
-                                    a(href='#')
-                                        i.fa.fa-envelope(aria-hidden='true')
-                                li
-                                    a(href='#')
-                                        i.fa.fa-github(aria-hidden='true')
-                                li
-                                    a(href='#')
+                                    a(href='https://www.facebook.com/getottemo' target="_blank")
                                         i.fa.fa-facebook(aria-hidden='true')
                                 li
-                                    a(href='#')
-                                        i.fa.fa-linkedin(aria-hidden='true')
+                                    a(href='https://twitter.com/getottemo' target="_blank")
+                                        i.fa.fa-twitter(aria-hidden='true')
                                 li
-                                    a(href='#')
-                                        i.fa.fa-lightbulb-o(aria-hidden='true')
+                                    a(href='https://www.linkedin.com/company/ottemo-inc' target="_blank")
+                                        i.fa.fa-linkedin(aria-hidden='true')
         script(src='/js/jquery-3.1.1.min.js')
         script(src='/js/bootstrap.min.js')
         script(src="/js/masonry.pkgd.min.js")

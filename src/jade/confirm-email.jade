@@ -1,0 +1,14 @@
+//
+   Created by Evgeniy on 22.03.2017.
+
+extends include/template
+block vars
+    - var pageId = 'confirm-page';
+block content
+    .block.article.thankyou
+        .container
+            img(src='/img/message-to-send.svg' alt='Confirm Email')
+            h1.heading.h1 Almost finished...
+            p.text.large
+                | We need to confirm your email address. Please click the link in the email we just sent you.
+            a(href='/').button.button-big Back to Home

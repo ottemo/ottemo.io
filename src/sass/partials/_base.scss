@@ -30,6 +30,12 @@ p, a, span, ul {
   text-transform: uppercase;
   background-color: $dark-grey;
   transition: .3s ease;
+  &.inverted {
+    background-color: $ottemo-blue;
+    &:hover {
+      background-color: $dark-grey;
+    }
+  }
   &.button-small {
     padding: 8px 24px;
     border-radius: 24px;

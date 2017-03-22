@@ -1,0 +1,14 @@
+//
+   Created by Evgeniy on 22.03.2017.
+
+extends include/template
+block vars
+    - var pageId = 'thankyou-page';
+block content
+    .block.article.thankyou
+        .container
+            img(src='/img/message-sent.svg' alt='Thank You')
+            h1.heading.h1 Thank you for your interest in Ottemo Commerce Cloud
+            p.text.large
+                | We appreciate your questions and comments. Someone will respond to your inquiry within 2-5 business days.
+            a(href='/').button.button-big Back to Home
