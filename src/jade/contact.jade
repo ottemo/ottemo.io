@@ -17,23 +17,23 @@ block content
                     #mc_embed_signup_scroll
                         .row
                             .col-sm-6
-                                input#mce-FNAME.form-field.required(type='text', placeholder='First Name', value='', name='FNAME')
+                                input#mce-FNAME.form-field.required(type='text', placeholder='First Name*', value='', name='FNAME')
                             .col-sm-6
-                                input#mce-LNAME.form-field.required(type='text', placeholder='Last Name', value='', name='LNAME')
+                                input#mce-LNAME.form-field.required(type='text', placeholder='Last Name*', value='', name='LNAME')
                         .row
                             .col-sm-6
-                                input#mce-TITLE.form-field(type='text', placeholder='Title', value='', name='TITLE')
+                                input#mce-TITLE.form-field(type='text', placeholder='Title*', value='', name='TITLE')
                             .col-sm-6
-                                input#mce-EMAIL.form-field.required(type='email', placeholder='Email', value='', name='EMAIL')
+                                input#mce-EMAIL.form-field.required(type='email', placeholder='Email*', value='', name='EMAIL')
                         .row
                             .col-sm-6
-                                input#mce-PHONE.form-field.required(type='text', placeholder='Phone', name='PHONE', value='')
+                                input#mce-PHONE.form-field.required(type='text', placeholder='Phone*', name='PHONE', value='')
                             .col-sm-6
-                                input#mce-COMPANY.form-field(type='text', placeholder='Company', value='', name='COMPANY')
+                                input#mce-COMPANY.form-field(type='text', placeholder='Company*', value='', name='COMPANY')
                         .row
                             .col-sm-6
                                 .select-wrapper
-                                    p(data-default-text='Country').select-label Country
+                                    p(data-default-text='Country*').select-label Country*
                                     select#mce-COUNTRY.select-element.required(name='COUNTRY')
                                         option(value='')
                                         option(value='United States of America') United States of America
@@ -287,7 +287,7 @@ block content
                                         option(value='Zimbabwe') Zimbabwe
                             .col-sm-6
                                 .select-wrapper.disabled
-                                    p(data-default-text='State/Province').select-label State/Province
+                                    p(data-default-text='State/Province*').select-label State/Province*
                                     select#mce-STATE.select-element.required(name='STATE' disabled)
                                         option(value='')
                                         option(value='Alabama') Alabama
@@ -344,7 +344,7 @@ block content
                         .row
                             .col-sm-6
                                 .select-wrapper
-                                    p(data-default-text='Organization Type').select-label Organization Type
+                                    p(data-default-text='Organization Type*').select-label Organization Type*
                                     select#mce-ORGANIZATI.select-element.required(name='ORGANIZATI')
                                         option(value='')
                                         option(value='Retailer') Retailer
@@ -355,7 +355,7 @@ block content
                                         option(value='Other') Other
                             .col-sm-6
                                 .select-wrapper
-                                    p(data-default-text='Inquire Type').select-label Inquire Type
+                                    p(data-default-text='Inquire Type*').select-label Inquire Type*
                                     select#mce-INQUIRE.select-element.required(name='INQUIRE')
                                         option(value='')
                                         option(value='General') General

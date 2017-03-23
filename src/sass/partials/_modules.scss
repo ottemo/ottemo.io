@@ -2513,3 +2513,22 @@ footer {
     }
   }
 }
+
+#privacy-policy-page,
+#terms-of-service-page {
+  .privacy-policy {
+    background-color: $light-grey;
+    .privacy-header {
+      margin-bottom: 24px;
+      .effective-date {
+        font-size: 18px;
+        font-weight: 300;
+        font-style: italic;
+        color: #999999;
+      }
+    }
+    strong {
+      font-weight: 500;
+    }
+  }
+}
