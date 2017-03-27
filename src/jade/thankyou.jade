@@ -1,10 +1,10 @@
 //
    Created by Evgeniy on 22.03.2017.
 
-extends include/template
-block vars
+//extends include/template
+//block vars
     - var pageId = 'thankyou-page';
-block content
+//block content
     .block.article.thankyou
         .container
             img(src='/img/message-sent.svg' alt='Thank You')
@@ -12,3 +12,21 @@ block content
             p.text.large
                 | We appreciate your questions and comments. Someone will respond to your inquiry within 2-5 business days.
             a(href='/').button.button-big Back to Home
+
+html(lang='en')
+    - var pageId = "thankyou-page";
+    head
+        meta(charset='UTF-8')
+        meta(name="viewport", content="width=device-width, initial-scale=1.0, maximum-scale=1.0")
+        title Ottemo
+        link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css')
+        link(rel='stylesheet', href='/css/bootstrap.min.css')
+        link(rel='stylesheet', href='/css/style.css')
+        block extraStyles
+    body(id='#{pageId}')
+        .block.article.thankyou
+            .container
+                img(src='/img/message-sent.svg' alt='Thank You')
+                h1.heading.h1 Thank you for your interest in Ottemo Commerce Cloud
+                p.text.large
+                    | We appreciate your questions and comments. Someone will respond to your inquiry within 2-5 business days.
