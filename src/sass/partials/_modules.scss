@@ -2498,11 +2498,10 @@ footer {
   }
 }
 
-#thankyou-page,
-#confirm-page {
+#thankyou-page {
+  background-color: $light-grey;
   .thankyou {
     text-align: center;
-    padding: 150px 0;
     img {
       width: 130px;
       height: auto;
@@ -2510,6 +2509,25 @@ footer {
     }
     @include respond-to(xs) {
       padding: 60px 0;
+    }
+  }
+}
+
+#privacy-policy-page,
+#terms-of-service-page {
+  .privacy-policy {
+    background-color: $light-grey;
+    .privacy-header {
+      margin-bottom: 24px;
+      .effective-date {
+        font-size: 18px;
+        font-weight: 300;
+        font-style: italic;
+        color: #999999;
+      }
+    }
+    strong {
+      font-weight: 500;
     }
   }
 }

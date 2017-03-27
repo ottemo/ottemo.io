@@ -15,9 +15,17 @@ html, body {
 h1, h2, h3, h4, h5, h6 {
   font-family: 'Roboto Slab', serif;
   font-weight: 400;
+  &::selection {
+    background: #4a9fd9;
+    color: white;
+  }
 }
-p, a, span, ul {
+p, a, span, strong, ul, ol, li {
   font-family: 'Lato', sans-serif;
+  &::selection {
+    background: #4a9fd9;
+    color: white;
+  }
 }
 
 .button {
