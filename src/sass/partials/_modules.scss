@@ -977,9 +977,14 @@ footer {
     padding: 0;
     background-color: $light-grey;
     .section-wrapper {
-      padding: 150px 0;
-      background: url('/img/clients.png') no-repeat right top;
+      padding: 180px 0;
+      background: url('/img/clients.jpg') no-repeat right top;
       background-size: cover;
+      text-align: center;
+      color: $white;
+      h1 {
+        opacity: .95;
+      }
       @include respond-to(medium) {
         padding: 100px 0;
       }
@@ -994,7 +999,7 @@ footer {
       @include respond-to(xs) {
         background-position: left;
         text-align: center;
-        padding: 80px 0 50px;
+        padding: 60px 0;
       }
     }
   }
