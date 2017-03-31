@@ -95,6 +95,8 @@ $(document).ready(function() {
     function showPartnerInfo() {
         const partner = $(this).data('partner');
         const partnerInfo = $(`.reveal-overlay[data-partner="${partner}"]`);
+        const body = $('body');
+        body.addClass('noscroll');
         partnerInfo.addClass('active');
     }
 
@@ -102,6 +104,7 @@ $(document).ready(function() {
 
 
     $('.popup-close').on('click', function() {
+        $('body').removeClass('noscroll');
         $(this).parents('.reveal-overlay').removeClass('active');
     });
 
