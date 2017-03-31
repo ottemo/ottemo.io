@@ -1,0 +1,96 @@
+//
+   Created by Evgeniy on 30.03.2017.
+
+extends include/template
+block vars
+    - var pageId = 'partners-page';
+block content
+
+
+
+    .block.partners-hero-image
+        .text-content
+            .container
+                h1.heading.h1 OUR PARTNERS
+                p.text.large
+                    | Bringing innovative companies together to create an ecosystem for creating critical ecommerce technologies on the Ottemo platform.
+
+
+
+    .block.article
+        .container
+            .text-content
+                h1.heading.h1 Solution Partners
+                p.text.medium
+                    | Our solution partners have experience selling and implementing end-to-end solutions for mid-market and enterprise clients.
+            .partners-box-wrapper
+                .partners-box
+                    .partner-img
+                        img(src='/img/logos/level11-logo.png' alt='Level11 logo')
+                    span(data-partner='level11').link.partner-info Learn More >>
+                .partners-box
+                    .partner-img
+                        img(src='/img/logos/bravolt-logo.png' alt='BravoLT logo')
+                    span(data-partner='bravolt').link.partner-info Learn More >>
+
+    .block.article
+        .container
+            .text-content
+                h1.heading.h1 Technology Partners
+                p.text.medium
+                    | Ottemo Technology Partners have complete access to the same API used to build Ottemo, allowing you to build limitless integrations and seamlessly bring clients to market faster.
+            .partners-box-wrapper
+                .partners-box
+                    .partner-img
+                        img(src='/img/logos/speroteck-logo.svg' alt='Speroteck logo')
+                    span(data-partner='speroteck').link.partner-info Learn More >>
+
+    .block.banner
+        .container
+            h1.heading.h1 Become a Partner
+            a(href='/contact.html').button.button-big Contact Us
+
+    .reveal-overlay(data-partner='level11')
+        .popup.clearfix
+            .popup-close
+                span X
+            .partner-col.partner-logo
+                img(src='/img/logos/level11-logo.png' alt='Level11 logo')
+            .partner-col.partner-copy
+                .partner-name
+                    span.heading.h2 Level 11
+                .partner-site
+                    a(href="http://www.level11.com/" target='blank').link www.level11.com
+                .partner-text
+                    p.text.base
+                        | Level 11 are Experience Design engineers. Level 11 partners with ambitious creative leaders, who want to use the tangible to create the intangible. The Level 11 team works by, with, and through you to build digitally disruptive e-commerce, retail, and software experiences that create magical memories in the minds of clients and customers. With Ottemo, Level 11 will offer customers technology leadership and design innovation that results in a creative, robust and increasingly profitable unified commerce experiences.
+
+    .reveal-overlay(data-partner='bravolt')
+        .popup.clearfix
+            .popup-close
+                span X
+            .partner-col.partner-logo
+                img(src='/img/logos/bravolt-logo.png' alt='BravoLT logo')
+            .partner-col.partner-copy
+                .partner-name
+                    span.heading.h2 BraboLT
+                .partner-site
+                    a(href="https://bravolt.com/" target='blank').link www.bravolt.com
+                .partner-text
+                    p.text.base
+                        | BravoLT empowers their clients, employees, and community to succeed through compassion, professionalism, and the power of technology. BravoLT integrates functional expertise and technical capabilities with sound talent management practices to create performance that works. Bravo LT partnered with Ottemo to offer their clients lightning-fast scalable e-commerce sites hosted and managed in the cloud.
+
+    .reveal-overlay(data-partner='speroteck')
+        .popup.clearfix
+            .popup-close
+                span X
+            .partner-col.partner-logo
+                img(src='/img/logos/speroteck-logo.svg' alt='Speroteck logo')
+            .partner-col.partner-copy
+                .partner-name
+                    span.heading.h2 Speroteck
+                .partner-site
+                    a(href="https://speroteck.com/" target='blank').link www.speroteck.com
+                .partner-text
+                    p.text.base
+                        | Speroteck was founded with the mission of continually improving the productivity of its customer's ecommerce business by integrating your online stores with emerging software products, extensions, updates, and ongoing support. Building on the deep technical knowledge of their development staff, they provide exceptional value for clients. Speroteck partnered with Ottemo allowing us to build limitless integrations and seamlessly bring clients to market faster.

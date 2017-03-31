@@ -14,6 +14,8 @@ $(document).ready(function() {
 
     // mobile menu show/hide
     $('#hamburger-menu-btn').click(function(){
+        $('.mobile-menu li a').first().scrollTop(0);
+        console.log($('.mobile-menu li').first());
         $('.body-wrapper').toggleClass('opened');
     });
 
@@ -32,12 +34,6 @@ $(document).ready(function() {
         }
     });
 
-    //show-hide bio
-    /*$('.team-member').click(function() {
-        $('.team-member').removeClass('active');
-        $(this).find('.member-bio').scrollTop(0);
-        $(this).toggleClass('active');
-    })*/
 
     $('.team-member').click(function() {
         if (!$(this).hasClass('active')) {
@@ -94,6 +90,21 @@ $(document).ready(function() {
             }
         }
     });
+
+    //Show partner's info popup functionality
+    function showPartnerInfo() {
+        const partner = $(this).data('partner');
+        const partnerInfo = $(`.reveal-overlay[data-partner="${partner}"]`);
+        partnerInfo.addClass('active');
+    }
+
+    $('.partner-info').on('click', showPartnerInfo);
+
+
+    $('.popup-close').on('click', function() {
+        $(this).parents('.reveal-overlay').removeClass('active');
+    });
+
 
 });
 

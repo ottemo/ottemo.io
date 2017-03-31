@@ -18,8 +18,6 @@ html(lang='en')
             ul.mobile-menu
                 li.active
                     a(href='/').item Home
-                li
-                    a(href='/why-ottemo') Why Ottemo
                 li.dropdown
                     span.item Products
                     ul
@@ -30,11 +28,22 @@ html(lang='en')
                         li.nav-item
                             a(href='/pro-services').item Services
                 li
+                    a(href='/why-ottemo') Why Ottemo
+                li.dropdown
+                    span.item Partners
+                    ul
+                        li
+                            a(href='/partners').item Our Partners
+                        li
+                            a(href='/contact').item Become a Partner
+                li
                     a(href='/clients').item Clients
                 li
                     a(href='http://blog.ottemo.io').item Blog
                 li
                     a(href='/company').item Company
+                li.box-bottom
+
 
         .body-wrapper
             header#header.header
@@ -48,20 +57,27 @@ html(lang='en')
                     nav.navigation
                         ul
                             li.nav-item
-                                a(href='/why-ottemo') Why Ottemo
-                            li.nav-item
                                 span Products >
                                 ul.submenu
                                     li.nav-item
                                         a(href='/platform-overview') Platform Overview
                                     li.nav-item
-                                        a(href='/ottemo-commerce-cloud') Ottemo Commerce Cloud
+                                        a(href='/ottemo-commerce-cloud') Ottemo Cloud Commerce
                                     li.nav-item
                                         a(href='/pro-services') Services
                             li.nav-item
+                                a(href='/why-ottemo') Why Ottemo
+                            li.nav-item
+                                span Partners >
+                                ul.submenu
+                                    li.nav-item
+                                        a(href='/partners') Our Partners
+                                    li.nav-item
+                                        a(href='/contact') Become a Partner
+                            li.nav-item
                                 a(href='/clients') Clients
                             li.nav-item
-                                a(href='#') Resources >
+                                span Resources >
                                 ul.submenu
                                     li.nav-item
                                         a(href='http://blog.ottemo.io') Blog
@@ -88,14 +104,15 @@ html(lang='en')
                                 li
                                     a(href='#') Partner's
                         .col
+                            .category-link.expandable Partners
+                            ul.subcategory-links
+                                li
+                                    a(href='/partners') Our Partners
+                        .col
                             .category-link.expandable Clients
                             ul.subcategory-links
                                 li
                                     a(href='/clients') Client Stories
-                                li
-                                    a(href='/case-studies/karigran') KariGran
-                                li
-                                    a(href='/case-studies/poconovapes') Pocono Vapes
                         .col
                             .category-link.expandable Company
                             ul.subcategory-links
@@ -107,18 +124,12 @@ html(lang='en')
                                     a(href='/company') Careers
                                 li
                                     a(href='/terms-of-service') Terms of Service
-                                li
-                                    a(href='/privacy-policy') Privacy Policy
                         .col
                             .category-link.expandable Resources
                             ul.subcategory-links
                                 li
                                     a(href='http://blog.ottemo.io') Ottemo Blog
-                        .col
-                            .category-link.expandable Ottemo Sales
-                            ul.subcategory-links
-                                li
-                                    a(href='mailto:info@ottemo.io') info@ottemo.io
+
 
                     .bottom-block.clearfix
                         .copyright
