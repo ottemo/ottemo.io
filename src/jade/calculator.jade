@@ -1,0 +1,71 @@
+//
+   Created by Evgeniy on 03.04.2017.
+
+extends include/template
+block vars
+    - var pageId = "calculator-page"
+block content
+    .block.article.calc-form
+        .container
+            h1.heading.h1 Annual Cost Comparison
+            form#calc-form
+                div
+                    input(type="text")#revenue
+                button(type="submit").button.button-big Calculate
+
+    .block.article
+        .container
+            table
+                tbody
+                    tr.thead
+                        th.section-title Launch Costs
+                        th.section-title
+                            strong On Prem
+                        th.section-title
+                            strong Ottemo
+                    tr
+                        td Design, QA, and Build (implementation)
+                        td.op-build —
+                        td.ottemo-build —
+                    tr
+                        td Advanced Integration Costs 
+                        td.op-advanced-cost —
+                        td.ottemo-advanced-cost —
+                    tr
+                        td Typical GTM Time
+                        td.op-gtm-time —
+                        td.ottemo-gtm-time —
+                    tr.thead
+                        th.section-title Recurring Costs
+                        th.section-title
+                        th.section-title
+                    tr
+                        td Subscription(hardware maintenance,IT infrastructure, etc)
+                        td.op-subscription —
+                        td.ottemo-subscription —
+                    tr
+                        td Managed Support Costs (Devloper blocks)
+                        td.op-support —
+                        td.ottemo-support —
+                    tr
+                        td Biannual Software Upgrades 
+                        td.sw-upgrades —
+                        td —
+                    tr
+                        td Technical Staff Hires 
+                        td.tech-staff-hires —
+                        td —
+                    tr
+                        th Total Costs
+                        th
+                        th
+                    tr
+                        td
+                            strong Total Year One Costs
+                        td.op-total-one-year —
+                        td.ottemo-total-one-year —
+                    tr
+                        td
+                            strong Total Year 2 Costs (Recurring)
+                        td.op-total-two-year —
+                        td.ottemo-total-two-year —
