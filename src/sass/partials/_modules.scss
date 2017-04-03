@@ -113,12 +113,14 @@
   top: 0;
   display: none;
   width: 300px;
-  height: 100%;
+  height: 100vh;
+  overflow-y: scroll;
   background-color: $light-grey;
   z-index: 0;
   ul {
     margin: 0;
     padding: 0;
+    text-align: left;
   }
   .mobile-menu {
     .active {
@@ -161,6 +163,9 @@
           text-transform: uppercase;
         }
       }
+    }
+    .box-bottom {
+      height: 40px;
     }
     a {
       position: relative;
@@ -1528,18 +1533,15 @@ footer {
         background: rgba(0,0,0,.5);
         font-weight: 400;
         overflow-y: scroll;
-        &::-webkit-scrollbar
-        {
+        &::-webkit-scrollbar {
           width: 4px;  /* for vertical scrollbars */
         }
 
-        &::-webkit-scrollbar-track
-        {
+        &::-webkit-scrollbar-track {
           background: rgba(0, 0, 0, 0.1);
         }
 
-        &::-webkit-scrollbar-thumb
-        {
+        &::-webkit-scrollbar-thumb {
           background: rgba(0, 0, 0, 0.5);
         }
       }
@@ -1607,6 +1609,176 @@ footer {
   @include respond-to(xs) {
     margin-bottom: 0;
   }
+}
+
+
+#partners-page {
+  .block {
+    text-align: center;
+  }
+  .text-content {
+    padding: 0 15%;
+  }
+  .partners-hero-image {
+    height: 700px;
+    background: url("/img/partners-hero.jpg") no-repeat center;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgba(255,255,255,.95);
+    .text-content {
+      p {
+        padding: 0 15%;
+      }
+    }
+  }
+  .partners-box-wrapper {
+    margin-top: 32px;
+    .partners-box {
+      display: inline-block;
+      width: 250px;
+      height: 250px;
+      margin: 0 16px;
+      .partner-img {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 100%;
+        img {
+          max-width: 90%;
+          max-height: 90%;
+        }
+      }
+      span {
+        cursor: pointer;
+      }
+    }
+  }
+
+  .banner {
+    text-align: center;
+    background: $light-grey;
+    padding: 64px 0;
+    .heading.h1 {
+      margin-bottom: 24px;
+    }
+  }
+
+  .reveal-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 1005;
+    background-color: rgba(37,40,46,0.45);
+    &.active {
+      display: block;
+    }
+    .popup {
+      position: relative;
+      top: 20%;
+      width: 800px;
+      margin: 0 auto;
+      padding: 32px;
+      background-color: $white;
+      text-align: left;
+      box-shadow: 0 0 35px rgba(0,0,0,.15);
+      .partner-col {
+        float: left;
+        &.partner-logo {
+          width: 25%;
+          img {
+            width: 100%;
+          }
+        }
+        &.partner-copy {
+          width: 75%;
+          padding-left: 24px;
+        }
+      }
+      .popup-close {
+        width: 32px;
+        height: 32px;
+        cursor: pointer;
+        background: url("/img/close-btn.svg") no-repeat center;
+        background-size: cover;
+        position: absolute;
+        top: 16px;
+        right: 16px;
+      }
+    }
+  }
+  @include respond-to(small) {
+    .text-content {
+      padding: 0 10%;
+    }
+    .partners-hero-image {
+      height: 450px;
+    }
+    .reveal-overlay {
+      .popup {
+        width: 500px;
+      }
+    }
+  }
+  @include respond-to(xs) {
+    .text-content {
+      padding: 0 5%;
+    }
+    .partners-hero-image {
+      height: 300px;
+      .text-content {
+        p {
+          padding: 0;
+        }
+      }
+    }
+    .partners-box-wrapper {
+      .partners-box {
+        width: 180px;
+        height: 180px;
+      }
+    }
+    .reveal-overlay {
+      .popup {
+        width: 90%;
+        max-height: 90vh;
+        top: 5vh;
+        overflow-y: scroll;
+        &::-webkit-scrollbar {
+          width: 4px;
+        }
+
+        &::-webkit-scrollbar-track {
+          background: rgba(0, 0, 0, 0.1);
+        }
+
+        &::-webkit-scrollbar-thumb {
+          background: rgba(0, 0, 0, 0.25);
+        }
+        .partner-col {
+          float: none;
+          text-align: center;
+          &.partner-logo {
+            width: 100%;
+            margin: 24px 0;
+            img {
+              width: 50%;
+            }
+          }
+          &.partner-copy {
+            width: 100%;
+            padding-left: 0;
+          }
+        }
+      }
+    }
+  }
+
 }
 
 
