@@ -114,6 +114,25 @@ $(document).ready(function() {
 
 
 
+    $(function(){
+        $('input[type="range"]').rangeslider({
+            polyfill:false,
+            onInit: function(){
+                $('.budget-header .input-value').text('$' + $('#revenue').val() + 'M');
+            },
+            onSlide: function(position, value){
+                if (value == 12) {
+                    $('.budget-header .input-value').text('$' + value + 'M +');
+                } else {
+                    $('.budget-header .input-value').text('$' + value + 'M');
+                }
+            },
+            onSlideEnd:function(position, value){
+
+            }
+        });
+    });
+
 
 
 
@@ -167,9 +186,9 @@ $(document).ready(function() {
         };
 
         // Set server costs based on business types
-        if (revenue < 5e6) {
+        if (revenue < 5) {
             serverCosts = SERVER_COSTS['GROWING'];
-        } else if (revenue < 12e6) {
+        } else if (revenue < 12) {
             serverCosts = SERVER_COSTS['MIDERPRISE'];
         } else {
             serverCosts = SERVER_COSTS['ENTERPRISE'];
@@ -244,3 +263,4 @@ $(window).scroll(function() {
         }
     });
 });
+

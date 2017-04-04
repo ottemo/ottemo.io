@@ -7,13 +7,22 @@ block vars
 block content
     .block.article.calc-form
         .container
-            h1.heading.h1 Annual Cost Comparison
+            h1.heading.h1 Total Cost of Ownership Calculator
+            p.text.medium
+                | Compare the entire cost of using an on-premise solution versus Ottemo platform
             form#calc-form
-                div
-                    input(type="text")#revenue
-                button(type="submit").button.button-big Calculate
 
-    .block.article
+                .budget-wrap
+                    .budget
+                        .budget-header
+                            .title
+                                | Set your annual revenue!
+                                span.input-value
+                        .content
+                            input(type='range', min='1', max='12', value='4', data-rangeslider='')#revenue
+                            button(type="submit").button.button-big Calculate
+
+    .block.article.calc-results
         .container
             table
                 tbody
@@ -69,3 +78,6 @@ block content
                             strong Total Year 2 Costs (Recurring)
                         td.op-total-two-year —
                         td.ottemo-total-two-year —
+
+block extraScripts
+    script(src="/js/rangeslider.min.js")
