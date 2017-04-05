@@ -2866,6 +2866,7 @@ footer {
       }
     }
     @include respond-to(xs) {
+      margin-bottom: 0;
       table tr {
         th {
           font-size: 14px;
@@ -2880,6 +2881,50 @@ footer {
 
           }
         }
+      }
+    }
+  }
+
+  .totals {
+    border: 1px solid #dadada;
+    background: $white;
+    text-align: center;
+    margin-top: 50px;
+    .col-sm-6:first-child {
+      color: #999999;
+      border-right: 1px solid #dadada;
+      @include respond-to(xs) {
+        border: none;
+      }
+    }
+    .col-sm-6 {
+      padding: 32px;
+      p:first-child {
+        font-size: 16px;
+        font-weight: 700;
+      }
+      .amount {
+        font-size: 24px;
+      }
+    }
+  }
+
+  .banner {
+    margin: 0 0 70px;
+    .banner-inner {
+      text-align: center;
+      padding: 70px 180px;
+      background: $white;
+    }
+    @include respond-to(small) {
+      .banner-inner {
+        padding: 70px;
+      }
+    }
+    @include respond-to(xs) {
+      margin: 0 0 50px;
+      .banner-inner {
+        padding: 40px;
       }
     }
   }

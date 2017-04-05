@@ -216,7 +216,8 @@ $(document).ready(function() {
             total_one_yearOP_int = buildOP_int + advancedIntegrationOP_int + subscriptionOP_int,
             total_two_yearOP_int = subscriptionOP_int,
             total_one_yearOttemo_int = buildOttemo_int + advancedIntegrationOttemo_int + subscriptionOttemo_int,
-            total_two_yearOttemo_int = subscriptionOttemo_int + supportOttemo_int;
+            total_two_yearOttemo_int = subscriptionOttemo_int + supportOttemo_int,
+            ottemo_money_saved = total_one_yearOP_int - total_one_yearOttemo_int;
 
         // Set the values in the elements
         $('.op-build').text(formatNum(buildOP_int));
@@ -235,6 +236,8 @@ $(document).ready(function() {
         $('.ottemo-total-one-year').text(formatNum(total_one_yearOttemo_int));
         $('.op-total-two-year').text(formatNum(total_two_yearOP_int));
         $('.ottemo-total-two-year').text(formatNum(total_two_yearOttemo_int));
+        $('.op-budget').text(formatNum(total_one_yearOP_int));
+        $('.ottemo-money-saved').text(formatNum(ottemo_money_saved));
     }
 
     $('#calc-form').on('submit', function(e) {
