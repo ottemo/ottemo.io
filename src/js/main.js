@@ -21,16 +21,22 @@ $(document).ready(function() {
 
     $(function() {
         $(window).resize(function() {
+            if($(window).width() >= 767)
             $('#main-section').height($(window).height() - $("#header").height());
         });
         $(window).resize();
     });
 
+    //mobile navigation submenu
+    $('.mobile-menu .dropdown').on('click touch', function() {
+        $(this).find('ul').toggle();
+    });
+
     //footer mobile menu
-    $(document).on("click", ".col .category-link", function(e) {
+    $('.col').on('click touch', function(e) {
         if($(window).width() <= 991) {
-            e.preventDefault();
-            $(this).toggleClass("expanded").siblings("ul").toggle()
+            $(this).find('.category-link').toggleClass("expanded");
+            $(this).find('.subcategory-links').toggle();
         }
     });
 
@@ -74,20 +80,6 @@ $(document).ready(function() {
         } else {
             var defaultLabelText = selectLabel.data('default-text');
             selectLabel.text(defaultLabelText);
-        }
-
-        if ($(this).is('#mce-COUNTRY')) {
-            if (selectedValue == 'United States of America') {
-                $('#mce-STATE')
-                    .prop('disabled', false)
-                    .parents('.select-wrapper').removeClass('disabled');
-            } else {
-                $('#mce-STATE')
-                    .val('')
-                    .prop('disabled', true)
-                    .parents('.select-wrapper').addClass('disabled')
-                    .find('.select-label').text('State/Province');
-            }
         }
     });
 
@@ -238,6 +230,16 @@ $(document).ready(function() {
         $('.ottemo-total-two-year').text(formatNum(total_two_yearOttemo_int));
         $('.op-budget').text(formatNum(total_one_yearOP_int));
         $('.ottemo-money-saved').text(formatNum(ottemo_money_saved));
+
+        // Spend extra budget
+        $('.ppc .cost').text(formatNum((revenue * 0.02e6)));
+        $('.capital .cost').text(formatNum((revenue * 0.02e6)));
+        $('.extra-budget tr').each(function() {
+            var $el = $(this);
+            var percentage = $el.find('.rev').text().replace(/\D+/g, '');
+            var upside = (percentage / 100) * revenue *1e6;
+            $el.find('.upside').text(formatNum(upside));
+        });
     }
 
     $('#calc-form').on('submit', function(e) {

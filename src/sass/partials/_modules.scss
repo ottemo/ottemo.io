@@ -112,7 +112,7 @@
   left: 0;
   top: 0;
   display: none;
-  width: 300px;
+  width: 280px;
   height: 100vh;
   overflow-y: scroll;
   background-color: $light-grey;
@@ -131,16 +131,24 @@
     .dropdown {
       position: relative;
       &::before {
-        top: 27px;
+        content: '';
+        position: absolute;
+        top: 29px;
+        right: 20px;
         height: 8px;
+        width: 18px;
         border-top: 3px solid #dbe0df;
         border-bottom: 3px solid #dbe0df;
+        z-index: 1;
       }
       &::after {
         content: '';
         position: absolute;
-        right: 28px;
+        right: 20px;
+        top: 39px;
         width: 18px;
+        height: 3px;
+        background: #dbe0df;
         z-index: 1;
       }
       .item {
@@ -156,7 +164,7 @@
         transition: background .3s ease-in-out,border .3s ease-in-out,color .3s ease-in-out;
       }
       ul {
-        //display: none;
+        display: none;
         a.item {
           font-size: 13px;
           font-weight: normal;
@@ -165,7 +173,7 @@
       }
     }
     .box-bottom {
-      height: 40px;
+      height: 60px;
     }
     a {
       position: relative;
@@ -177,6 +185,7 @@
       cursor: pointer;
       background: #f4f7f6;
       border-bottom: 1px solid #e6eaea;
+      text-decoration: none;
       &:hover {
         background-color: #fcfcfc;
       }
@@ -360,6 +369,7 @@ section {
   transition: transform .4s ease;
   z-index: 1;
   &.opened {
+    position: fixed;
     box-shadow: 0 -3px 15px rgba(0,0,0,.3);
     transform: translate(280px, 0);
   }
@@ -409,9 +419,6 @@ section {
 .top-section {
   overflow: hidden;
   padding: 0;
-  @include respond-to(mobile) {
-    //margin-top: 65px;
-  }
   @include diagonal-background(500px, -180px);
   .top-section-wrapper {
     display:table;
@@ -445,17 +452,21 @@ section {
           line-height: 60px;
           font-weight: 400;
           margin: 24px 0;
-          @include respond-to(xs) {
-            font-size: 32px;
-            line-height: 40px;
-            margin: 16px 0;
-          }
         }
         .hero-description {
           margin-bottom: 36px;
         }
         @include respond-to(xs) {
           text-align: center;
+          margin-bottom: 50px;
+          .hero-caption {
+            font-size: 32px;
+            line-height: 40px;
+            margin: 16px 0;
+          }
+          .hero-description {
+            margin-bottom: 16px;
+          }
         }
         @include respond-to(small) {
           text-align: center;
@@ -603,14 +614,6 @@ footer {
       display: inline;
       width: 20%;
       float: left;
-      @include respond-to(mobile) {
-        display: block;
-        float: none;
-        width: 100%;
-        border-bottom: 1px solid rgba(255,255,255,.1);
-        padding-top: 8px;
-        padding-bottom: 8px;
-      }
       .category-link {
         font-size: 16px;
         font-weight: 700;
@@ -619,20 +622,6 @@ footer {
         margin-bottom: 16px;
         &:focus {
           text-decoration: none;
-        }
-        @include respond-to(mobile) {
-          &.expandable:after {
-            content: url("/img/arrow-accordion.svg");
-            width: 24px;
-            height: 24px;
-            float: right;
-            &.expanded & {
-              transform: rotate(7deg);
-            }
-          }
-          &.expanded:after {
-            transform: rotate(180deg);
-          }
         }
       }
       .subcategory-links {
@@ -650,7 +639,34 @@ footer {
             opacity: 1;
           }
         }
-        @include respond-to(mobile) {
+      }
+    }
+    @include respond-to(mobile) {
+      .col {
+        display: block;
+        float: none;
+        width: 100%;
+        border-bottom: 1px solid rgba(255,255,255,.1);
+        padding-top: 8px;
+        padding-bottom: 8px;
+        .category-link {
+          margin: 8px 0;
+          &.expandable:after {
+            content: url("/img/arrow-accordion.svg");
+            width: 24px;
+            height: 24px;
+            float: right;
+          }
+          &.expanded {
+            .subcategory-links {
+              display: block;
+            }
+            &:after {
+              transform: rotate(180deg);
+            }
+          }
+        }
+        .subcategory-links {
           display: none;
           li {
             padding: 8px;
@@ -2818,22 +2834,56 @@ footer {
     }
   }
 
+  table {
+    width: 100%;
+    tr {
+      th {
+        font-size: 16px;
+      }
+      td {
+        border: 1px solid #dadada;
+        background: $white;
+        text-align: left;
+        &:not(:first-child) {
+          text-align: center;
+        }
+      }
+      th,
+      td {
+        padding: 16px;
+        &:not(:first-child) {
+          text-align: center;
+          font-weight: 700;
+        }
+      }
+    }
+  }
+  @include respond-to(xs) {
+    margin-bottom: 0;
+    table tr {
+      th {
+        font-size: 14px;
+      }
+      th,
+      td {
+        padding: 8px;
+      }
+      td {
+        font-size: 12px;
+        &:not(:first-child) {
+
+        }
+      }
+    }
+  }
 
   .calc-results {
     margin-bottom: 50px;
     table {
-      width: 100%;
       tr {
-        th {
-          font-size: 16px;
-        }
         td {
-          border: 1px solid #dadada;
-          background: $white;
-          text-align: left;
           &:not(:first-child) {
             width: 20%;
-            text-align: center;
           }
           &:nth-child(2) {
             color: #999999;
@@ -2841,12 +2891,10 @@ footer {
         }
         th,
         td {
-          padding: 16px;
           &:not(:first-child) {
             text-align: center;
             font-weight: 700;
           }
-
           &:nth-child(3) {
             border-left: 2px solid $ottemo-blue;
             border-right: 2px solid $ottemo-blue;
@@ -2866,22 +2914,16 @@ footer {
       }
     }
     @include respond-to(xs) {
-      margin-bottom: 0;
-      table tr {
-        th {
-          font-size: 14px;
-        }
-        th,
-        td {
-          padding: 8px;
-        }
-        td {
-          font-size: 12px;
-          &:not(:first-child) {
+      padding: 0;
+      margin: 0;
+    }
+  }
 
-          }
-        }
-      }
+  .extra-budget {
+    .block-header {
+      text-align: center;
+      padding: 0 180px;
+      margin-bottom: 50px;
     }
   }
 
