@@ -242,13 +242,6 @@ $(document).ready(function() {
             total_two_yearOttemo_int = subscriptionSAAS_int + supportOttemo_int,
             ottemo_money_saved = total_one_yearOP_int - total_one_yearOttemo_int;
 
-            /*total_one_yearOP_int = buildOP_int + advancedIntegrationOP_int + subscriptionOP_int,
-            total_two_yearOP_int = subscriptionOP_int,
-            total_one_yearOttemo_int = buildOttemo_int + advancedIntegrationOttemo_int + subscriptionOttemo_int,
-            total_two_yearOttemo_int = subscriptionOttemo_int + supportOttemo_int,
-            infrastructure_cost_int = subscriptionOP_int + serverOP_int + databaseOP_int + firewallOP_int + balancerOP_int,
-            launch_cost_int = designOP_int + integrationOP_int;*/
-
         //Launch Costs
         $('.op-build').text(formatNum(buildOP_int));
         $('.ottemo-build').text(formatNum(buildOttemo_int));
