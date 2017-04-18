@@ -2881,12 +2881,46 @@ footer {
     margin-bottom: 50px;
     table {
       tr {
+        &.monthly-breakdown>td:first-child {
+          padding-left: 50px;
+        }
         td {
           &:not(:first-child) {
             width: 20%;
           }
           &:nth-child(2) {
             color: #999999;
+          }
+          .cost-breakdown {
+            padding-left: 10px;
+            padding-right: 10px;
+            vertical-align: middle;
+            float: right;
+            .arrow-down,
+            .arrow-up {
+              display: inline-block;
+              width: 0;
+              height: 0;
+              border-left: 5px solid transparent;
+              border-right: 5px solid transparent;
+            }
+            .arrow-down {
+              border-top: 5px solid #606F7A;
+            }
+            .arrow-up {
+              border-bottom: 5px solid #606F7A;
+            }
+          }
+          i {
+            &.question-tooltip {
+              font-size: 18px;
+              color: #dadada;
+              margin-left: 8px;
+              transition: .1s ease;
+            }
+            &:hover {
+              color: $grey;
+            }
           }
         }
         th,
@@ -2924,6 +2958,12 @@ footer {
       text-align: center;
       padding: 0 180px;
       margin-bottom: 50px;
+      @include respond-to(small) {
+        padding: 0 60px;
+      }
+      @include respond-to(xs) {
+        padding: 0;
+      }
     }
   }
 

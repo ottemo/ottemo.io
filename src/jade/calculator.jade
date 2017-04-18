@@ -34,10 +34,24 @@ block content
                             strong Ottemo
                     tr
                         td Design, QA, and Build (implementation)
+                            i.fa.fa-question-circle-o.question-tooltip(
+                                aria-hidden="true",
+                                data-html="true",
+                                data-toggle="tooltip",
+                                title="",
+                                data-placement="right",
+                                data-original-title="<p><strong>On-Premise</strong>: Very customizable but also extremely complex. This cuts time to customize, design and update in half.</p><p><strong>Ottemo</strong>: Full access to our frontend code (Angular JS) allows for major customization without complexity.</p>")
                         td.op-build —
                         td.ottemo-build —
                     tr
-                        td Advanced Integration Costs 
+                        td Advanced Integration Costs
+                            i.fa.fa-question-circle-o.question-tooltip(
+                                aria-hidden="true",
+                                data-html="true",
+                                data-toggle="tooltip",
+                                title="",
+                                data-placement="right",
+                                data-original-title="<p><strong>On-Premise</strong>: Advanced integrations (CRM, ERP, PIM) are very complex and costly because in-depth quality testing is needed to ensure they don’t impact other areas of the code.</p><p><strong>Ottemo</strong>: Many built-in integrations with leading business applications are available, plus our powerful API’s let you easily build custom integrations to meet all your needs.</p>")
                         td.op-advanced-cost —
                         td.ottemo-advanced-cost —
                     tr
@@ -50,8 +64,37 @@ block content
                         th.section-title
                     tr
                         td Total Annual Infrastructure Costs
-                        td —
-                        td —
+                            i.fa.fa-question-circle-o.question-tooltip(
+                                aria-hidden="true",
+                                data-html="true",
+                                data-toggle="tooltip",
+                                title="",
+                                data-placement="right",
+                                data-original-title="One of the greatest benefits of SaaS is not having to manage your own IT infrastructure, data, security, hosting or hardware maintenance.")
+                            a.cost-breakdown(href="#")
+                                i.arrow-down
+                        td.op-total —
+                        td.ottemo-total —
+                    tr.monthly-breakdown.hidden
+                        td Subscription / License Cost
+                        td.op-subscription —
+                        td.ottemo-subscription —
+                    tr.server.monthly-breakdown.hidden
+                        td Web / App Server
+                        td.op —
+                        td.saas Included in Subscription
+                    tr.database.monthly-breakdown.hidden
+                        td Database
+                        td.op —
+                        td.saas Included in Subscription
+                    tr.firewall.monthly-breakdown.hidden
+                        td Firewall
+                        td.op —
+                        td.saas Included in Subscription
+                    tr.balancer.monthly-breakdown.hidden
+                        td Load Balancer
+                        td.op —
+                        td.saas Included in Subscription
 
                     tr.thead
                         th.section-title Recurring Costs
@@ -59,14 +102,35 @@ block content
                         th.section-title
                     tr
                         td Managed Support costs / Partner Retainer
+                            i.fa.fa-question-circle-o.question-tooltip(
+                                aria-hidden="true",
+                                data-html="true",
+                                data-toggle="tooltip",
+                                title="",
+                                data-placement="right",
+                                data-original-title="<p><strong>On-Premise</strong>: A retainer is required to install updates, troubleshooting, fix patches and bugs and train employees on using a complex backend.</p><p><strong>Ottemo</strong>: Your retainer budget can be used for marketing, design, and customization services because all technical details are handled for free by your SaaS provider.</p>")
                         td.op-support —
                         td.ottemo-support —
                     tr
                         td Biannual Software Upgrades 
+                            i.fa.fa-question-circle-o.question-tooltip(
+                                aria-hidden="true",
+                                data-html="true",
+                                data-toggle="tooltip",
+                                title="",
+                                data-placement="right",
+                                data-original-title="<p><strong>On-Premise</strong>: Software must be updated regularly, and installs are very time-intensive that can cause store down-time.</p><p><strong>Ottemo</strong>: Software updates are rolled out quietly and automatically so you can carry on business as usual.</p>")
                         td.sw-upgrades —
                         td —
                     tr
                         td Technical Staff Hires 
+                            i.fa.fa-question-circle-o.question-tooltip(
+                                aria-hidden="true",
+                                data-html="true",
+                                data-toggle="tooltip",
+                                title="",
+                                data-placement="right",
+                                data-original-title="<p><strong>On-Premise</strong>: At least one employee must be hired to manage the system. Salaries range from $50,000-$120,000, plus weekend and overtime wages in case of emergency.</p><p><strong>Ottemo</strong>: There are no need for technical hires because your provider covers updates, troubleshooting and fixes.</p>")
                         td.tech-staff-hires —
                         td —
                     tr
@@ -136,7 +200,6 @@ block content
                         td.cost $25,000
                         td.rev 20%
                         td.upside
-
 
     .block.banner
         .container
