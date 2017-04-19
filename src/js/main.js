@@ -114,30 +114,6 @@ $(document).ready(function() {
 
 
 
-
-
-    $(function(){
-        $('input[type="range"]').rangeslider({
-            polyfill:false,
-            onInit: function(){
-                $('.budget-header .input-value').text('$' + $('#revenue').val() + 'M');
-            },
-            onSlide: function(position, value){
-                if (value == 12) {
-                    $('.budget-header .input-value').text('$' + value + 'M +');
-                } else {
-                    $('.budget-header .input-value').text('$' + value + 'M');
-                }
-            },
-            onSlideEnd:function(position, value){
-
-            }
-        });
-    });
-
-
-
-
     function roiCalculator(revenue) {
         // Revenue is used to calculate costs
         var serverCosts;
@@ -200,9 +176,9 @@ $(document).ready(function() {
         };
 
         // Set server costs based on business types
-        if (revenue < 5) {
+        if (revenue < 4e6) {
             serverCosts = SERVER_COSTS['GROWING'];
-        } else if (revenue < 12) {
+        } else if (revenue < 12e6) {
             serverCosts = SERVER_COSTS['MIDERPRISE'];
         } else {
             serverCosts = SERVER_COSTS['ENTERPRISE'];
@@ -274,23 +250,18 @@ $(document).ready(function() {
 
         $('.op-budget').text(formatNum(total_one_yearOP_int));
         $('.ottemo-money-saved').text(formatNum(ottemo_money_saved));
-
-
-
-        // Spend extra budget
-        $('.ppc .cost').text(formatNum((revenue * 0.02e6)));
-        $('.capital .cost').text(formatNum((revenue * 0.02e6)));
-        $('.extra-budget tr').each(function() {
-            var $el = $(this);
-            var percentage = $el.find('.rev').text().replace(/\D+/g, '');
-            var upside = (percentage / 100) * revenue *1e6;
-            $el.find('.upside').text(formatNum(upside));
-        });
-
     }
 
     $('#calc-form').on('submit', function(e) {
         e.preventDefault();
+        $('.form-group').removeClass('has-error');
+        $('input', '#calc-form').each(function () {
+            var $el = $(this);
+            if (!$el.val().length) {
+                $el.closest('.form-group').addClass('has-error');
+            }
+        });
+
         var revenue = $('#revenue').val().replace(/\D+/g, '') || 0;
         if (+ revenue) {
             roiCalculator(revenue);

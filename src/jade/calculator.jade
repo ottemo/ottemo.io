@@ -11,8 +11,23 @@ block content
             p.text.medium
                 | Compare the entire cost of using an on-premise solution versus Ottemo platform
             form#calc-form
+                .tco-calc-user-inputs
+                    .row
+                        .col-sm-6.col-sm-offset-3
+                            .form-group
+                                label Total Monthly Visits
+                                input(type='number', value='100000', placeholder="Number of Visitors")#visitors.form-control
+                                span.help-block.error-text Please input a value
+                        .col-sm-6.col-sm-offset-3
+                            .form-group
+                                label Annual Revenue
+                                .input-group
+                                    .input-group-addon USD $
+                                    input(type='number', placeholder="Revenue")#revenue.form-control
+                                span.help-block.error-text Please input a dollar amount
+                    button(type="submit").button.button-big Calculate
 
-                .budget-wrap
+                //.budget-wrap
                     .budget
                         .budget-header
                             .title
@@ -157,7 +172,7 @@ block content
                         p Money You'd Save by Using Ottemo
                         p.amount.ottemo-money-saved —
 
-    .block.article.spend-extra-budget
+    //.block.article.spend-extra-budget
         .container
             .block-header
                 h1.heading.h1 Imagine what you could do with that extra budget
@@ -208,5 +223,5 @@ block content
                 p.text.large BigCommerce Enterprise has the lower cost of ownership, advanced features and premium support you need to get bigger results with less hassle.
                 a(href='/contact.html').button.button-big Contact Us
 
-block extraScripts
+//block extraScripts
     script(src="/js/rangeslider.min.js")
