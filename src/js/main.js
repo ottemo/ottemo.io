@@ -130,7 +130,7 @@ $(document).ready(function() {
                 supportOttemo: 5000,
                 swUpgrades: 20000,
                 techStaffHires: 85000,
-                subscriptionOP: 207000,
+                subscriptionOP: 45000,
                 subscriptionOttemo: 60000,
                 web: 28800,
                 database: 6000,
@@ -148,7 +148,7 @@ $(document).ready(function() {
                 supportOttemo: 7500,
                 swUpgrades: 40000,
                 techStaffHires: 120000,
-                subscriptionOP: 333000,
+                subscriptionOP: 75000,
                 subscriptionOttemo: 120000,
                 web: 52800,
                 database: 9600,
@@ -166,7 +166,7 @@ $(document).ready(function() {
                 supportOttemo: 7500,
                 swUpgrades: 40000,
                 techStaffHires: 120000,
-                subscriptionOP: 383000,
+                subscriptionOP: 125000,
                 subscriptionOttemo: 180000,
                 web: 52800,
                 database: 9600,
@@ -176,7 +176,7 @@ $(document).ready(function() {
         };
 
         // Set server costs based on business types
-        if (revenue < 4e6) {
+        if (revenue < 5e6) {
             serverCosts = SERVER_COSTS['GROWING'];
         } else if (revenue < 12e6) {
             serverCosts = SERVER_COSTS['MIDERPRISE'];
@@ -210,10 +210,10 @@ $(document).ready(function() {
             staff_int = serverCosts['techStaffHires'],
 
             // Calculate total annual costs
-            infrastructure_cost_int = subscriptionOP_int + serverOP_int + databaseOP_int + firewallOP_int + balancerOP_int,
+            infrastructure_cost_int = subscriptionOP_int + serverOP_int + databaseOP_int + firewallOP_int + balancerOP_int + software_int + staff_int + supportOP_int,
 
-            total_one_yearOP_int = buildOP_int + advancedIntegrationOP_int + infrastructure_cost_int + supportOP_int + software_int + staff_int,
-            total_two_yearOP_int = infrastructure_cost_int + supportOP_int + software_int + staff_int,
+            total_one_yearOP_int = buildOP_int + advancedIntegrationOP_int + infrastructure_cost_int,
+            total_two_yearOP_int = infrastructure_cost_int,
             total_one_yearOttemo_int = buildOttemo_int + advancedIntegrationOttemo_int + subscriptionOttemo_int,
             total_two_yearOttemo_int = subscriptionSAAS_int + supportOttemo_int,
             ottemo_money_saved = total_one_yearOP_int - total_one_yearOttemo_int;
@@ -273,6 +273,23 @@ $(document).ready(function() {
         x = x.toFixed(0);
         return '$' + x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
     }
+
+    // Add commas for user inputs that may have large numbers
+    function addCommas(x) {
+        var retVal = x.replace(/,/g, '');
+        return retVal.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+    }
+
+    $('.tco-calc-user-inputs input').each( function() {
+        $(this).on('change', function() {
+            var errorClass = $(this).closest('.form-group');
+            if ( errorClass.hasClass('has-error') ) {
+                errorClass.removeClass('has-error')
+            }
+            var value = addCommas($(this).val());
+            $(this).val(value);
+        })
+    });
 
     // TCO Calc Functions
     function addCostBreakdownHandler() {

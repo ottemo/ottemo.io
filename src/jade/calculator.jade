@@ -16,26 +16,17 @@ block content
                         .col-sm-6.col-sm-offset-3
                             .form-group
                                 label Total Monthly Visits
-                                input(type='number', value='100000', placeholder="Number of Visitors")#visitors.form-control
+                                input(type='text', value='100,000', placeholder="Number of Visitors")#visitors.form-control
                                 span.help-block.error-text Please input a value
                         .col-sm-6.col-sm-offset-3
                             .form-group
                                 label Annual Revenue
                                 .input-group
                                     .input-group-addon USD $
-                                    input(type='number', placeholder="Revenue")#revenue.form-control
+                                    input(type='text', placeholder="Revenue")#revenue.form-control
                                 span.help-block.error-text Please input a dollar amount
                     button(type="submit").button.button-big Calculate
 
-                //.budget-wrap
-                    .budget
-                        .budget-header
-                            .title
-                                | Set your annual revenue!
-                                span.input-value
-                        .content
-                            input(type='range', min='1', max='12', value='4', data-rangeslider='')#revenue
-                            button(type="submit").button.button-big Calculate
 
     .block.article.calc-results
         .container
@@ -170,51 +161,14 @@ block content
                         p.amount.op-budget —
                     .col-sm-6
                         p Money You'd Save by Using Ottemo
+                            i.fa.fa-question-circle-o.question-tooltip(
+                                aria-hidden="true",
+                                data-html="true",
+                                data-toggle="tooltip",
+                                title="",
+                                data-placement="top",
+                                data-original-title="The money you’d have left over in your budget if you use SaaS instead of on-premise (year one site launch plus recurring costs).")
                         p.amount.ottemo-money-saved —
-
-    //.block.article.spend-extra-budget
-        .container
-            .block-header
-                h1.heading.h1 Imagine what you could do with that extra budget
-                p.text.medium
-                    | Forrester estimates that 80% of on-premise spending is on maintenance and only 20% is used for new projects and initiatives
-            table.extra-budget
-                tbody
-                    tr.thead
-                        th.section-title How You Could Spend Your Extra Budget
-                        th.section-title Average Cost
-                        th.section-title Revenue Lift
-                        th.section-title Potential Upside
-                    tr.capital
-                        td Working Capital
-                        td.cost —
-                        td.rev 10%
-                        td.upside
-                    tr
-                        td Additional Sales or Marketing Headcount
-                        td.cost $60,000
-                        td.rev 10%
-                        td.upside
-                    tr
-                        td Email & Loyalty Marketing
-                        td.cost $25,000
-                        td.rev 10%
-                        td.upside
-                    tr
-                        td Social Media
-                        td.cost $15,000
-                        td.rev 5%
-                        td.upside
-                    tr.ppc
-                        td Google Adwords & PPC Management
-                        td.cost —
-                        td.rev 5%
-                        td.upside
-                    tr
-                        td SEO Services
-                        td.cost $25,000
-                        td.rev 20%
-                        td.upside
 
     .block.banner
         .container

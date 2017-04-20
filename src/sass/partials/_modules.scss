@@ -102,6 +102,18 @@
   }
 }
 
+i {
+  &.question-tooltip {
+    font-size: 18px;
+    color: #dadada;
+    margin-left: 8px;
+    transition: .1s ease;
+  }
+  &:hover {
+    color: $grey;
+  }
+}
+
 /*
   Hamburger menu.
   Available only when window width less than 1200px
@@ -2768,15 +2780,6 @@ footer {
         font-weight: 700;
       }
     }
-    input[type="number"]::-webkit-outer-spin-button,
-    input[type="number"]::-webkit-inner-spin-button {
-      -webkit-appearance: none;
-      margin: 0;
-    }
-    input[type="number"] {
-      -moz-appearance: textfield;
-    }
-
   }
 
   table {
@@ -2854,17 +2857,6 @@ footer {
             }
             .arrow-up {
               border-bottom: 5px solid #606F7A;
-            }
-          }
-          i {
-            &.question-tooltip {
-              font-size: 18px;
-              color: #dadada;
-              margin-left: 8px;
-              transition: .1s ease;
-            }
-            &:hover {
-              color: $grey;
             }
           }
         }
