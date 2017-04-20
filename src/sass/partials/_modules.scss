@@ -102,6 +102,18 @@
   }
 }
 
+i {
+  &.question-tooltip {
+    font-size: 18px;
+    color: #dadada;
+    margin-left: 8px;
+    transition: .1s ease;
+  }
+  &:hover {
+    color: $grey;
+  }
+}
+
 /*
   Hamburger menu.
   Available only when window width less than 1200px
@@ -2731,105 +2743,41 @@ footer {
   }
   .calc-form {
     text-align: center;
-
-    //Range slider styles
-
-    .rangeslider,
-    .rangeslider__fill {
-      display:block;
-      border-radius:10px;
-    }
-
-    .rangeslider {
-      position:relative;
-      margin-bottom: 24px;
-      &:after {
-        top:50%;
-        left:0;
-        right:0;
-        content:'';
-        width:100%;
-        height:5px;
-        margin-top:-2.5px;
-        border-radius:5px;
-        position:absolute;
-        background:#212131;
-      }
-    }
-
-    .rangeslider--horizontal{
-      width:100%;
-      height:28px;
-      &.rangeslider__fill {
-        top:0;
-        height:100%;
-      }
-    }
-
-    .rangeslider--disabled{
-      filter:progid:DXImageTransform.Microsoft.Alpha(Opacity=40);
-      opacity:0.4;
-    }
-
-    .rangeslider__fill{
-      position:absolute;
-      background: $ottemo-blue;
-    }
-
-
-    .rangeslider__handle{
-      top:50%;
-      width:28px;
-      height:28px;
-      cursor:pointer;
-      margin-top:-14px;
-      position:absolute;
-      background: $ottemo-blue;
-      border-radius:50%;
-      display:inline-block;
-      &:active {
-        background: $ottemo-blue;
-      }
-    }
-
-    .rangeslider__fill,
-    .rangeslider__handle{
-      z-index:1;
-    }
-    .rangeslider--horizontal .rangeslider__fill{
-      top:50%;
-      height:5px;
-      margin-top:-2.5px;
-    }
-
-    /* Budget */
-    .budget-wrap{
-      margin-top: 50px;
-      padding:40px;
-      background: $white;
-      box-shadow:0 7px 15px 0 rgba(0,0,0,.1);
-      .budget-header {
-        .title {
-          color: $dark-grey;
-          font-size:18px;
-          margin-bottom:30px;
-          text-align: left;
-          .input-value {
-            color: $ottemo-blue;
-            font-size:24px;
-            font-weight:400;
-            float: right;
-          }
-          @include respond-to(xs) {
-            text-align: center;
-            .input-value {
-              display: block;
-              margin-top: 16px;
-              float: none;
-              font-weight: 700;
-            }
-          }
+    .form-group,
+    .input-group {
+      &.has-error {
+        .help-block {
+          display: block;
         }
+      }
+    }
+    button {
+      margin-top: 16px;
+    }
+    .tco-calc-user-inputs {
+      margin-top: 50px;
+      background-color: #fff;
+      padding: 64px 0;
+      border: 1px solid #dadada;
+    }
+    input {
+      font-family: 'Lato', sans-serif;
+      padding: 8px;
+      font-size: 16px;
+      font-weight: 500;
+      height: 48px;
+      border-radius: 0;
+      box-shadow: none;
+    }
+    .input-group-addon {
+      border-radius: 0;
+      height: 40px;
+    }
+    .help-block {
+      display: none;
+      &.error-text {
+        color: #b71c1c;
+        font-weight: 700;
       }
     }
   }
@@ -2909,17 +2857,6 @@ footer {
             }
             .arrow-up {
               border-bottom: 5px solid #606F7A;
-            }
-          }
-          i {
-            &.question-tooltip {
-              font-size: 18px;
-              color: #dadada;
-              margin-left: 8px;
-              transition: .1s ease;
-            }
-            &:hover {
-              color: $grey;
             }
           }
         }
