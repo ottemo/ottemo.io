@@ -6,6 +6,8 @@ html(lang='en')
         meta(charset='UTF-8')
         meta(name="viewport", content="width=device-width, initial-scale=1.0, maximum-scale=1.0")
         title Ottemo
+        script(type='text/javascript').
+            var _sf_startpt=(new Date()).getTime()
         link(rel="shortcut icon", type="image/png", href="/img/favicon.ico")
         link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css')
         link(rel='stylesheet', href='/css/bootstrap.min.css')
@@ -153,3 +155,19 @@ html(lang='en')
         script(src='/js/owl.carousel.min.js')
         script(src='/js/main.js')
         block extraScripts
+            script(type='text/javascript').
+                var _sf_async_config = { uid: 65616, domain: 'ottemo.io', useCanonical: true };
+                    (function() {
+                        function loadChartbeat() {
+                            window._sf_endpt = (new Date()).getTime();
+                            var e = document.createElement('script');
+                            e.setAttribute('language', 'javascript');
+                            e.setAttribute('type', 'text/javascript');
+                            e.setAttribute('src','//static.chartbeat.com/js/chartbeat.js');
+                            document.body.appendChild(e);
+                        };
+                        var oldonload = window.onload;
+                        window.onload = (typeof window.onload != 'function') ?
+                        loadChartbeat : function() { oldonload(); loadChartbeat(); };
+                })();
+
