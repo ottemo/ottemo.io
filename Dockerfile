@@ -1,4 +1,4 @@
-FROM gcr.io/ottemo-kube/node:7.8.0
+FROM ottemo/node:7.8.0
 
 USER root
 RUN apk add --no-cache nginx
