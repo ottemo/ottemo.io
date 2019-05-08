@@ -1,6 +1,5 @@
 doctype html
 html(lang='en')
-    - var pageId = "";
     block vars
     head
         meta(charset='UTF-8')
@@ -15,7 +14,7 @@ html(lang='en')
         link(rel='stylesheet', href='/css/owl.transitions.css')
         link(rel='stylesheet', href='/css/style.css')
         block extraStyles
-    body(id='#{pageId}')
+    body(id=pageId)
 
         .mobile-navigation
             ul.mobile-menu
@@ -170,4 +169,3 @@ html(lang='en')
                         window.onload = (typeof window.onload != 'function') ?
                         loadChartbeat : function() { oldonload(); loadChartbeat(); };
                 })();
-

@@ -29,12 +29,16 @@
     "gulp": "^3.8.11",
     "gulp-changed": "^1.0.0",
     "gulp-concat": "^2.5.2",
-    "gulp-jade": "^1.1.0",
     "gulp-load-plugins": "^1.2.0",
-    "gulp-sass": "^2.0.0",
+    "gulp-pug": "^4.0.1",
+    "gulp-sass": "4.0.1",
     "gulp-sitemap": "^2.1.0",
     "gulp-swig": "^0.8.0",
     "gulp-task-listing": "^1.0.1",
+    "pug": "^2.0.3",
     "run-sequence": "^1.1.5"
+  },
+  "dependencies": {
+    "pug": "^2.0.3"
   }
 }
