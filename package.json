@@ -26,14 +26,14 @@
   "devDependencies": {
     "browser-sync": "^2.11.0",
     "del": "^2.2.0",
-    "gulp": "^3.8.11",
+    "gulp": "^3.9.1",
     "gulp-changed": "^1.0.0",
     "gulp-concat": "^2.5.2",
     "gulp-load-plugins": "^1.2.0",
     "gulp-pug": "^4.0.1",
-    "gulp-sass": "4.0.1",
+    "gulp-sass": "^4.0.2",
     "gulp-sitemap": "^2.1.0",
-    "gulp-swig": "^0.8.0",
+    "gulp-swig": "^0.9.1",
     "gulp-task-listing": "^1.0.1",
     "pug": "^2.0.3",
     "run-sequence": "^1.1.5"
