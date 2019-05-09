@@ -1,5 +1,5 @@
 var gulp = require('gulp'),
-    jade = require('gulp-jade'),
+    pug = require('gulp-pug'),
     del = require('del'),
     browserSync = require('browser-sync'),
     reload = browserSync.reload,
@@ -12,9 +12,9 @@ var src = './src';
 var paths = {
     src: src,
     dist: './dist',
-    jade: [
-        '!' + src + '/jade/include/*.jade',
-        src + '/jade/**/*.jade'
+    pug: [
+        '!' + src + '/pug/include/*.pug',
+        src + '/pug/**/*.pug'
     ],
     sass: src + '/sass/**/*.scss',
     js: src + '/js/**/*.js',
@@ -59,7 +59,7 @@ function devServerTask() {
         });
 
         // Start watching
-        gulp.watch(paths.jade, ['compile_views']);
+        gulp.watch(paths.pug, ['compile_views']);
         gulp.watch(paths.js, ['compile_js']);
         gulp.watch(paths.sass, ['compile_sass']);
     }
@@ -76,10 +76,10 @@ function cleanTask() {
 // Compile from src to dist
 gulp.task('compile', ['compile_views', 'compile_sass', 'compile_js', 'compile_media', 'compile_static']);
 
-// Compile jade templates
+// Compile pug templates
 gulp.task('compile_views', function() {
-    return gulp.src(paths.jade)
-        .pipe($.jade({
+    return gulp.src(paths.pug)
+        .pipe($.pug({
             pretty: true
         }))
         .pipe(gulp.dest(paths.dist))
