@@ -1,0 +1,211 @@
+body {
+  &.noScroll {
+    overflow: hidden;
+  }
+}
+
+.modal-trial {
+  position: relative;
+  background-color: $white;
+  box-shadow: 0 6px 6px 0 rgba(0,0,0,0.15);
+  width: 680px;
+  z-index: 1002;
+  margin: auto;
+  @media (max-width: 767px) {
+    width: calc(100% - 15px);
+    max-width: 680px;
+  }
+  .modal-header {
+    width: 100%;
+    padding: 35px 65px;
+    background: linear-gradient(to bottom, #4b71fc 0%, #273a8a 100%);
+    text-align: center;
+    @media (max-width: 767px) {
+      padding: 15px;
+    }
+    p {
+      color: $white;
+      &.modal-header_title {
+        font-size: 28px;
+      }
+      &.modal-header_subtitle {
+        font-size: 16px;
+      }
+    }
+  }
+  .modal-trial_wrap {
+    width: 100%;
+    padding: 35px 65px;
+    @media (max-width: 767px) {
+      padding: 15px;
+    }
+  }
+}
+
+.overlay-trial {
+  position: fixed;
+  display: none;
+  overflow: auto;
+  padding: 100px 0;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1001;
+  background-color: rgba(0, 0, 0, .4);
+}
+
+.steps {
+  width: 390px;
+  margin: 0 auto 30px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  @media (max-width: 767px) {
+    width: 280px;
+  }
+}
+
+.step {
+  width: 33%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  .step-label {
+    color: $dark-grey;
+    font-size: 16px;
+    text-transform: uppercase;
+    margin: 0 0 10px;
+    opacity: 0;
+  }
+  .step-point {
+    position: relative;
+    background: $white;
+    border-radius: 50%;
+    border: 2px solid #e4e7ed;
+    height: 24px;
+    width: 24px;
+    .step-point-inner {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      height: 8px;
+      width: 8px;
+      transform: translate(-50%, -50%);
+      background-color: $accent-blue;
+      border-radius: 50%;
+      display: none;
+      pointer-events: none;
+    }
+    &:after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 100%;
+      width: 107px;
+      height: 2px;
+      background-color: #e4e7ed;
+      @media (max-width: 767px) {
+        width: 75px;
+      }
+    }
+  }
+  &:last-child {
+    .step-point {
+      &:after {
+        display: none;
+      }
+    }
+  }
+  &.active {
+    .step-label {
+      opacity: 1;
+    }
+    .step-point {
+      box-shadow: 0 3px 6px 0 rgba(0,0,0,0.1);
+      .step-point-inner {
+        display: block;
+      }
+    }
+  }
+  &.complete {
+    .step-point {
+      .step-point-inner {
+        display: block;
+        height: 100%;
+        width: 100%;
+        background-image: url('../img/icons8-галочка-filled-24.png');
+        background-size: 16px auto;
+        background-repeat: no-repeat;
+        background-position: center center;
+        pointer-events: auto;
+      }
+      &:after {
+        background-color: $accent-blue;
+      }
+    }
+  }
+}
+
+
+.step-form {
+  display: none;
+  justify-content: space-between;
+  flex-direction: row;
+  flex-wrap: wrap;
+  .error-text {
+    color: red;
+  }
+  &.active {
+    display: flex;
+  }
+  .form-group {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    &.half {
+      width: calc(50% - 10px);
+      @media (max-width: 767px) {
+        width: 100%;
+      }
+    }
+    &.check-error1 {
+      .error1 {
+        display: block;
+      }
+    }
+    &.check-error2 {
+      .error2 {
+        display: block;
+      }
+    }
+    label {
+      text-align: center;
+    }
+    .step-form_input {
+      padding: 8px;
+      font-size: 20px;
+      height: 48px;
+      width: 100%;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+      transition: all .2s;
+      &:focus {
+        box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(102, 175, 233, 0.6);
+        border-color: $accent-blue;
+        outline: 0;
+      }
+    }
+    .help-block {
+      display: none;
+    }
+  }
+}
+
+button.button-big.button-trial {
+  margin: 16px auto 0;
+  @media screen and (max-width: 768px) {
+    padding: 16px 20px;
+  }
+}

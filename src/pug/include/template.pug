@@ -44,10 +44,121 @@ html(lang='en')
                     a(href='/clients').item Clients
                 li
                     a(href='/company').item Company
+                li
+                    a.register-btn Free Trial
                 li.box-bottom
 
 
         .body-wrapper
+            .overlay-trial
+                .modal-trial
+                    .modal-header
+                            p.modal-header_title Start your free 15-day trial of Ottemo today.
+                            p.modal-header_subtitle No credit card necessary.
+                    .modal-trial_wrap
+                        .steps
+                            .step
+                                .step-label
+                                    span step 1
+                                .step-point
+                                    .step-point-inner(check="1")
+                            .step
+                                .step-label
+                                    span step 2
+                                .step-point
+                                    .step-point-inner(check="2")
+                            .step
+                                .step-label
+                                    span step 3
+                                .step-point
+                                    .step-point-inner(check="3")
+                        form#form-trial
+                            .step-form.step1
+                                .form-group
+                                    input(type='email', placeholder="Email address").step-form_input
+                                    span.help-block.error-text.error1 Email address is required
+                                    span.help-block.error-text.error2 Please enter a valid email address
+                                .form-group
+                                    button(type="submit").button.button-big.button-trial.button-trial_step1 Continue to Store Details
+                            .step-form.step2
+                                .form-group
+                                    input(type='text', placeholder="Store name (You can change this at any time)").step-form_input
+                                    span.help-block.error-text.error1 Store name (You can change this at any time) is required
+                                    span.help-block.error-text.error2 Store name (You can change this at any time) must have at least 3 characters
+                                .form-group
+                                    input(type='password', placeholder="Password").step-form_input
+                                    span.help-block.error-text.error1 Password is required
+                                    span.help-block.error-text.error2 Password must have at least 8 characters
+                                .form-group.half
+                                    input(type='text', placeholder="First Name").step-form_input
+                                    span.help-block.error-text.error1 First Name is required
+                                    span.help-block.error-text.error2 First Name must have at least 3 characters
+                                .form-group.half
+                                    input(type='text', placeholder="Last Name").step-form_input
+                                    span.help-block.error-text.error1 Last Name is required
+                                    span.help-block.error-text.error2 Last Name must have at least 3 characters
+                                .form-group
+                                    input(type='number', placeholder="Phone number").step-form_input
+                                    span.help-block.error-text.error1 Phone number is required
+                                    span.help-block.error-text.error2 Phone number must have at least 8 characters
+                                .form-group
+                                    select(placeholder="test").step-form_input
+                                        option(value="not value", label="What size is your online business?")
+                                        option(value="I haven't started selling yet: no revenue") I haven't started selling yet: no revenue
+                                        option(value="Just starting out: less than $50k revenue") Just starting out: less than $50k revenue
+                                        option(value="Building a business: $50k–250k revenue") Building a business: $50k–250k revenue
+                                        option(value="Growing business: $250k–1M revenue") Growing business: $250k–1M revenue
+                                        option(value="Maturing business: $1M–20M revenue") Maturing business: $1M–20M revenue
+                                        option(value="Established business: $20M–100M revenue") Established business: $20M–100M revenue
+                                        option(value="Enterprise: more than $100M revenue") Enterprise: more than $100M revenue
+                                        option(value="I'm not sure") I'm not sure
+                                    span.help-block.error-text.error1 What size is your online business? is required
+                                .form-group
+                                    button(type="submit").button.button-big.button-trial.button-trial_step2 Continue to Store Details
+                            .step-form.step3
+                                .form-group
+                                    select.step-form_input
+                                        option(value="not value", label="Do you have an existing website?")
+                                        option(value="yes") Yes
+                                        option(value="no") No
+                                    span.help-block.error-text.error1 Do you have an existing website? is required
+                                .form-group
+                                    select.step-form_input
+                                        option(value="not value", label="What will you be selling?")
+                                        option(value="Apparel") Apparel
+                                        option(value="Automotive") Automotive
+                                        option(value="Books/Music/Video") Books/Music/Video
+                                        option(value="Computers/Electronics") Computers/Electronics
+                                        option(value="Flowers/Gifts") Flowers/Gifts
+                                        option(value="Food/Drug") Food/Drug
+                                        option(value="Hardware/Home Improvement") Hardware/Home Improvement
+                                        option(value="Health/Beauty") Health/Beauty
+                                        option(value="Housewares") Housewares
+                                        option(value="Jewelry") Jewelry
+                                        option(value="Mass Merchant") Mass Merchant
+                                        option(value="Office Supplies") Office Supplies
+                                        option(value="Pet Care") Pet Care
+                                        option(value="Specialty") Specialty
+                                        option(value="Sporting Goods") Sporting Goods
+                                        option(value="Toys/Hobbies") Toys/Hobbies
+                                        option(value="Other, something else") Other, something else
+                                        option(value="I don't have products to sell") I don't have products to sell
+                                    span.help-block.error-text.error1 What will you be selling? is required
+                                .form-group
+                                    select.step-form_input
+                                        option(value="not value", label="What best describes how you currently sell your products?")
+                                        option(value="Start an online business") I'm not selling yet
+                                        option(value="Switching from a Competitor") I sell on a website using another solution
+                                        option(value="Expand my online business") I sell mainly through online marketplaces
+                                        option(value="Add an online store to my offline business") I sell mainly in person or in retail stores
+                                        option(value="I'm an existing client") I’m a BigCommerce customer
+                                        option(value="Set up a store for a client") I'm building a store for a client
+                                        option(value="Research as a student, app developer or job applicant") I'm a student, job applicant, or just doing research
+                                    span.help-block.error-text.error1 What best describes how you currently sell your products? is required
+                                .form-group
+                                    button(type="submit").button.button-big.button-trial.button-trial_step3 Finish
+
+
             header#header.header
                 .container
                     .hamburger-menu-btn
@@ -82,6 +193,8 @@ html(lang='en')
                                 a(href='/clients') Clients
                             li.nav-item
                                 a(href='/company') Company
+                            li.nav-item
+                                a.register-btn Free Trial
                     .action-button
                         a.button.button-small.inverted(href='/contact') Contact Us
             block subnav
