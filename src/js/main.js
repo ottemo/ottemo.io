@@ -320,3 +320,109 @@ $(window).scroll(function() {
     });
 });
 
+const validateEmail = function(email) {
+    var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    return re.test(email);
+}
+
+const checkValid = function(element) {
+    for (let index = 0; index < element.length; index++) {
+        if ($(element[index]).val().length <= 0 || $(element[index]).val() === 'not value') {
+            $(element[index]).parent().addClass('check-error1')
+        }
+        else {
+            $(element[index]).parent().removeClass('check-error1')
+            if ($(element[index]).attr('type') === 'email') {
+                if (!validateEmail($(element[index]).val())) {
+                    $(element[index]).parent().addClass('check-error2')
+                }
+                else {
+                    $(element[index]).parent().removeClass('check-error2')
+                }
+            }
+            else if ($(element[index]).attr('type') === 'text') {
+                if ($(element[index]).val().length <= 2) {
+                    $(element[index]).parent().addClass('check-error2')
+                }
+                else {
+                    $(element[index]).parent().removeClass('check-error2')
+                }
+            }
+            else if ($(element[index]).attr('type') === 'number') {
+                if ($(element[index]).val().length <= 7) {
+                    $(element[index]).parent().addClass('check-error2')
+                }
+                else {
+                    $(element[index]).parent().removeClass('check-error2')
+                }
+            }
+            else if ($(element[index]).attr('type') === 'password') {
+                if ($(element[index]).val().length <= 8) {
+                    $(element[index]).parent().addClass('check-error2')
+                }
+                else {
+                    $(element[index]).parent().removeClass('check-error2')
+                }
+            }
+        }
+
+    }
+    if (element.parents('.step-form').find('.check-error1').length === 0 && element.parents('.step-form').find('.check-error2').length === 0) {
+        return true
+    }
+    return false
+}
+
+$('.register-btn').on('click', function() {
+    $('.body-wrapper').removeClass('opened')
+    if ($('.modal-trial').find('.active').length === 0) {
+        $($('.modal-trial').find('.step')[0]).addClass('active')
+        $('.step1').addClass('active')
+    }
+    $('.overlay-trial').fadeIn()
+    $('body').addClass('noScroll')
+})
+
+$('.button-trial_step1').on('click', function(e) {
+    e.preventDefault()
+    let element =  $(this).parents('.step-form').find('.step-form_input')
+    if (checkValid(element)) {
+        $($('.modal-trial').find('.step')[0]).removeClass('active').addClass('complete')
+        $($('.modal-trial').find('.step')[1]).addClass('active')
+        $('.step1').removeClass('active')
+        $('.step2').addClass('active')
+    }
+})
+
+$('.button-trial_step2').on('click', function(e) {
+    e.preventDefault()
+    let element =  $(this).parents('.step-form').find('.step-form_input')
+    if (checkValid(element)) {
+        $($('.modal-trial').find('.step')[1]).removeClass('active').addClass('complete')
+        $($('.modal-trial').find('.step')[2]).addClass('active')
+        $('.step2').removeClass('active')
+        $('.step3').addClass('active')
+    }
+})
+
+$('.button-trial_step3').on('click', function(e) {
+    e.preventDefault()
+    let element =  $(this).parents('.step-form').find('.step-form_input')
+    if (checkValid(element)) {
+        $('.overlay-trial').fadeOut()
+        $('body').removeClass('noScroll')
+    }
+})
+
+$('.step-point-inner').on('click', function() {
+    $('.step-form').removeClass('active')
+    $($('.modal-trial').find('.step')[Number($(this).attr('check')) - 1]).removeClass('complete').addClass('active')
+    for (let index = Number($(this).attr('check')); index < 3; index++) {
+        $($('.modal-trial').find('.step')[index]).removeClass('active').removeClass('complete')
+    }
+    $(`.step${$(this).attr('check')}`).addClass('active')
+})
+
+$('select.step-form_input').on('change', function() {
+    $($(this).find('option')[0]).css('display', 'none')
+})
