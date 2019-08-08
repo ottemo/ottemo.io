@@ -32,7 +32,7 @@
     "gulp-load-plugins": "^1.2.0",
     "gulp-pug": "^4.0.1",
     "gulp-sass": "^4.0.2",
-    "tar": "^4.4.8",
+    "tar": "^4.4.10",
     "node-gyp": "4.0.0",
     "gulp-sitemap": "^2.1.0",
     "gulp-swig": "^0.9.1",
