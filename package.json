@@ -37,10 +37,10 @@
     "gulp-sitemap": "^2.1.0",
     "gulp-swig": "^0.9.1",
     "gulp-task-listing": "^1.0.1",
-    "pug": "^2.0.3",
+    "pug": "^3.0.1",
     "run-sequence": "^1.1.5"
   },
   "dependencies": {
-    "pug": "^2.0.3"
+    "pug": "^3.0.1"
   }
 }
